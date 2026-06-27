@@ -4,84 +4,120 @@ import { TechBox } from './TechBox';
 
 export function Header({ lang, setLang, audioMuted, setAudioMuted }: any) {
   return (
-    <TechBox className="flex-none" innerClassName="p-5 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 overflow-hidden" dir="ltr">
-      <div className="absolute left-0 top-1/4 bottom-1/4 w-[6px] opacity-30" style={{ backgroundImage: 'repeating-linear-gradient(to bottom, #00E5A0 0px, #00E5A0 3px, transparent 3px, transparent 10px)' }}></div>
-      <div className="absolute top-2 right-2 text-[10px] font-bold tracking-[0.2em] text-[#3A5048] font-mono uppercase">⊕ {t("FIDUCIAL_A", "en")}</div>
+    <TechBox className="flex-none" innerClassName="p-5 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 overflow-hidden">
+      <div className="absolute left-0 top-1/4 bottom-1/4 w-[6px] opacity-30" style={{ backgroundImage: 'repeating-linear-gradient(to bottom, #ff7f41 0px, #ff7f41 3px, transparent 3px, transparent 10px)' }}></div>
+      <div className="absolute top-2 right-2 text-[10px] font-bold tracking-[0.2em] text-[#d9531e] font-mono uppercase">⊕ {t("FIDUCIAL_A", "en")}</div>
 
       {/* Master Hybrid Logo Lockup */}
-      <div className="flex items-center gap-5 relative z-10 cursor-pointer" onClick={() => playHardwareTone(880, 0.08, audioMuted)}>
-        <div className="flex-none">
+      <div className="flex items-center gap-5 relative z-10 cursor-pointer group" onClick={() => playHardwareTone(880, 0.08, audioMuted)}>
+        <div className="flex-none transition-transform duration-700 group-hover:scale-105">
           <svg viewBox="0 0 520 120" width="260" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Abstract Symbol */}
-            <g id="abstract_symbol" transform="translate(0, 0)">
-              <g id="traces">
-                <path d="M 24 30 L 24 52 L 44 72 L 44 90" stroke="#00E5A0" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M 44 18 L 44 52 L 54 62 L 54 74" stroke="#00E5A0" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M 64 30 L 64 52" stroke="#00E5A0" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <defs>
+              <linearGradient id="oxide_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#ff7f41" />
+                <stop offset="50%" stopColor="#d9531e" />
+                <stop offset="100%" stopColor="#eab308" />
+              </linearGradient>
+              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            {/* Abstract Symbol: Rusted Gear & Traces (based on abstract_logo_symbol.svg) */}
+            <g id="abstract_symbol" transform="translate(10, 0) scale(0.6)">
+              {/* Outer Gear Ring — 6-tooth gear referencing Rust */}
+              <polygon
+                points="35,24 42.2,21 40.9,7 59.1,7 57.8,21 65,24 71.2,28.8 82.7,20.6 91.9,36.4 79,42.2 80,50 79,57.8 91.9,63.6 82.7,79.4 71.2,71.2 65,76 57.8,79 59.1,93 40.9,93 42.2,79 35,76 28.8,71.2 17.3,79.4 8.1,63.6 21,57.8 20,50 21,42.2 8.1,36.4 17.3,20.6 28.8,28.8"
+                fill="none"
+                stroke="#ff7f41"
+                strokeWidth="1.8"
+                strokeOpacity="0.7"
+                strokeLinejoin="round"
+                className="origin-[50px_50px] animate-[spin_20s_linear_infinite]"
+              />
+
+              {/* Inner Hexagon — SiO₂ crystal lattice */}
+              <polygon
+                points="50,30 67.3,40 67.3,60 50,70 32.7,60 32.7,40"
+                fill="none"
+                stroke="#d9531e"
+                strokeWidth="1.5"
+                strokeOpacity="0.8"
+                className="origin-[50px_50px] animate-[spin_10s_linear_infinite_reverse]"
+              />
+
+              {/* Lattice cross-lines (crystal structure) */}
+              <g className="origin-[50px_50px] animate-[spin_10s_linear_infinite_reverse]">
+                <line x1="50" y1="30" x2="50" y2="70" stroke="#d9531e" strokeWidth="0.8" strokeOpacity="0.3" />
+                <line x1="67.3" y1="40" x2="32.7" y2="60" stroke="#d9531e" strokeWidth="0.8" strokeOpacity="0.3" />
+                <line x1="67.3" y1="60" x2="32.7" y2="40" stroke="#d9531e" strokeWidth="0.8" strokeOpacity="0.3" />
+                
+                {/* Hexagon vertex nodes */}
+                <circle cx="50" cy="30" r="1.2" fill="#d9531e" fillOpacity="0.8" />
+                <circle cx="67.3" cy="40" r="1.2" fill="#d9531e" fillOpacity="0.8" />
+                <circle cx="67.3" cy="60" r="1.2" fill="#d9531e" fillOpacity="0.8" />
+                <circle cx="50" cy="70" r="1.2" fill="#d9531e" fillOpacity="0.8" />
+                <circle cx="32.7" cy="60" r="1.2" fill="#d9531e" fillOpacity="0.8" />
+                <circle cx="32.7" cy="40" r="1.2" fill="#d9531e" fillOpacity="0.8" />
               </g>
-              <g id="vias">
-                <g transform="translate(24, 30)">
-                  <circle r="8" fill="#0A0E14" stroke="#00E5A0" strokeWidth="3.5" />
-                  <circle r="3" fill="#00E5A0" />
-                </g>
-                <g transform="translate(44, 18)">
-                  <circle r="8" fill="#0A0E14" stroke="#00E5A0" strokeWidth="3.5" />
-                  <circle r="3" fill="#00E5A0" />
-                </g>
-                <g transform="translate(64, 30)">
-                  <circle r="8" fill="#0A0E14" stroke="#00E5A0" strokeWidth="3.5" />
-                  <circle r="3" fill="#00E5A0" />
-                </g>
-                <g transform="translate(64, 52)">
-                  <circle r="8" fill="#0A0E14" stroke="#00E5A0" strokeWidth="3.5" />
-                  <circle r="3" fill="#00E5A0" />
-                </g>
-                <g transform="translate(44, 90)">
-                  <circle r="8" fill="#0A0E14" stroke="#00E5A0" strokeWidth="3.5" />
-                  <circle r="3" fill="#00E5A0" />
-                </g>
+
+              {/* Gear tooth tip nodes (IC pin / connection nodes) */}
+              <g className="origin-[50px_50px] animate-[spin_20s_linear_infinite]">
+                <circle cx="50" cy="4.5" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
+                <circle cx="89.5" cy="27.3" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
+                <circle cx="89.5" cy="72.7" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
+                <circle cx="50" cy="95.5" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
+                <circle cx="10.5" cy="72.7" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
+                <circle cx="10.5" cy="27.3" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
               </g>
+
+              {/* Central Core */}
+              <circle cx="50" cy="50" r="8" fill="#ff7f41" fillOpacity="0.95" />
+              <circle cx="50" cy="50" r="4" fill="#07070a" />
+              <circle cx="50" cy="50" r="2" fill="#eab308" className="animate-pulse" />
             </g>
 
             {/* Wordmark */}
-            <g transform="translate(120, 72)">
+            <g transform="translate(110, 72)">
               {/* Main Wordmark */}
-              <text x="0" y="0" style={{ fontFamily: "'IBM Plex Mono', 'Courier Prime', 'Courier New', monospace", fontWeight: 900, fontSize: "34px", fill: "#E8F4F0" }}>nexora</text>
+              <text x="0" y="0" style={{ fontFamily: "'IBM Plex Mono', 'Courier Prime', 'Courier New', monospace", fontWeight: 900, fontSize: "36px", fill: "url(#oxide_grad)", letterSpacing: "-0.05em" }} filter="url(#glow)">oxide</text>
+              <text x="116" y="0" style={{ fontFamily: "'IBM Plex Mono', 'Courier Prime', 'Courier New', monospace", fontWeight: 500, fontSize: "36px", fill: "#c2b5ad", letterSpacing: "-0.05em" }}>-tech</text>
               
               {/* Vertical Divider */}
-              <line x1="140" y1="-26" x2="140" y2="4" stroke="#1A2830" strokeWidth="1.5" />
+              <line x1="240" y1="-26" x2="240" y2="4" stroke="#d9531e" strokeWidth="2" opacity="0.5" />
               
               {/* Subtitle Stack */}
-              <text x="155" y="-14" style={{ fontFamily: "'IBM Plex Sans', -apple-system, sans-serif", fontWeight: 600, fontSize: "9.5px", fill: "#3A5048", letterSpacing: "0.28em" }}>EMBEDDED</text>
-              <text x="155" y="2" style={{ fontFamily: "'IBM Plex Sans', -apple-system, sans-serif", fontWeight: 600, fontSize: "9.5px", fill: "#3A5048", letterSpacing: "0.28em" }}>MEDICAL SYSTEMS</text>
+              <text x="255" y="-14" style={{ fontFamily: "'IBM Plex Sans', -apple-system, sans-serif", fontWeight: 700, fontSize: "9.5px", fill: "#ff7f41", letterSpacing: "0.28em" }}>EMBEDDED RUST</text>
+              <text x="255" y="2" style={{ fontFamily: "'IBM Plex Sans', -apple-system, sans-serif", fontWeight: 700, fontSize: "9.5px", fill: "#ff7f41", letterSpacing: "0.28em" }}>ARCHITECTURE</text>
             </g>
           </svg>
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center gap-8 text-[10px] font-bold tracking-[0.2em] font-mono w-full lg:w-auto lg:border-l border-[#1A2830] lg:pl-8 uppercase">
+      <div className="flex flex-wrap items-center gap-8 text-[10px] font-bold tracking-[0.2em] font-mono w-full lg:w-auto lg:border-l border-[#2e211b] lg:pl-8 uppercase">
         <div className="flex flex-col">
-          <span className="text-[#3A5048] block mb-1">{t("LANG_JUMPER", "en")}</span>
-          <button onClick={() => setLang(lang === 'en' ? 'fa' : 'en')} className="text-[#E8F4F0] hover:text-[#00E5A0] transition-colors border border-[#1A2830] hover:border-[#00E5A0] bg-[#0D1620] px-2 py-1">
+          <span className="text-[#d9531e] block mb-1">{t("LANG_JUMPER", "en")}</span>
+          <button onClick={() => setLang(lang === 'en' ? 'fa' : 'en')} className="text-[#fbfbfb] hover:text-[#ff7f41] transition-colors border border-[#2e211b] hover:border-[#ff7f41] bg-[#161210] px-2 py-1">
             {lang === 'fa' ? t("[ JUMPER: EN ]", "en") : t("[ JUMPER: FA ]", "en")}
           </button>
         </div>
         <div>
-          <span className="text-[#3A5048] block mb-1">{t("SYS_BUS_LINK", "en")}</span>
+          <span className="text-[#d9531e] block mb-1">{t("SYS_BUS_LINK", "en")}</span>
           <div className="flex items-center gap-2 mt-1 px-2 py-1 bg-transparent border border-transparent">
-            <span className="w-2 h-2 bg-[#00E5A0] rounded-full inline-block animate-pulse"></span>
-            <span className="text-[#00E5A0]">{t("IMPEDANCE_MATCHED", "en")}</span>
+            <span className="w-2 h-2 bg-[#ff7f41] rounded-full inline-block animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]"></span>
+            <span className="text-[#ff7f41]">{t("IMPEDANCE_MATCHED", "en")}</span>
           </div>
         </div>
         <div className="flex flex-col">
-          <span className="text-[#3A5048] block mb-1">{t("SOUND_ENGINE", "en")}</span>
-          <button onClick={() => setAudioMuted(!audioMuted)} className="text-[#E8F4F0] hover:text-[#00E5A0] transition-colors border border-[#1A2830] hover:border-[#00E5A0] bg-[#0D1620] px-2 py-1">
+          <span className="text-[#d9531e] block mb-1">{t("SOUND_ENGINE", "en")}</span>
+          <button onClick={() => setAudioMuted(!audioMuted)} className="text-[#fbfbfb] hover:text-[#ff7f41] transition-colors border border-[#2e211b] hover:border-[#ff7f41] bg-[#161210] px-2 py-1">
             {audioMuted ? t("AUDIO_MUTED", "en") : t("AUDIO_ACTIVE", "en")}
           </button>
         </div>
         <div className="flex flex-col">
-          <span className="text-[#3A5048] block mb-1">{t("ACTIVE_TELEMETRY", "en")}</span>
-          <span className="text-[#5BA3E8] mt-1 px-2 py-1 bg-transparent border border-transparent">{t("LINKING_SECURE... // STABLE", "en")}</span>
+          <span className="text-[#d9531e] block mb-1">{t("ACTIVE_TELEMETRY", "en")}</span>
+          <span className="text-[#eab308] mt-1 px-2 py-1 bg-transparent border border-transparent">{t("LINKING_SECURE... // STABLE", "en")}</span>
         </div>
       </div>
     </TechBox>
@@ -98,15 +134,15 @@ export function Nav({ currentView, setView, audioMuted, lang }: any) {
   const getBtnInnerClass = (viewName: string) => {
     const base = "font-mono text-[11px] font-bold tracking-[0.2em] transition-all text-start group uppercase min-w-[160px] py-3 px-4 h-full flex items-center justify-start ";
     if (viewName === currentView) {
-      return base + "bg-[#008C5F]/10 text-[#E8F4F0]";
+      return base + "bg-[#d9531e]/20 text-[#fbfbfb]";
     }
-    return base + "text-[#3A5048] group-hover:text-[#E8F4F0]";
+    return base + "text-[#d9531e] group-hover:text-[#fbfbfb]";
   };
   
   const getBtnOuterClass = (viewName: string) => {
     const base = "w-full text-left ";
     if (viewName === currentView) {
-      return base + "bg-[#00E5A0]";
+      return base + "bg-[#ff7f41]";
     }
     return base;
   }
@@ -114,8 +150,8 @@ export function Nav({ currentView, setView, audioMuted, lang }: any) {
   return (
     <nav className="flex-none grid grid-cols-1 md:grid-cols-4 gap-3 relative z-10">
       <div className="md:col-span-4 flex items-center gap-4 mb-1">
-        <span className="text-[10px] text-[#3A5048] font-bold tracking-[0.25em] font-mono uppercase">{t("Interface Controller Bus // ADR_0x00", lang)}</span>
-        <div className="flex-grow h-[1px] bg-[#1A2830]"></div>
+        <span className="text-[10px] text-[#d9531e] font-bold tracking-[0.25em] font-mono uppercase">{t("Interface Controller Bus // ADR_0x00", lang)}</span>
+        <div className="flex-grow h-[1px] bg-[#2e211b]"></div>
       </div>
 
       <TechBox variant={currentView === 'gateway' ? 'accent' : 'button'} interactive onClick={() => navigate('gateway')} className={getBtnOuterClass('gateway')} innerClassName={getBtnInnerClass('gateway')}>

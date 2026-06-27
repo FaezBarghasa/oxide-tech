@@ -15,16 +15,16 @@ export function TechBox({ children, variant = 'panel', interactive = false, inne
   const outerClip = isSmall ? 'clip-polygon-sm' : 'clip-polygon';
   const innerClip = isSmall ? 'clip-polygon-sm-inner' : 'clip-polygon-inner';
 
-  let outerClasses = `bg-[#1A2830] p-[1px] ${outerClip}`;
-  let innerClasses = `bg-[#0D1620] h-full w-full ${innerClip} relative flex flex-col ${innerClassName}`;
+  let outerClasses = `bg-[#3f2314] p-[1px] ${outerClip}`;
+  let innerClasses = `bg-[#161210] h-full w-full ${innerClip} relative flex flex-col ${innerClassName}`;
 
   if (variant === 'button' && interactive) {
-    outerClasses += ' transition-colors hover:bg-[#00E5A0] cursor-pointer';
+    outerClasses += ' transition-colors hover:bg-[#ff7f41] cursor-pointer';
   } else if (variant === 'accent') {
-    outerClasses = `bg-[#00E5A0] p-[1px] pl-[4px] ${outerClip}`;
+    outerClasses = `bg-[#ff7f41] p-[1px] pl-[4px] ${outerClip}`;
   } else if (variant === 'badge') {
-    outerClasses = `bg-[#1A2830] p-[1px] ${outerClip}`;
-    innerClasses = `bg-[#0A0E14] h-full w-full ${innerClip} relative flex flex-col ${innerClassName}`;
+    outerClasses = `bg-[#3f2314] p-[1px] ${outerClip}`;
+    innerClasses = `bg-[#0b0908] h-full w-full ${innerClip} relative flex flex-col ${innerClassName}`;
   }
 
   return (
@@ -32,7 +32,7 @@ export function TechBox({ children, variant = 'panel', interactive = false, inne
       <div className={innerClasses}>
         {children}
         {variant === 'panel' && (
-          <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-[#00E5A0] opacity-50 pointer-events-none"></div>
+          <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-[#ff7f41] opacity-50 pointer-events-none"></div>
         )}
       </div>
     </div>

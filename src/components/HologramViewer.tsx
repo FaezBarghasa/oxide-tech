@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 export interface HoloVertex {
   x: number;
@@ -163,19 +163,56 @@ const MODELS: Record<string, HoloModel> = (() => {
 })();
 
 interface HologramViewerProps {
-  modelKey: string;
-  yaw: number;
-  pitch: number;
-  autoRot: boolean;
-  setYaw: (y: number | ((prev: number) => number)) => void;
-  setPitch: (p: number | ((prev: number) => number)) => void;
-  setAutoRot: (state: boolean) => void;
+  activeProductIndex: number;
 }
 
-export function HologramViewer({ modelKey, yaw, pitch, autoRot, setYaw, setPitch, setAutoRot }: HologramViewerProps) {
+const productMetadata = [
+  {
+    modelKey: 'blue-pill',
+    name: "Laminar Hood Board",
+    category: "HARDWARE // MODULE_01",
+    stats: {
+      tl: "FREQ: 72.0 MHz",
+      tr: "NODE: 0x4B12",
+      bl: "ISO: CLASS-5",
+      br: "LATENCY: 98μs"
+    }
+  },
+  {
+    modelKey: 'mixer',
+    name: "Lab Mixer Rotator",
+    category: "KINETICS // MODULE_02",
+    stats: {
+      tl: "CAN-BUS: 1Mbps",
+      tr: "NODE: 0x82DC",
+      bl: "SLINT GRAPHICS",
+      br: "JITTER: ZERO"
+    }
+  },
+  {
+    modelKey: 'bain-marie',
+    name: "PID Controller",
+    category: "CONTROL // MODULE_03",
+    stats: {
+      tl: "INTEGRATION: CJS",
+      tr: "NODE: 0x51E2",
+      bl: "BUS TYPE: ETH",
+      br: "RESPONSE: <1ms"
+    }
+  }
+];
+
+const HologramViewer: React.FC<HologramViewerProps> = ({ activeProductIndex }) => {
+  const currentMetadata = productMetadata[activeProductIndex] || productMetadata[0];
+  const modelKey = currentMetadata.modelKey;
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   
+  // Real 3D control states
+  const [yaw, setYaw] = useState(0.8);
+  const [pitch, setPitch] = useState(0.35);
+  const [autoRot, setAutoRot] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
   const [prevMouse, setPrevMouse] = useState({ x: 0, y: 0 });
 
@@ -211,7 +248,7 @@ export function HologramViewer({ modelKey, yaw, pitch, autoRot, setYaw, setPitch
     });
     resizeObserver.observe(container);
 
-    const scaleFactor = 1.6;
+    const scaleFactor = 1.35;
 
     const project = (x: number, y: number, z: number, w: number, h: number) => {
       const currentYaw = yawRef.current;
@@ -231,32 +268,32 @@ export function HologramViewer({ modelKey, yaw, pitch, autoRot, setYaw, setPitch
       const scale = dist / (dist + z2);
 
       return {
+        // Shift a bit down for nice perspective alignment
         x: (w / 2) + x1 * scale * scaleFactor,
-        y: (h / 2) + y2 * scale * scaleFactor,
+        y: (h / 2 + 10) + y2 * scale * scaleFactor,
         scale: scale
       };
     };
 
     const render = () => {
       if (autoRotRef.current) {
-        setYaw((prev) => prev + 0.008);
+        setYaw((prev) => prev + 0.006);
       }
 
       ctx.clearRect(0, 0, width, height);
 
+      // Render concentric hologram rings
+      ctx.strokeStyle = 'rgba(0, 212, 255, 0.04)';
+      ctx.lineWidth = 1;
+      for (let r = 50; r <= 220; r += 55) {
+        ctx.beginPath();
+        ctx.arc(width / 2, height / 2 + 60, r, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
       const activeModel = MODELS[modelKey];
       if (activeModel) {
-        ctx.strokeStyle = 'rgba(0, 229, 160, 0.05)';
-        ctx.lineWidth = 1;
-        for (let r = 50; r <= 200; r += 50) {
-          ctx.beginPath();
-          ctx.arc(width / 2, height / 2 + 20, r, 0, Math.PI * 2);
-          ctx.stroke();
-        }
-
-        ctx.strokeStyle = '#00E5A0';
-        ctx.lineWidth = 1.4;
-
+        // Projection Lines
         activeModel.lines.forEach((pair) => {
           const v1 = activeModel.vertices[pair[0]];
           const v2 = activeModel.vertices[pair[1]];
@@ -267,51 +304,57 @@ export function HologramViewer({ modelKey, yaw, pitch, autoRot, setYaw, setPitch
 
             ctx.beginPath();
             
-            // Apply slight glitch on X axis randomly
+            // Random glitch system offset
             let glitchOffsetX = 0;
-            if (Math.random() > 0.95) {
-              glitchOffsetX = (Math.random() - 0.5) * 10;
-              ctx.strokeStyle = `rgba(0, 229, 160, ${Math.random()})`;
+            if (Math.random() > 0.985) {
+              glitchOffsetX = (Math.random() - 0.5) * 12;
+              ctx.strokeStyle = `rgba(0, 255, 159, ${Math.random() * 0.8})`;
             }
 
             ctx.moveTo(p1.x + glitchOffsetX, p1.y);
             ctx.lineTo(p2.x + glitchOffsetX, p2.y);
 
             if (glitchOffsetX === 0) {
-              ctx.strokeStyle = `rgba(0, 229, 160, ${Math.min(1.0, 0.15 + p1.scale * 0.75)})`;
+              // High contrast aesthetic colors (Silicon Cyan and Verdigris Green)
+              const coeff = Math.min(1.0, 0.2 + p1.scale * 0.8);
+              ctx.strokeStyle = `rgba(0, 212, 255, ${coeff * 0.75})`;
             }
+            
+            ctx.lineWidth = 1.3;
             ctx.stroke();
           }
         });
 
+        // Projection Vertices/Points
         activeModel.vertices.forEach((v) => {
           const p = project(v.x, v.y, v.z, width, height);
-          ctx.fillStyle = '#00E5A0';
-          ctx.beginPath();
+          
           let glitchR = 0;
-          if (Math.random() > 0.9) {
-             glitchR = Math.random() * 2;
+          if (Math.random() > 0.99) {
+             glitchR = Math.random() * 3;
           }
-          ctx.arc(p.x, p.y, 2.5 * p.scale + glitchR, 0, Math.PI * 2);
+
+          ctx.fillStyle = '#00ff9f'; // Verdigris green spots
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, Math.max(1, (2.2 * p.scale + glitchR)), 0, Math.PI * 2);
           ctx.fill();
         });
         
-        // Scanline effect
-        ctx.fillStyle = 'rgba(0, 229, 160, 0.03)';
+        // Scanline effect integration
+        ctx.fillStyle = 'rgba(0, 212, 255, 0.025)';
         for (let i = 0; i < height; i += 4) {
           ctx.fillRect(0, i, width, 1);
         }
         
-        // CRT Flicker
-        if (Math.random() > 0.98) {
-           ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+        // CRT Chromatic shift & flicker emulator
+        if (Math.random() > 0.985) {
+           ctx.fillStyle = 'rgba(0, 212, 255, 0.04)';
            ctx.fillRect(0, 0, width, height);
            
-           // Chromatic shift
            ctx.globalCompositeOperation = 'screen';
-           ctx.fillStyle = 'rgba(255, 0, 0, 0.1)';
+           ctx.fillStyle = 'rgba(255, 0, 0, 0.06)';
            ctx.fillRect(-2, 0, width, height);
-           ctx.fillStyle = 'rgba(0, 0, 255, 0.1)';
+           ctx.fillStyle = 'rgba(0, 0, 255, 0.06)';
            ctx.fillRect(2, 0, width, height);
            ctx.globalCompositeOperation = 'source-over';
         }
@@ -326,7 +369,7 @@ export function HologramViewer({ modelKey, yaw, pitch, autoRot, setYaw, setPitch
       cancelAnimationFrame(animId);
       resizeObserver.disconnect();
     };
-  }, [modelKey, setYaw]);
+  }, [modelKey]);
 
   const handlePointerDown = (e: React.PointerEvent) => {
     setIsDragging(true);
@@ -340,9 +383,9 @@ export function HologramViewer({ modelKey, yaw, pitch, autoRot, setYaw, setPitch
     const deltaX = e.clientX - prevMouse.x;
     const deltaY = e.clientY - prevMouse.y;
     
-    setYaw(y => y + deltaX * 0.01);
+    setYaw(y => y + deltaX * 0.012);
     setPitch(p => {
-      let newPitch = p + deltaY * 0.01;
+      let newPitch = p + deltaY * 0.012;
       return Math.max(-Math.PI / 2 + 0.1, Math.min(Math.PI / 2 - 0.1, newPitch));
     });
 
@@ -355,20 +398,85 @@ export function HologramViewer({ modelKey, yaw, pitch, autoRot, setYaw, setPitch
   };
 
   return (
-    <div ref={containerRef} className="w-full h-full relative cursor-move hover:cursor-grab active:cursor-grabbing overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none z-10 mix-blend-overlay opacity-30" style={{
-        backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, #00E5A0 2px, #00E5A0 4px)',
-        backgroundSize: '100% 4px',
-      }}></div>
+    <div 
+      ref={containerRef}
+      className="relative w-full h-[450px] border border-[#00d4ff]/20 bg-[#111118] overflow-hidden flex items-center justify-center cursor-grab active:cursor-grabbing group select-none"
+    >
+      {/* Scope Lines Background Grid */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#00d4ff]/4 pointer-events-none z-10" />
+      <div 
+        className="absolute inset-0 opacity-[0.06] pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(0, 212, 255, 0.25) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 212, 255, 0.25) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px'
+        }}
+      />
+
+      {/* Technical Metric Overlays - Corner Text */}
+      <div className="absolute top-4 left-4 font-mono text-[10px] tracking-wider text-[#00d4ff]/80 z-20">
+        [ {currentMetadata.stats.tl} ]
+      </div>
+      <div className="absolute top-4 right-4 font-mono text-[10px] tracking-wider text-[#00d4ff]/80 z-20">
+        [ {currentMetadata.stats.tr} ]
+      </div>
+      <div className="absolute bottom-4 left-4 font-mono text-[10px] tracking-wider text-[#00d4ff]/80 z-20">
+        [ {currentMetadata.stats.bl} ]
+      </div>
+      <div className="absolute bottom-4 right-4 font-mono text-[10px] tracking-wider text-[#00ff9f]/90 z-20 animate-pulse">
+        [ {currentMetadata.stats.br} ]
+      </div>
+
+      {/* Manual Controls Toolbar */}
+      <div className="absolute top-12 left-4 flex gap-2 z-30">
+        <button
+          onClick={() => setAutoRot(prev => !prev)}
+          className={`px-2 py-0.5 border text-[8px] font-mono tracking-widest uppercase cursor-pointer transition-colors ${
+            autoRot 
+              ? 'border-[#00ff9f]/50 bg-[#00ff9f]/10 text-[#00ff9f]' 
+              : 'border-[#64748b]/30 bg-transparent text-[#64748b] hover:text-[#f8fafc]'
+          }`}
+        >
+          {autoRot ? 'AutoRotate: ON' : 'AutoRotate: OFF'}
+        </button>
+        <button
+          onClick={() => {
+            setYaw(0.8);
+            setPitch(0.35);
+          }}
+          className="px-2 py-0.5 border border-[#00d4ff]/30 bg-transparent hover:bg-[#00d4ff]/10 text-[#00d4ff] text-[8px] font-mono tracking-widest uppercase cursor-pointer transition-colors"
+        >
+          Reset View
+        </button>
+      </div>
+
+      {/* Interactive 3D Canvas element */}
       <canvas
         ref={canvasRef}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerUp}
-        className="block w-full h-full touch-none"
-        style={{ filter: 'drop-shadow(0 0 8px rgba(0,229,160,0.5))' }}
+        className="block w-full h-full touch-none z-10"
+        style={{ filter: 'drop-shadow(0 0 12px rgba(0,212,255,0.4))' }}
       />
+
+      {/* Drag Tutorial Highlight Indicator */}
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 font-mono text-[8px] tracking-[0.25em] text-[#64748b] opacity-60 pointer-events-none group-hover:opacity-100 transition-opacity duration-300">
+        DRAG TO ROTATE 3D SYSTEM
+      </div>
+
+      {/* Hologram Stage Platform visual backplane */}
+      <div className="absolute bottom-6 w-72 h-12 bg-gradient-to-t from-[#00d4ff]/15 to-transparent border-t border-[#00d4ff]/20 transform -rotate-x-60 rounded-full blur-[1px] z-0 opacity-60" />
+
+      {/* Viewer Label footer */}
+      <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 font-mono text-[9px] tracking-[0.2em] text-[#94a3b8]/75 uppercase pointer-events-none">
+        VECTOR MODEL // ROT-{yaw.toFixed(2)}_PITCH-{pitch.toFixed(2)}
+      </div>
     </div>
   );
-}
+};
+
+export default HologramViewer;

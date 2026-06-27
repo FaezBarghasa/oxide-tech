@@ -3,7 +3,7 @@ import { playHardwareTone } from '../lib/audio';
 import { productData } from '../lib/datasheet';
 import { t } from '../lib/i18n';
 
-import { HologramViewer } from './HologramViewer';
+import HologramViewer from './HologramViewer';
 import { TechBox } from './TechBox';
 
 export function GatewayView({ audioMuted, setView, lang }: any) {

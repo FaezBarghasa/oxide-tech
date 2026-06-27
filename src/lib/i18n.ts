@@ -6,25 +6,137 @@ export const t = (text: string, lang: string): string => {
 };
 
 const dictEn: Record<string, string> = {
-  // New Header info
+  // Common UI
+  "Interface Controller Bus // ADR_0x00": "Interface Controller Bus // ADR_0x00",
+  "EMBEDDED MEDICAL SYSTEMS": "EMBEDDED MEDICAL SYSTEMS",
+  "LANG_JUMPER": "LANG_JUMPER",
+  "SYS_BUS_LINK": "SYS_BUS_LINK",
+  "IMPEDANCE_MATCHED": "IMPEDANCE_MATCHED",
+  "SOUND_ENGINE": "SOUND_ENGINE",
+  "AUDIO_MUTED": "AUDIO_MUTED",
+  "AUDIO_ACTIVE": "AUDIO_ACTIVE",
+  "ACTIVE_TELEMETRY": "ACTIVE_TELEMETRY",
+  "LINKING_SECURE... // STABLE": "LINKING_SECURE... // STABLE",
+  "FIDUCIAL_A": "FIDUCIAL_A",
   "SYS_LABEL": "[!] QUALITY CONTROL SYSTEM",
   "SYS_STATUS": "REGISTER ADDR_0x00 ONLINE",
-  
-  "HERO_TITLE": "Designing Safe and Precise Electronic Boards for Sensitive Medical & Laboratory Equipment",
-  "HERO_DESC": "With over 20 years of experience (since 2003), the Nexora team specializes in designing and manufacturing multi-layer controller boards for medical and laboratory equipment manufacturers. By utilizing the Rust programming language and ARM microcontrollers, we guarantee global-level stability, safety, and precision for your devices.",
-  
-  "LABEL_THERM": "PRECISE TEMP CONTROLLER",
-  "VAL_THERM": "0.01°C ACCURACY",
-  "DESC_THERM": "> Ovens, Incubators, Autoclaves",
-  
-  "LABEL_VELOCITY": "SMART MOTOR DRIVE",
-  "VAL_VELOCITY": "SENSORLESS FOC CONTROL",
-  "DESC_VELOCITY": "> Lab Mixers and Rotators",
-  
-  "LABEL_ISO": "SAFE ISOLATION",
-  "VAL_ISO": "FULL GALVANIC ISOLATION",
-  "DESC_ISO": "> Compliant with IEC 60601",
-  
+
+  // Navigation
+  "NAV_PHILOSOPHY": "PHILOSOPHY",
+  "NAV_JOURNEY": "JOURNEY",
+  "NAV_PRODUCTS": "PRODUCTS",
+  "NAV_TEAM": "TEAM",
+  "NAV_GET_LICENSE": "GET LICENSE",
+
+  // Hero
+  "HERO_STATUS": "SYSTEM STATUS: OPERATIONAL_V.23.4",
+  "HERO_TITLE": "Where 23 years of hardware wisdom meets",
+  "HERO_DESC_NEW": "Developing deterministic embedded systems with uncompromising memory safety and high-performance industrial primitives. Engineered for the extremes.",
+  "HERO_INIT_SEQ": "INITIALIZE_SEQUENCE",
+  "HERO_VIEW_DOCS": "VIEW_DOCUMENTATION",
+  "HERO_HW_SELECT": "HW_SELECT:",
+
+  // Typewriter Words
+  "Rust": "Rust",
+  "Silicon": "Silicon",
+  "Safety": "Safety",
+  "Reliability": "Reliability",
+
+  // Manifesto
+  "MAN_SUB": "// OUR PHILOSOPHY",
+  "MAN_TITLE": "Core Manifesto",
+  "Correctness": "Correctness",
+  "Zero Deviations": "Zero Deviations",
+  "Zero Deviations Desc": "Formal verification and static analysis as the bedrock of hardware interaction.",
+  "Mastery": "Mastery",
+  "Bare Metal": "Bare Metal",
+  "Bare Metal Desc": "Deep understanding of silicon behavior from the register level up.",
+  "Independence": "Independence",
+  "Sovereign Code": "Sovereign Code",
+  "Sovereign Code Desc": "Building proprietary technology stacks without external bloat or dependencies.",
+  "Safety_principle": "Safety",
+  "Iron Memory": "Iron Memory",
+  "Iron Memory Desc": "Leveraging Rust's ownership model to eliminate entire classes of hardware bugs.",
+  "Legacy": "Legacy",
+  "Generational": "Generational",
+  "Generational Desc": "Designing systems that remain operational for decades, not months.",
+
+  // Inventory
+  "INV_SUB": "// PRODUCT CATALOG",
+  "INV_TITLE": "Industrial Inventory",
+  "INV_PROD_1_NAME": "Laminar Hood Board",
+  "INV_PROD_1_DESC": "Ultra-low latency airflow control system with redundant sensor feedback loops and ISO-5 compliance.",
+  "INV_PROD_2_NAME": "Lab Mixer Rotator",
+  "INV_PROD_2_DESC": "Precise angular velocity management with jitter-free brushless DC motor integration and Slint-based UI.",
+  "INV_PROD_3_NAME": "PID Controller",
+  "INV_PROD_3_DESC": "Modular thermal management unit with sub-millisecond response times and secure remote telemetry.",
+  "INV_PROJECT_3D": "Project 3D",
+  "INV_ACTIVE": "Active",
+  "INV_PROJECTED_ACTIVE": "Projected ACTIVE",
+
+  // Tech Stack
+  "TECH_SUB": "// SECURITY EMBEDDED",
+  "TECH_TITLE": "Silicon to Cloud",
+  "TECH_DESC": "A vertically integrated stack built for security, speed, and long-term maintainability. No middle-men, no bloated abstractions. Zero undefined behavior.",
+  "TECH_LATENCY": "System Latency",
+  "TECH_LIVE": "LIVE_TELEMETRY",
+  "TECH_LIVE_SHORT": "LIVE",
+  "TECH_ITEM_1_SUB": "HARDWARE LAYER",
+  "TECH_ITEM_1_DESC": "ARM Cortex integration",
+  "TECH_ITEM_2_SUB": "EMBEDDED CORE",
+  "TECH_ITEM_2_DESC": "Memory safe firmware",
+  "TECH_ITEM_3_SUB": "INTERFACE SYS",
+  "TECH_ITEM_3_DESC": "No-std GUI library",
+  "TECH_ITEM_4_SUB": "CLOUD BACKEND",
+  "TECH_ITEM_4_DESC": "Telemetry streaming",
+
+  // Telemetry Stats
+  "Hash_Rate": "Hash_Rate",
+  "Temp_Core": "Temp_Core",
+  "Bus_State": "Bus_State",
+  "Memory_Usage": "Memory_Usage",
+  "Uptime": "Uptime",
+  "Sys_Auth": "Sys_Auth",
+  "Verified": "Verified",
+  "Nominal": "Nominal",
+
+  // Leadership
+  "LEAD_SUB": "// DIRECTORS",
+  "LEAD_TITLE": "Dual-Core Leadership",
+  "CEO_TITLE": "CHIEF EXECUTIVE OFFICER",
+  "CEO_DESC": "Driving the strategic vision of Oxide's industrial sovereignty and global hardware standards.",
+  "CTO_TITLE": "CHIEF TECHNOLOGY OFFICER",
+  "CTO_DESC": "Architecting the low-level Rust primitives and hardware-software parity that define Oxide systems.",
+
+  // Footer
+  "FOOT_TITLE": "OXIDE INDUSTRIAL",
+  "FOOT_DESC": "High-performance design systems for embedded engineering and mission-critical hardware deployments. Where safety meets compile-time certainty.",
+  "FOOT_RESOURCES": "RESOURCES",
+  "FOOT_COMPLIANCE": "COMPLIANCE",
+  "FOOT_UPDATES": "SUBSYSTEM_UPDATES",
+  "FOOT_COPYRIGHT": "© 2026 OXIDE INDUSTRIAL. ALL RIGHTS RESERVED.",
+  "FOOT_REGION": "REGION: GLOBAL_NODE_01",
+  "FOOT_STATUS": "STATUS: 200 OK",
+
+  // Contact / CTA Section
+  "CTA_SUB": "// ENTERPRISE GATEWAY",
+  "CTA_TITLE": "Ready to engineer the impossible?",
+  "CTA_DESC": "Join the vanguard of industrial engineering. Request a technical consultation or explore our licensing models for enterprise infrastructure.",
+  "CTA_ESTABLISH": "ESTABLISH_CONTACT",
+  "CTA_DEV_PORTAL": "DEVELOPER_PORTAL",
+  "FORM_SESSION": "// SECURE_CHANNEL_SESSION",
+  "FORM_CLOSE": "[CLOSE]",
+  "FORM_NAME": "C_NAME *",
+  "FORM_COMPANY": "COMPANY",
+  "FORM_EMAIL": "EMAIL *",
+  "FORM_MSG": "CHANNEL_MSG",
+  "FORM_TRANSMIT": "TRANSMIT_SEQUENCE",
+  "FORM_SUCCESS": "TRANSMISSION SUCCESSFUL",
+  "FORM_RETURN": "RETURN_TO_PORTAL",
+  "FORM_SUCCESS_DESC": "Secure handshake initialized. Our engineering team has registered coordinate hash:",
+  "FORM_SUCCESS_DESC_2": "and will respond within 24 cycles.",
+
+  // Legacy compatibility keys
   "ABOUT_TITLE": "Why the Rust Programming Language?",
   "ABOUT_P1": "In sensitive equipment like cell culture incubators or medical autoclaves, even the slightest software error can be catastrophic. Temperature fluctuations or sudden motor stops incur heavy costs.",
   "ABOUT_P2": "At Nexora, we use the Rust programming language at the hardware (Bare-Metal) level. This language inherently prevents common C/C++ errors such as memory leaks and unauthorized access.",
@@ -35,17 +147,13 @@ const dictEn: Record<string, string> = {
   "COMM_3": "Support for industrial and medical protocols (Modbus, RS485, CAN).",
   "TEAM_TITLE": "Expert Research & Development (R&D) Team",
   "TEAM_DESC": "Our team consists of veteran electronics and embedded software engineers who have been developing cutting-edge technologies in the Iranian medical equipment industry since 2003.",
-  
   "BTN_ABOUT": "About Us",
   "BTN_PROD": "Products",
   "BTN_CONT": "Contact & Partnership",
-  
   "DIR_TITLE": "Products & Boards Catalog",
   "DIR_DESC": "Click on each board to view its technical specifications:",
   "DIR_STATUS_ACT": "[ ACTIVE ]",
   "DIR_STATUS_CUST": "[ CUSTOM ]",
-  
-  // Contacts
   "CONT_TITLE": "Partnership & Project Inquiry",
   "CONT_DESC": "If you are a laboratory or medical equipment manufacturer looking for a powerful technical partner to develop control boards for your products, or need consulting and R&D project execution, get in touch with us.",
   "CONT_BEN_TITLE": "Benefits of Partnering with Nexora:",
@@ -59,8 +167,6 @@ const dictEn: Record<string, string> = {
   "LBL_SPEC": "Project Requirements or Description",
   "PLH_SPEC": "Please describe the technical details or the type of board required...",
   "BTN_SUBMIT": "SUBMIT PARTNERSHIP REQUEST //",
-  
-  // Datasheet Translations (En)
   "MM-PID-03 // PID_CONTROLLER": "MM-PID-03 // General Purpose PID Temperature Controller",
   "PID_DESC": "Auto-tuning PID algorithm with 0.01°C accuracy. Complete prevention of temperature overshoot, which is critical for cell culture and sterilization. Optimized with Embedded Rust.",
   "COMP_EQUIP": "Compatible Equipment",
@@ -68,7 +174,6 @@ const dictEn: Record<string, string> = {
   "SENS_INP": "Sensor Input",
   "PID_S2": "PT100 / PT1000 / Thermocouple",
   "COMM_PROT": "Communication Protocol",
-  
   "MM-MIX-02 // AC_MOTOR_CONTROLLER": "MM-MIX-02 // Lab Mixer/Rotator AC Motor Controller",
   "MIX_DESC": "Maintains constant speed under variable laboratory loads. Instant jam detection and safe shutdown to prevent damage to sensitive samples. Implemented with sensorless FOC algorithm.",
   "MOTOR_TYP": "Motor Type",
@@ -78,7 +183,6 @@ const dictEn: Record<string, string> = {
   "MIX_S3": "100 to 5000 RPM",
   "SAFETY": "Safety",
   "MIX_S4": "Overcurrent & Overtemperature Detection",
-  
   "MM-LAM-01 // LAMINAR_HOOD_CONTROLLER": "MM-LAM-01 // Laminar Hood Control Board",
   "LAM_DESC": "Code written in Embedded Rust to guarantee uniform and isolated airflow. Advanced warning system in case of leakage or filter clogging using precise differential pressure sensors.",
   "FAN_CTRL": "Fan Control",
@@ -103,60 +207,125 @@ const dictFa: Record<string, string> = {
   "ACTIVE_TELEMETRY": "تله‌متری_فعال",
   "LINKING_SECURE... // STABLE": "ارتباط_امن... // پایدار",
   "FIDUCIAL_A": "نشانگر_الف",
-  
   "SYS_LABEL": "[!] سیستم کنترل کیفیت",
   "SYS_STATUS": "ثبت‌نام ADDR_0x00 آنلاین",
-  
-  "HERO_TITLE": "طراحی بردهای الکترونیکی ایمن و دقیق برای تجهیزات حساس پزشکی و آزمایشگاهی",
-  "HERO_DESC": "تیم نکسورا با بیش از ۲۰ سال تجربه (از سال ۱۳۸۲)، متخصص طراحی و ساخت بردهای کنترلر چندلایه برای تولیدکنندگان تجهیزات پزشکی و آزمایشگاهی است. ما با استفاده از زبان برنامه‌نویسی Rust و میکروکنترلرهای ARM، پایداری، ایمنی و دقت دستگاه‌های شما را در سطح جهانی تضمین می‌کنیم.",
-  
-  "LABEL_THERM": "کنترلر دمای دقیق",
-  "VAL_THERM": "دقت ۰.۰۱ درجه سانتی‌گراد",
-  "DESC_THERM": "> آون، انکوباتور، اتوکلاو",
-  
-  "LABEL_VELOCITY": "درایو موتور هوشمند",
-  "VAL_VELOCITY": "کنترل FOC بدون سنسور",
-  "DESC_VELOCITY": "> میکسر و روتاتور آزمایشگاهی",
-  
-  "LABEL_ISO": "ایزولاسیون ایمن",
-  "VAL_ISO": "ایزولاسیون گالوانیک کامل",
-  "DESC_ISO": "> منطبق با استاندارد IEC 60601",
-  
-  "ABOUT_TITLE": "چرا زبان برنامه‌نویسی Rust؟",
-  "ABOUT_P1": "در تجهیزات حساسی مانند انکوباتورهای نگهداری سلول یا اتوکلاوهای پزشکی، کوچکترین خطای نرم‌افزاری می‌تواند فاجعه‌بار باشد. نوسان دما یا توقف ناگهانی موتور، هزینه‌های سنگینی به بار می‌آورد.",
-  "ABOUT_P2": "ما در نکسورا از زبان برنامه‌نویسی Rust در سطح سخت‌افزار (Bare-Metal) استفاده می‌کنیم. این زبان به طور ذاتی از خطاهای رایج در C/C++ مانند نشت حافظه و دسترسی‌های غیرمجاز جلوگیری می‌کند.",
-  "ABOUT_P3": "نتیجه، سیستم‌هایی است که هرگز هنگ نمی‌کنند، به شدت سریع هستند و ایمنی آنها در سطح کامپایل تضمین شده است.",
-  "COMM_TITLE": "تعهدات فنی نکسورا:",
-  "COMM_1": "تضمین عملکرد بلادرنگ (Real-Time) بدون تاخیرهای پیش‌بینی نشده.",
-  "COMM_2": "ایمنی سطح بالا (Safety-Critical) با ویژگی‌های Memory-Safe در زبان Rust.",
-  "COMM_3": "پشتیبانی از پروتکل‌های صنعتی و پزشکی (Modbus, RS485, CAN).",
-  "TEAM_TITLE": "تیم متخصص تحقیق و توسعه (R&D)",
-  "TEAM_DESC": "تیم ما متشکل از مهندسان باسابقه الکترونیک و نرم‌افزار نهفته است که از سال ۱۳۸۲ در حال توسعه فناوری‌های روز دنیا در صنعت تجهیزات پزشکی ایران هستند.",
-  
-  "BTN_ABOUT": "درباره ما",
-  "BTN_PROD": "محصولات",
-  "BTN_CONT": "تماس و همکاری",
-  
-  "DIR_TITLE": "فهرست محصولات و بردها",
-  "DIR_DESC": "برای مشاهده مشخصات فنی هر برد، روی آن کلیک کنید:",
-  "DIR_STATUS_ACT": "[ فعال ]",
-  "DIR_STATUS_CUST": "[ سفارشی ]",
-  
-  "CONT_TITLE": "درخواست همکاری و پروژه",
-  "CONT_DESC": "اگر تولیدکننده تجهیزات آزمایشگاهی یا پزشکی هستید و به دنبال یک شریک فنی قدرتمند برای توسعه بردهای کنترلی محصولات خود می‌گردید، یا نیاز به مشاوره و انجام پروژه‌های R&D دارید، با ما در ارتباط باشید.",
-  "CONT_BEN_TITLE": "مزایای همکاری با نکسورا:",
-  "CONT_BEN_1": "استفاده از جدیدترین فناوری‌های روز دنیا (Embedded Rust, ARM Cortex-M).",
-  "CONT_BEN_2": "پشتیبانی فنی کامل از مرحله طراحی تا تولید انبوه.",
-  "CONT_BEN_3": "تحویل مستندات کامل فنی (Source Code, Schematic, PCB Layout).",
-  "LBL_COMP": "نام شرکت / سازمان",
-  "PLH_COMP": "نام شرکت خود را وارد کنید",
-  "LBL_EML": "آدرس ایمیل ارتباطی",
-  "PLH_EML": "example@company.com",
-  "LBL_SPEC": "شرح نیازمندی‌ها یا پروژه مورد نظر",
-  "PLH_SPEC": "لطفاً جزئیات فنی یا نوع برد مورد نیاز را شرح دهید...",
-  "BTN_SUBMIT": "ارسال درخواست همکاری //",
-  
-  // Datasheet Translations (Fa)
+
+  // Navigation
+  "NAV_PHILOSOPHY": "منیفست اصلی",
+  "NAV_JOURNEY": "مسیر فناوری",
+  "NAV_PRODUCTS": "کاتالوگ محصولات",
+  "NAV_TEAM": "تیم مدیریت",
+  "NAV_GET_LICENSE": "دریافت لایسنس",
+
+  // Hero
+  "HERO_STATUS": "وضعیت سیستم: فعال_نسخه.۲۳.۴",
+  "HERO_TITLE": "جایی که ۲۳ سال تجربه طراحی سخت‌افزار با",
+  "HERO_DESC_NEW": "توسعه سیستم‌های نهفته قطعی با امنیت حافظه بی‌نظیر و مکانیزم‌های صنعتی با کارایی بالا. مهندسی‌شده برای شرایط کاری سخت و محیط‌های خشن.",
+  "HERO_INIT_SEQ": "شروع_سلسله_مراتب",
+  "HERO_VIEW_DOCS": "مشاهده_مستندات",
+  "HERO_HW_SELECT": "انتخاب_سخت‌افزار:",
+
+  // Typewriter Words
+  "Rust": "راست (Rust)",
+  "Silicon": "سیلیکون",
+  "Safety": "ایمنی",
+  "Reliability": "پایداری",
+
+  // Manifesto
+  "MAN_SUB": "// فلسفه و تعهدات ما",
+  "MAN_TITLE": "منیفست اصلی اکساید",
+  "Correctness": "صحت و اصالت",
+  "Zero Deviations": "انحراف صفر",
+  "Zero Deviations Desc": "راستی‌آزمایی صوری و تحلیل ایستا به عنوان سنگ بنای تعامل با سخت‌افزار.",
+  "Mastery": "تسلط فنی",
+  "Bare Metal": "تراشه عریان (Bare Metal)",
+  "Bare Metal Desc": "درک عمیق رفتار سیلیکون و حافظه میکروکنترلر مستقیماً از سطح ثبات به بالا.",
+  "Independence": "استقلال سیستم",
+  "Sovereign Code": "کد حاکمیتی مستقل",
+  "Sovereign Code Desc": "توسعه و ساخت معماری‌های اختصاصی نرم‌افزاری بدون وابستگی یا کتابخانه‌های زائد خارجی.",
+  "Safety_principle": "ایمنی پایدار",
+  "Iron Memory": "حافظه پولادین",
+  "Iron Memory Desc": "بهره‌گیری از مدل مالکیت زبان راست برای حذف کامل دسته‌های بزرگی از باگ‌های سخت‌افزاری.",
+  "Legacy": "اصالت طراحی",
+  "Generational": "نسل‌ساز پایدار",
+  "Generational Desc": "طراحی سیستم‌های باکیفیت که برای چندین دهه کار مداوم بدون توقف مهندسی شده‌اند.",
+
+  // Inventory
+  "INV_SUB": "// کاتالوگ محصولات صنعتی",
+  "INV_TITLE": "محصولات و بردهای تولیدی",
+  "INV_PROD_1_NAME": "برد کنترلر هود لامینار",
+  "INV_PROD_1_DESC": "سیستم کنترل جریان هوا با تاخیر فوق‌العاده کم، حلقه‌های بازخورد حسگر دوگانه و انطباق کامل با استاندارد ISO-5.",
+  "INV_PROD_2_NAME": "کنترلر موتور میکسر آزمایشگاهی",
+  "INV_PROD_2_DESC": "مدیریت دقیق سرعت زاویه‌ای با موتورهای بدون برس DC بدون لرزش (Jitter-free) و رابط کاربری مدرن مبتنی بر Slint.",
+  "INV_PROD_3_NAME": "کنترلر دمای PID",
+  "INV_PROD_3_DESC": "واحد مدیریت حرارتی صنعتی ماژولار با زمان پاسخ زیر میلی‌ثانیه و سیستم تله‌متری از راه دور کاملاً امن.",
+  "INV_PROJECT_3D": "نمایش سه‌بعدی",
+  "INV_ACTIVE": "فعال در هولوگرام",
+  "INV_PROJECTED_ACTIVE": "در حال نمایش فعال",
+
+  // Tech Stack
+  "TECH_SUB": "// سیستم‌های نهفته و سخت‌افزار امن",
+  "TECH_TITLE": "یکپارچگی از تراشه تا ابر",
+  "TECH_DESC": "یک معماری یکپارچه و عمودی برای امنیت بالا، سرعت حداکثری و قابلیت نگهداری طولانی‌مدت. بدون واسطه، بدون انتزاع‌های سنگین و بدون رفتارهای تعریف‌نشده.",
+  "TECH_LATENCY": "میزان تاخیر سیستم",
+  "TECH_LIVE": "تله‌متری_زنده_سیستم",
+  "TECH_LIVE_SHORT": "زنده",
+  "TECH_ITEM_1_SUB": "لایه سخت‌افزار",
+  "TECH_ITEM_1_DESC": "توسعه و یکپارچه‌سازی ARM Cortex",
+  "TECH_ITEM_2_SUB": "هسته سیستم‌های نهفته",
+  "TECH_ITEM_2_DESC": "سفت‌افزار با حافظه امن (Rust)",
+  "TECH_ITEM_3_SUB": "سیستم رابط کاربری",
+  "TECH_ITEM_3_DESC": "رابط گرافیکی بدون وابستگی std (Slint)",
+  "TECH_ITEM_4_SUB": "سرویس ابری",
+  "TECH_ITEM_4_DESC": "جریان داده‌های تله‌متری زنده",
+
+  // Telemetry Stats
+  "Hash_Rate": "نرخ_هش",
+  "Temp_Core": "دمای_هسته",
+  "Bus_State": "وضعیت_گذرگاه",
+  "Memory_Usage": "مصرف_حافظه",
+  "Uptime": "مدت_کارکرد",
+  "Sys_Auth": "تایید_سیستم",
+  "Verified": "تایید شده",
+  "Nominal": "عادی",
+
+  // Leadership
+  "LEAD_SUB": "// اعضای هیئت مدیره",
+  "LEAD_TITLE": "مدیریت دو هسته‌ای اکساید",
+  "CEO_TITLE": "مدیر عامل و رئیس هیئت مدیره",
+  "CEO_DESC": "هدایت چشم‌انداز استراتژیک حاکمیت صنعتی اکساید و استانداردهای جهانی سخت‌افزار.",
+  "CTO_TITLE": "مدیر ارشد فناوری",
+  "CTO_DESC": "طراحی معماری کدهای پایه‌ای راست و تعادل بهینه سخت‌افزار و نرم‌افزار برای تضمین عملکرد حداکثری.",
+
+  // Footer
+  "FOOT_TITLE": "اکساید صنعتی",
+  "FOOT_DESC": "سیستم‌های طراحی با کارایی بالا برای مهندسی سیستم‌های نهفته و استقرار سخت‌افزارهای حیاتی. جایی که ایمنی با قطعیت زمان کامپایل ملاقات می‌کند.",
+  "FOOT_RESOURCES": "منابع اطلاعاتی",
+  "FOOT_COMPLIANCE": "قوانین و انطباق",
+  "FOOT_UPDATES": "به‌روزرسانی_زیرسیستم",
+  "FOOT_COPYRIGHT": "© ۲۰۲۶ اکساید صنعتی. کلیه حقوق مادی و معنوی محفوظ است.",
+  "FOOT_REGION": "منطقه: GLOBAL_NODE_01",
+  "FOOT_STATUS": "وضعیت: ۲۰۰ OK",
+
+  // Contact / CTA Section
+  "CTA_SUB": "// درگاه ارتباطی سازمانی",
+  "CTA_TITLE": "آماده‌اید غیرممکن‌ها را مهندسی کنید؟",
+  "CTA_DESC": "به پیشتازان مهندسی صنعتی بپیوندید. درخواست مشاوره فنی ثبت کنید یا مدل‌های مجوزدهی ما را برای زیرساخت‌های سازمانی بررسی نمایید.",
+  "CTA_ESTABLISH": "برقراری_ارتباط",
+  "CTA_DEV_PORTAL": "پورتال_توسعه‌دهندگان",
+  "FORM_SESSION": "// نشست_کانال_امن_ارتباطی",
+  "FORM_CLOSE": "[بستن]",
+  "FORM_NAME": "نام_مخاطب *",
+  "FORM_COMPANY": "شرکت / سازمان",
+  "FORM_EMAIL": "ایمیل ارتباطی *",
+  "FORM_MSG": "پیام_مخاطب",
+  "FORM_TRANSMIT": "ارسال_سلسله_داده",
+  "FORM_SUCCESS": "ارسال با موفقیت انجام شد",
+  "FORM_RETURN": "بازگشت_به_پورتال",
+  "FORM_SUCCESS_DESC": "دست دادن امن با موفقیت انجام شد. تیم مهندسی ما هش مختصات را ثبت کرده است:",
+  "FORM_SUCCESS_DESC_2": "و در طول ۲۴ چرخه پاسخ خواهد داد.",
+
+  // Legacy compatibility keys & product datasheets
   "MM-PID-03 // PID_CONTROLLER": "MM-PID-03 // کنترلر PID عمومی دما",
   "PID_DESC": "الگوریتم PID خودتنظیم‌گر (Auto-Tuning) با دقت ۰.۰۱ درجه. جلوگیری کامل از Overshoot دما که برای نگهداری سلول و استریلیزاسیون حیاتی است. بهینه‌سازی شده با Embedded Rust.",
   "COMP_EQUIP": "تجهیزات سازگار",
@@ -186,8 +355,7 @@ const dictFa: Record<string, string> = {
   "LAM_S3": "نمایشگر لمسی ۷ اینچی",
   "STD": "استاندارد",
   "LAM_S4": "منطبق با ISO 14644-1",
-
-  // Contacts existing
+ 
   "FAEZ BARGHASA (CTO):": "فائز برغصه (مدیرفنی):",
   "MONIB MOKHTARI (CEO):": "منیب مختاری (مدیرعامل):",
   "EMAIL:": "ایمیل:",

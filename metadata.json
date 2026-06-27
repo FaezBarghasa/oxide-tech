@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Oxide Industrial",
+  "description": "High-performance hardware engineering dashboard for embedded systems",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
