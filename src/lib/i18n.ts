@@ -73,6 +73,13 @@ const dictEn: Record<string, string> = {
   "INV_PROJECT_3D": "Project 3D",
   "INV_ACTIVE": "Active",
   "INV_PROJECTED_ACTIVE": "Projected ACTIVE",
+  "SEARCH_PLACEHOLDER": "Search for hardware models...",
+  "CRITICAL_STATUS": "Critical Status Dashboard",
+  "THERMAL_WARN": "Thermal Warning",
+  "THERMAL_WARN_DESC": "Unit #3 overheating (74.2°C)",
+  "VOLTAGE_FLUC": "Voltage Fluctuation",
+  "VOLTAGE_FLUC_DESC": "Unit #1 experiencing voltage drops (4.65V)",
+  "POWER_USAGE": "Power Usage (W)",
 
   // Tech Stack
   "TECH_SUB": "// SECURITY EMBEDDED",
@@ -262,6 +269,13 @@ const dictFa: Record<string, string> = {
   "INV_PROJECT_3D": "نمایش سه‌بعدی",
   "INV_ACTIVE": "فعال در هولوگرام",
   "INV_PROJECTED_ACTIVE": "در حال نمایش فعال",
+  "SEARCH_PLACEHOLDER": "جستجو در مدل‌های سخت‌افزاری...",
+  "CRITICAL_STATUS": "داشبورد وضعیت بحرانی",
+  "THERMAL_WARN": "هشدار حرارتی",
+  "THERMAL_WARN_DESC": "افزایش دمای شدید واحد ۳ (۷۴.۲ درجه سلسیوس)",
+  "VOLTAGE_FLUC": "نوسان ولتاژ",
+  "VOLTAGE_FLUC_DESC": "افت ولتاژ بحرانی واحد ۱ (۴.۶۵ ولت)",
+  "POWER_USAGE": "میزان مصرف توان (وات)",
 
   // Tech Stack
   "TECH_SUB": "// سیستم‌های نهفته و سخت‌افزار امن",
