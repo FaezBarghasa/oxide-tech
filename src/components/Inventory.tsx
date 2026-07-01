@@ -101,7 +101,7 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
       name: t("INV_PROD_1_NAME", lang), 
       desc: t("INV_PROD_1_DESC", lang), 
       tag: 'READY', 
-      img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80', 
+      img: '',
       category: 'HARDWARE // MODULE_01', 
       specs: 'ST-M4 / RUST',
       pins: [
@@ -116,7 +116,7 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
       name: t("INV_PROD_2_NAME", lang), 
       desc: t("INV_PROD_2_DESC", lang), 
       tag: 'READY', 
-      img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80', 
+      img: '',
       category: 'KINETICS // MODULE_02', 
       specs: 'CAN-BUS / SLINT',
       pins: [
@@ -131,7 +131,7 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
       name: t("INV_PROD_3_NAME", lang), 
       desc: t("INV_PROD_3_DESC", lang), 
       tag: 'PRODUCTION', 
-      img: 'https://images.unsplash.com/photo-1631553127988-372074e44dc3?auto=format&fit=crop&w=800&q=80', 
+      img: '',
       category: 'CONTROL // MODULE_03', 
       specs: 'ETHERNET / NO-STD',
       pins: [
