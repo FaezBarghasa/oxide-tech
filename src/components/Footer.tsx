@@ -64,11 +64,11 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
                 <div className="font-bold text-[#fbfbfb]">
                   {lang === 'fa' ? "منیب مختاری (مدیرعامل)" : "Monib Mokhtari (CEO)"}
                 </div>
-                <div className="flex items-center justify-between text-[11px] font-mono">
-                  <a href="tel:+989123617481" className="text-[#ff7f41] hover:underline dir-ltr">+98 912 361 7481</a>
+                <div className="flex items-center justify-between text-[11px] font-mono" dir="ltr">
+                  <a href="tel:+989123617481" className="text-[#ff7f41] hover:underline dir-ltr text-xs font-bold" dir="ltr">+98 912 361 7481</a>
                 </div>
                 <div className="flex items-center justify-between text-[10px] font-mono text-[#c2b5ad]">
-                  <a href="mailto:monib.mokhtari@gmail.com" className="hover:text-white truncate">monib.mokhtari@gmail.com</a>
+                  <a href="mailto:monib.mokhtari@gmail.com" className="hover:text-white truncate font-mono dir-ltr" dir="ltr">monib.mokhtari@gmail.com</a>
                   <button 
                     onClick={() => handleCopy("monib.mokhtari@gmail.com", "monib_f")}
                     className="text-[#85746a] hover:text-[#ff7f41] cursor-pointer"
@@ -83,11 +83,11 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
                 <div className="font-bold text-[#fbfbfb]">
                   {lang === 'fa' ? "فائز برق‌آسا (مدیر فنی)" : "Faez Barghasa (CTO)"}
                 </div>
-                <div className="flex items-center justify-between text-[11px] font-mono">
-                  <a href="tel:+989359180154" className="text-[#ff7f41] hover:underline dir-ltr">+98 935 918 0154</a>
+                <div className="flex items-center justify-between text-[11px] font-mono" dir="ltr">
+                  <a href="tel:+989359180154" className="text-[#ff7f41] hover:underline dir-ltr text-xs font-bold" dir="ltr">+98 935 918 0154</a>
                 </div>
                 <div className="flex items-center justify-between text-[10px] font-mono text-[#c2b5ad]">
-                  <a href="mailto:faez.barghasa@gmail.com" className="hover:text-white truncate">faez.barghasa@gmail.com</a>
+                  <a href="mailto:faez.barghasa@gmail.com" className="hover:text-white truncate font-mono dir-ltr" dir="ltr">faez.barghasa@gmail.com</a>
                   <button 
                     onClick={() => handleCopy("faez.barghasa@gmail.com", "faez_f")}
                     className="text-[#85746a] hover:text-[#ff7f41] cursor-pointer"
@@ -101,10 +101,10 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
             {/* General Inquiries */}
             <div className="mt-3 flex items-center justify-between p-2.5 bg-[#14110f] border border-white/5 rounded-sm text-xs font-mono">
               <span className="text-[#85746a]">{lang === 'fa' ? "جیمیل سازمانی:" : "Corporate Gmail:"}</span>
-              <div className="flex items-center gap-2">
-                <a href="mailto:oxidetech.embedded@gmail.com" className="text-[#ff7f41] hover:underline">oxidetech.embedded@gmail.com</a>
+              <div className="flex items-center gap-2" dir="ltr">
+                <a href="mailto:oxide.embedded@gmail.com" className="text-[#ff7f41] hover:underline font-mono dir-ltr" dir="ltr">oxide.embedded@gmail.com</a>
                 <button 
-                  onClick={() => handleCopy("oxidetech.embedded@gmail.com", "office_f")}
+                  onClick={() => handleCopy("oxide.embedded@gmail.com", "office_f")}
                   className="text-[#85746a] hover:text-white cursor-pointer"
                 >
                   {copiedItem === "office_f" ? <Check className="w-3 h-3 text-[#ff7f41]" /> : <Copy className="w-3 h-3" />}

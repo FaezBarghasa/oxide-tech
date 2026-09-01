@@ -43,7 +43,7 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
       role: lang === 'fa' ? "ارتباطات سازمانی" : "General Inquiries",
       phone: "+982188000000",
       phoneDisplay: "+98 21 8800 0000",
-      email: "oxidetech.embedded@gmail.com",
+      email: "oxide.embedded@gmail.com",
       accent: "#eab308"
     }
   ];
@@ -82,24 +82,26 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
                     <span className="text-[9px] font-mono text-[#ff7f41]">{c.role}</span>
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-[11px] font-mono">
+                  <div className="flex items-center gap-1.5 text-[11px] font-mono" dir="ltr">
                     {/* Call Link */}
                     <a
                       href={`tel:${c.phone}`}
                       onClick={() => telemetry.track(`call_${c.id}`, 'cta')}
-                      className="flex-1 flex items-center gap-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#ff7f41] hover:text-white px-2 py-1 rounded transition-colors"
+                      className="flex-1 flex items-center gap-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#ff7f41] hover:text-white px-2 py-1 rounded transition-colors dir-ltr"
                       title="Call direct line"
+                      dir="ltr"
                     >
-                      <Phone className="w-3 h-3" />
-                      <span className="dir-ltr text-[10px]">{c.phoneDisplay}</span>
+                      <Phone className="w-3 h-3 flex-shrink-0" />
+                      <span className="dir-ltr text-[10px] font-bold" dir="ltr">{c.phoneDisplay}</span>
                     </a>
 
                     {/* Email Link */}
                     <a
                       href={`mailto:${c.email}`}
                       onClick={() => telemetry.track(`email_${c.id}`, 'cta')}
-                      className="flex items-center justify-center p-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#c2b5ad] hover:text-white rounded transition-colors"
+                      className="flex items-center justify-center p-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#c2b5ad] hover:text-white rounded transition-colors dir-ltr"
                       title="Send Gmail"
+                      dir="ltr"
                     >
                       <Mail className="w-3.5 h-3.5" />
                     </a>

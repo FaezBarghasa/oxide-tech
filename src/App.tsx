@@ -227,11 +227,11 @@ export default function App() {
             <div className="flex items-center gap-3">
               <span className="text-[#85746a]">{lang === 'fa' ? "جیمیل سازمانی:" : "Corporate Gmail:"}</span>
               <a 
-                href="mailto:oxidetech.embedded@gmail.com" 
+                href="mailto:oxide.embedded@gmail.com" 
                 className="text-[#ff7f41] font-bold hover:underline font-mono dir-ltr"
                 dir="ltr"
               >
-                oxidetech.embedded@gmail.com
+                oxide.embedded@gmail.com
               </a>
             </div>
           </div>
