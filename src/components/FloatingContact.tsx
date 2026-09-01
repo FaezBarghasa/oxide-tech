@@ -25,7 +25,7 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
       role: lang === 'fa' ? "مدیرعامل و معمار سیستم" : "CEO & Architect",
       phone: "+989123617481",
       phoneDisplay: "+98 912 361 7481",
-      email: "monib.mokhtari@gmail.com",
+      email: "monib.mokhtari85@gmail.com",
       accent: "#c1552c"
     },
     {
@@ -34,15 +34,15 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
       role: lang === 'fa' ? "مدیر ارشد فناوری (CTO)" : "CTO & Systems Eng",
       phone: "+989359180154",
       phoneDisplay: "+98 935 918 0154",
-      email: "faez.barghasa@gmail.com",
+      email: "faez.barghasa.org@gmail.com",
       accent: "#ff7f41"
     },
     {
       id: "office",
-      name: lang === 'fa' ? "دفتر مرکزی اکساید تک" : "Oxide Tech Lab",
-      role: lang === 'fa' ? "ارتباطات سازمانی" : "General Inquiries",
-      phone: "+982188000000",
-      phoneDisplay: "+98 21 8800 0000",
+      name: lang === 'fa' ? "جیمیل سازمانی اکساید تک" : "Oxide Tech Corporate",
+      role: lang === 'fa' ? "ارتباطات رسمی" : "Corporate Gmail",
+      phone: null,
+      phoneDisplay: null,
       email: "oxide.embedded@gmail.com",
       accent: "#eab308"
     }
@@ -83,28 +83,43 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
                   </div>
 
                   <div className="flex items-center gap-1.5 text-[11px] font-mono" dir="ltr">
-                    {/* Call Link */}
-                    <a
-                      href={`tel:${c.phone}`}
-                      onClick={() => telemetry.track(`call_${c.id}`, 'cta')}
-                      className="flex-1 flex items-center gap-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#ff7f41] hover:text-white px-2 py-1 rounded transition-colors dir-ltr"
-                      title="Call direct line"
-                      dir="ltr"
-                    >
-                      <Phone className="w-3 h-3 flex-shrink-0" />
-                      <span className="dir-ltr text-[10px] font-bold" dir="ltr">{c.phoneDisplay}</span>
-                    </a>
+                    {/* Call Link if available */}
+                    {c.phone && c.phoneDisplay ? (
+                      <a
+                        href={`tel:${c.phone}`}
+                        onClick={() => telemetry.track(`call_${c.id}`, 'cta')}
+                        className="flex-1 flex items-center gap-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#ff7f41] hover:text-white px-2 py-1 rounded transition-colors dir-ltr"
+                        title="Call direct line"
+                        dir="ltr"
+                      >
+                        <Phone className="w-3 h-3 flex-shrink-0" />
+                        <span className="dir-ltr text-[10px] font-bold" dir="ltr">{c.phoneDisplay}</span>
+                      </a>
+                    ) : (
+                      <a
+                        href={`mailto:${c.email}`}
+                        onClick={() => telemetry.track(`email_${c.id}`, 'cta')}
+                        className="flex-1 flex items-center gap-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#c2b5ad] hover:text-white px-2 py-1 rounded transition-colors dir-ltr truncate text-[10px]"
+                        title="Send Gmail"
+                        dir="ltr"
+                      >
+                        <Mail className="w-3 h-3 flex-shrink-0 text-[#ff7f41]" />
+                        <span className="truncate">{c.email}</span>
+                      </a>
+                    )}
 
-                    {/* Email Link */}
-                    <a
-                      href={`mailto:${c.email}`}
-                      onClick={() => telemetry.track(`email_${c.id}`, 'cta')}
-                      className="flex items-center justify-center p-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#c2b5ad] hover:text-white rounded transition-colors dir-ltr"
-                      title="Send Gmail"
-                      dir="ltr"
-                    >
-                      <Mail className="w-3.5 h-3.5" />
-                    </a>
+                    {/* Email Link if phone was primary */}
+                    {c.phone && (
+                      <a
+                        href={`mailto:${c.email}`}
+                        onClick={() => telemetry.track(`email_${c.id}`, 'cta')}
+                        className="flex items-center justify-center p-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#c2b5ad] hover:text-white rounded transition-colors dir-ltr"
+                        title="Send Gmail"
+                        dir="ltr"
+                      >
+                        <Mail className="w-3.5 h-3.5" />
+                      </a>
+                    )}
 
                     {/* Copy Email Button */}
                     <button

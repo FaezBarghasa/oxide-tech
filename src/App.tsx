@@ -45,7 +45,7 @@ export default function App() {
       focus: lang === 'fa' ? "طراحی سخت‌افزار، معماری بردهای صنعتی و قراردادهای ایمنی" : "Hardware Co-Design, Industrial PCB & Safety Architecture",
       phone: "+989123617481",
       phoneDisplay: "+98 912 361 7481",
-      email: "monib.mokhtari@gmail.com",
+      email: "monib.mokhtari85@gmail.com",
       accent: "#c1552c",
       initials: "MM"
     },
@@ -56,7 +56,7 @@ export default function App() {
       focus: lang === 'fa' ? "توسعه هسته Rust no_std، پایپلاین‌های Zero-Copy و هوش لبه‌ای" : "Rust no_std, Zero-Copy DMA & Edge AI Deployment",
       phone: "+989359180154",
       phoneDisplay: "+98 935 918 0154",
-      email: "faez.barghasa@gmail.com",
+      email: "faez.barghasa.org@gmail.com",
       accent: "#ff7f41",
       initials: "FB"
     }

@@ -68,9 +68,9 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
                   <a href="tel:+989123617481" className="text-[#ff7f41] hover:underline dir-ltr text-xs font-bold" dir="ltr">+98 912 361 7481</a>
                 </div>
                 <div className="flex items-center justify-between text-[10px] font-mono text-[#c2b5ad]">
-                  <a href="mailto:monib.mokhtari@gmail.com" className="hover:text-white truncate font-mono dir-ltr" dir="ltr">monib.mokhtari@gmail.com</a>
+                  <a href="mailto:monib.mokhtari85@gmail.com" className="hover:text-white truncate font-mono dir-ltr" dir="ltr">monib.mokhtari85@gmail.com</a>
                   <button 
-                    onClick={() => handleCopy("monib.mokhtari@gmail.com", "monib_f")}
+                    onClick={() => handleCopy("monib.mokhtari85@gmail.com", "monib_f")}
                     className="text-[#85746a] hover:text-[#ff7f41] cursor-pointer"
                   >
                     {copiedItem === "monib_f" ? <Check className="w-3 h-3 text-[#ff7f41]" /> : <Copy className="w-3 h-3" />}
@@ -87,9 +87,9 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
                   <a href="tel:+989359180154" className="text-[#ff7f41] hover:underline dir-ltr text-xs font-bold" dir="ltr">+98 935 918 0154</a>
                 </div>
                 <div className="flex items-center justify-between text-[10px] font-mono text-[#c2b5ad]">
-                  <a href="mailto:faez.barghasa@gmail.com" className="hover:text-white truncate font-mono dir-ltr" dir="ltr">faez.barghasa@gmail.com</a>
+                  <a href="mailto:faez.barghasa.org@gmail.com" className="hover:text-white truncate font-mono dir-ltr" dir="ltr">faez.barghasa.org@gmail.com</a>
                   <button 
-                    onClick={() => handleCopy("faez.barghasa@gmail.com", "faez_f")}
+                    onClick={() => handleCopy("faez.barghasa.org@gmail.com", "faez_f")}
                     className="text-[#85746a] hover:text-[#ff7f41] cursor-pointer"
                   >
                     {copiedItem === "faez_f" ? <Check className="w-3 h-3 text-[#ff7f41]" /> : <Copy className="w-3 h-3" />}
