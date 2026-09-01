@@ -117,63 +117,51 @@ oxide-tech occupies a unique intersection:
 
 ### 3.1 The Mark: Abstract Geometric Identity
 
-The oxide-tech logo is an abstract geometric mark that synthesizes three core concepts:
+The oxide-tech logo is an abstract geometric mark that synthesizes core embedded systems and silicon concepts:
 
-1. **The Hexagon** (outer shape) — Represents the chemical/crystal structure of silicon dioxide
-2. **The Rotated Square** (inner shape) — Represents the integrated circuit die
-3. **The Central Core** (focal point) — Represents the processor core / the "oxide" at the heart
-
-The six corner nodes represent IC pins, connecting the physical hardware to the digital intelligence within.
+1. **The Central Octagonal Hub** — Represents the integrated circuit package / silicon processor core.
+2. **The 4 Quad-Quadrant Diagonal Traces** — Represents high-speed PCB differential routing paths radiating outward at strict 45° angles.
+3. **The 4 Concentric Circular Test Vias** — Represents precision test pads and nodal hardware interfaces.
+4. **The Center Multi-Ring Via** — The focal heartbeat of the chip, symbolizing determinism and silicon integrity.
 
 ### 3.2 Logo Anatomy
 
 ```
 ┌─────────────────────────────────────────┐
 │                                         │
-│           ╱╲                            │
-│          ╱  ╲   ← Hexagon (SiO₂)        │
-│         ╱ ◇  ╲  ← Rotated Square (IC)   │
-│        ╱  ●   ╲ ← Central Core          │
-│         ╲     ╱                         │
-│          ╲   ╱                          │
-│           ╲╱                            │
-│                                         │
-│    ○  ○  ○  ○  ○  ○  ← IC Pins         │
+│     ◎                     ◎             │
+│       ╲                 ╱               │
+│        ╲   ┌─────────┐ ╱                │
+│         ╲  │  ╱ ⊙ ╲  │╱                 │
+│          ──│  ╲   ╱  │──                │
+│         ╱  └─────────┘ ╲                │
+│        ╱                 ╲              │
+│     ◎                     ◎             │
 │                                         │
 └─────────────────────────────────────────┘
 ```
 
 **Components**:
-- **Outer hexagon**: Stroke `#00d4ff`, 1.5px width, 60% opacity
-- **Inner rotated square**: Stroke `#00ff9f`, 1.5px width, 80% opacity
-- **Circuit traces**: Stroke `#00d4ff`, 1px width, 50% opacity
-- **Corner nodes**: Fill `#00d4ff`, 2px radius, 80% opacity
-- **Central core**: Fill `#00d4ff`, 10px radius, 95% opacity
-- **Core ring**: Fill `#07070a` (background), 5px radius
-- **Core center**: Fill `#00ff9f`, 2.5px radius
+- **Diagonal Trace Arms**: Stroke `#C85A28` (Oxide Copper), 7px width, round linecap
+- **Central Octagon Frame**: Fill `#C85A28`, beveled 45° chamfer
+- **Inner Octagon Core**: Fill `#080B0F` (Dark Silicon Core)
+- **Central Concentric Via**: Outer `#C85A28` (r=6.2), Inner cavity `#080B0F` (r=3.6), Center pin `#C85A28` (r=1.4)
+- **4 Outer Vias/Nodes**: Outer `#C85A28` (r=11), Inner cavity `#080B0F` (r=6.5), Center pin `#C85A28` (r=2.5)
 
 ### 3.3 Logo Variations
 
-#### Primary Logo (Full Color)
-- **Use**: Digital interfaces, websites, presentations
-- **Background**: Dark backgrounds only (`#07070a` to `#181A20`)
-- **Colors**: Cyan `#00d4ff` + Green `#00ff9f`
+#### Primary Logo (Oxide Copper)
+- **Use**: Digital interfaces, websites, product UI, presentations
+- **Background**: Dark backgrounds (`#07070a` to `#161210`)
+- **Colors**: Oxide Copper `#C85A28` / `#FF7F41` + Dark Core `#080B0F`
 
 #### Monochrome Light
-- **Use**: Dark print materials, embossing, engraving
-- **Color**: White `#FFFFFF` at 90% opacity
+- **Use**: Dark print materials, laser engraving, PCB silkscreen
+- **Color**: Silk White `#FFFFFF` at 90% opacity or Tinned Copper `#E2E8F0`
 
 #### Monochrome Dark
-- **Use**: Light backgrounds (rare, for specific contexts)
-- **Color**: Carbon `#07070a`
-
-#### Single Color Cyan
-- **Use**: Technical documentation, schematics
-- **Color**: Cyan `#00d4ff` only
-
-#### Single Color Green
-- **Use**: Success states, safety contexts
-- **Color**: Green `#00ff9f` only
+- **Use**: Light backgrounds (rare, documentation exports)
+- **Color**: Carbon `#080B0F`
 
 ### 3.4 Logo Lockups
 

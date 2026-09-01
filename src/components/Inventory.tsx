@@ -4,6 +4,13 @@ import { motion, AnimatePresence } from 'motion/react';
 import { t } from '../lib/i18n';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
+import laminarHoodImg from '@/assets/pics/laminar-hood-flow.jpg';
+import mixerRotatorImg from '@/assets/pics/centrifuge-rotator.webp';
+import pidControllerImg from '@/assets/pics/Thermocouple+Sensing+Temperature+Controller.webp';
+import incubatorOvenImg from '@/assets/pics/laboratory-incubator-oven.webp';
+import incubatorCoolerImg from '@/assets/pics/incubator_with_cooler.webp';
+import autoclavesImg from '@/assets/pics/laboratory-autoclaves.webp';
+
 interface InventoryProps {
   lang: 'fa' | 'en';
   activeProductIndex: number;
@@ -39,6 +46,33 @@ const initialTelemetryData: Record<number, { cycle: string; watt: number }[]> = 
     { cycle: '20', watt: 98 },
     { cycle: '24', watt: 102 },
   ],
+  3: [
+    { cycle: '00', watt: 310 },
+    { cycle: '04', watt: 325 },
+    { cycle: '08', watt: 318 },
+    { cycle: '12', watt: 340 },
+    { cycle: '16', watt: 330 },
+    { cycle: '20', watt: 345 },
+    { cycle: '24', watt: 338 },
+  ],
+  4: [
+    { cycle: '00', watt: 215 },
+    { cycle: '04', watt: 230 },
+    { cycle: '08', watt: 220 },
+    { cycle: '12', watt: 245 },
+    { cycle: '16', watt: 235 },
+    { cycle: '20', watt: 250 },
+    { cycle: '24', watt: 240 },
+  ],
+  5: [
+    { cycle: '00', watt: 780 },
+    { cycle: '04', watt: 810 },
+    { cycle: '08', watt: 795 },
+    { cycle: '12', watt: 830 },
+    { cycle: '16', watt: 815 },
+    { cycle: '20', watt: 850 },
+    { cycle: '24', watt: 840 },
+  ],
 };
 
 const CustomTooltip = ({ active, payload }: any) => {
@@ -69,12 +103,15 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
           const arr = [...next[numKey]];
           const lastVal = arr[arr.length - 1].watt;
           const change = (Math.random() - 0.5) * 8; // change up or down by 4
-          
+
           let newVal = Math.round(lastVal + change);
           if (numKey === 0) newVal = Math.max(35, Math.min(60, newVal));
           if (numKey === 1) newVal = Math.max(120, Math.min(190, newVal));
           if (numKey === 2) newVal = Math.max(75, Math.min(125, newVal));
-          
+          if (numKey === 3) newVal = Math.max(280, Math.min(380, newVal));
+          if (numKey === 4) newVal = Math.max(190, Math.min(280, newVal));
+          if (numKey === 5) newVal = Math.max(700, Math.min(920, newVal));
+
           arr.shift();
           const nextCycle = (parseInt(arr[arr.length - 1].cycle) + 4) % 100;
           const padCycle = nextCycle.toString().padStart(2, '0');
@@ -97,12 +134,12 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
   }, []);
 
   const items = [
-    { 
-      name: t("INV_PROD_1_NAME", lang), 
-      desc: t("INV_PROD_1_DESC", lang), 
-      tag: 'READY', 
-      img: '',
-      category: 'HARDWARE // MODULE_01', 
+    {
+      name: t("INV_PROD_1_NAME", lang),
+      desc: t("INV_PROD_1_DESC", lang),
+      tag: 'READY',
+      img: laminarHoodImg,
+      category: 'HARDWARE // MODULE_01',
       specs: 'ST-M4 / RUST',
       pins: [
         { id: 'p1', x: '25%', y: '35%', label: 'CAN_TX_0', type: 'comm' },
@@ -112,12 +149,12 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
         { id: 'p5', x: '75%', y: '75%', label: 'PWM_FAN_2', type: 'io' },
       ]
     },
-    { 
-      name: t("INV_PROD_2_NAME", lang), 
-      desc: t("INV_PROD_2_DESC", lang), 
-      tag: 'READY', 
-      img: '',
-      category: 'KINETICS // MODULE_02', 
+    {
+      name: t("INV_PROD_2_NAME", lang),
+      desc: t("INV_PROD_2_DESC", lang),
+      tag: 'READY',
+      img: mixerRotatorImg,
+      category: 'KINETICS // MODULE_02',
       specs: 'CAN-BUS / SLINT',
       pins: [
         { id: 'p1', x: '40%', y: '30%', label: 'PHA_HIGH', type: 'power' },
@@ -127,12 +164,12 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
         { id: 'p5', x: '80%', y: '70%', label: 'HALL_B', type: 'io' },
       ]
     },
-    { 
-      name: t("INV_PROD_3_NAME", lang), 
-      desc: t("INV_PROD_3_DESC", lang), 
-      tag: 'PRODUCTION', 
-      img: '',
-      category: 'CONTROL // MODULE_03', 
+    {
+      name: t("INV_PROD_3_NAME", lang),
+      desc: t("INV_PROD_3_DESC", lang),
+      tag: 'PRODUCTION',
+      img: pidControllerImg,
+      category: 'CONTROL // MODULE_03',
       specs: 'ETHERNET / NO-STD',
       pins: [
         { id: 'p1', x: '25%', y: '80%', label: 'ETH_TX_P', type: 'comm' },
@@ -141,10 +178,52 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
         { id: 'p4', x: '80%', y: '40%', label: 'HEATER_PWM', type: 'power' },
       ]
     },
+    {
+      name: t("INV_PROD_4_NAME", lang),
+      desc: t("INV_PROD_4_DESC", lang),
+      tag: 'PRODUCTION',
+      img: incubatorOvenImg,
+      category: 'THERMAL // MODULE_04',
+      specs: 'DUAL-RTD / EMBASSY',
+      pins: [
+        { id: 'p1', x: '30%', y: '30%', label: 'PT1000_A', type: 'io' },
+        { id: 'p2', x: '30%', y: '45%', label: 'PT1000_B', type: 'io' },
+        { id: 'p3', x: '70%', y: '35%', label: 'SSR_GATE', type: 'power' },
+        { id: 'p4', x: '70%', y: '65%', label: 'MODBUS_B', type: 'comm' },
+      ]
+    },
+    {
+      name: t("INV_PROD_5_NAME", lang),
+      desc: t("INV_PROD_5_DESC", lang),
+      tag: 'READY',
+      img: incubatorCoolerImg,
+      category: 'CRYO-SYS // MODULE_05',
+      specs: 'PELTIER / RS485',
+      pins: [
+        { id: 'p1', x: '35%', y: '30%', label: 'COMP_RELAY', type: 'power' },
+        { id: 'p2', x: '35%', y: '60%', label: 'FAN_RPM', type: 'io' },
+        { id: 'p3', x: '65%', y: '40%', label: 'RS485_A', type: 'comm' },
+        { id: 'p4', x: '65%', y: '70%', label: 'NTC_PROBE', type: 'io' },
+      ]
+    },
+    {
+      name: t("INV_PROD_6_NAME", lang),
+      desc: t("INV_PROD_6_DESC", lang),
+      tag: 'PRODUCTION',
+      img: autoclavesImg,
+      category: 'PRESSURE // MODULE_06',
+      specs: 'SIL-2 / REDOX',
+      pins: [
+        { id: 'p1', x: '25%', y: '35%', label: 'STEAM_VALVE', type: 'power' },
+        { id: 'p2', x: '25%', y: '65%', label: 'PRESSURE_4_20MA', type: 'io' },
+        { id: 'p3', x: '75%', y: '30%', label: 'DOOR_LOCK_SENS', type: 'io' },
+        { id: 'p4', x: '75%', y: '60%', label: 'CAN_ISOLATED', type: 'comm' },
+      ]
+    },
   ];
 
-  const filteredItems = items.map((item, i) => ({ ...item, originalIndex: i })).filter(item => 
-    item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+  const filteredItems = items.map((item, i) => ({ ...item, originalIndex: i })).filter(item =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.specs.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -165,7 +244,7 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
 
   return (
     <section id="products" className="mb-32 relative">
-      <motion.div 
+      <motion.div
         className="mb-12"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -186,7 +265,7 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
         transition={{ duration: 0.8 }}
       >
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[repeating-linear-gradient(45deg,#000,#000_10px,#fff_10px,#fff_20px)]"></div>
-        
+
         <div className="flex items-center justify-between mb-6 border-b border-[#fbfbfb]/5 pb-4">
           <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 bg-red-500 rounded-full animate-ping" />
@@ -257,7 +336,7 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
       </div>
 
       {filteredItems.length === 0 ? (
-        <motion.div 
+        <motion.div
           className="text-center py-20 border border-dashed border-[#fbfbfb]/10 rounded-sm bg-[#161210]/20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -273,11 +352,10 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
             const i = item.originalIndex;
             const isProjected = activeProductIndex === i;
             return (
-              <motion.div 
-                key={i} 
-                className={`bg-[#161210]/80 backdrop-blur-md border transition-all duration-500 rounded-sm flex flex-col group relative overflow-hidden ${
-                  isProjected ? 'border-[#ff7f41]/45 shadow-[0_0_30px_rgba(255,127,65,0.15)]' : 'border-[#fbfbfb]/5 hover:border-[#ff7f41]/30 hover:shadow-[0_0_30px_rgba(255,127,65,0.05)]'
-                }`}
+              <motion.div
+                key={i}
+                className={`bg-[#161210]/80 backdrop-blur-md border transition-all duration-500 rounded-sm flex flex-col group relative overflow-hidden ${isProjected ? 'border-[#ff7f41]/45 shadow-[0_0_30px_rgba(255,127,65,0.15)]' : 'border-[#fbfbfb]/5 hover:border-[#ff7f41]/30 hover:shadow-[0_0_30px_rgba(255,127,65,0.05)]'
+                  }`}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -287,37 +365,37 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
                 <div className={`absolute top-0 left-0 w-full h-[2px] transition-all duration-500 z-20 ${isProjected ? 'bg-[#ff7f41]' : 'bg-gradient-to-r from-[#ff7f41] to-[#d9531e] opacity-0 group-hover:opacity-100'}`} />
 
                 <div className="h-[280px] relative bg-[#0b0908] border-b border-[#fbfbfb]/5 overflow-hidden">
-                  <img 
-                    src={item.img} 
-                    alt={item.name} 
+                  <img
+                    src={item.img}
+                    alt={item.name}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-700 ease-out mix-blend-screen" 
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-700 ease-out mix-blend-screen"
                   />
-                  
+
                   {/* Hardware Pinout Overlay */}
                   <div className="absolute inset-0 z-30 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     {item.pins.map(pin => {
                       const pinColor = getPinColor(pin.type);
-                      
+
                       return (
-                        <div 
+                        <div
                           key={pin.id}
                           className="absolute pointer-events-auto cursor-crosshair group/pin"
                           style={{ left: pin.x, top: pin.y, transform: 'translate(-50%, -50%)' }}
                         >
                           {/* Pin Visual */}
                           <div className="relative flex items-center justify-center w-8 h-8">
-                             <div className="absolute w-3 h-3 border-[1.5px] rounded-full transition-all duration-300 group-hover/pin:scale-150 group-hover/pin:border-[2px]" style={{ borderColor: pinColor, backgroundColor: '#0b0908' }}></div>
-                             <div className="absolute w-1 h-1 rounded-full group-hover/pin:shadow-[0_0_8px_currentColor] transition-all duration-300" style={{ backgroundColor: pinColor, color: pinColor }}></div>
+                            <div className="absolute w-3 h-3 border-[1.5px] rounded-full transition-all duration-300 group-hover/pin:scale-150 group-hover/pin:border-[2px]" style={{ borderColor: pinColor, backgroundColor: '#0b0908' }}></div>
+                            <div className="absolute w-1 h-1 rounded-full group-hover/pin:shadow-[0_0_8px_currentColor] transition-all duration-300" style={{ backgroundColor: pinColor, color: pinColor }}></div>
                           </div>
 
                           {/* Tooltip */}
                           <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 w-max opacity-0 scale-95 group-hover/pin:opacity-100 group-hover/pin:scale-100 transition-all duration-300 pointer-events-none origin-bottom translate-y-2 group-hover/pin:translate-y-0 z-50">
                             <div className="bg-[#161210]/95 backdrop-blur-md border border-[#fbfbfb]/10 px-3 py-1.5 rounded-sm shadow-xl flex items-center gap-2">
-                               {pin.type === 'power' && <Zap className="w-3 h-3" style={{ color: pinColor }} />}
-                               {pin.type === 'comm' && <Activity className="w-3 h-3" style={{ color: pinColor }} />}
-                               {pin.type === 'io' && <Cpu className="w-3 h-3" style={{ color: pinColor }} />}
-                               <span className="font-mono text-[9px] sm:text-[10px] tracking-widest text-[#fbfbfb] font-medium uppercase mt-px">{pin.label}</span>
+                              {pin.type === 'power' && <Zap className="w-3 h-3" style={{ color: pinColor }} />}
+                              {pin.type === 'comm' && <Activity className="w-3 h-3" style={{ color: pinColor }} />}
+                              {pin.type === 'io' && <Cpu className="w-3 h-3" style={{ color: pinColor }} />}
+                              <span className="font-mono text-[9px] sm:text-[10px] tracking-widest text-[#fbfbfb] font-medium uppercase mt-px">{pin.label}</span>
                             </div>
                             {/* Tooltip Arrow */}
                             <div className="w-2 h-2 border-r border-b border-[#fbfbfb]/10 bg-[#161210]/95 rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2"></div>
@@ -327,9 +405,8 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
                     })}
                   </div>
 
-                  <div className={`absolute top-5 right-5 px-3 py-1 text-[9px] font-mono tracking-[0.2em] font-medium select-none z-20 shadow-lg backdrop-blur-md transition-opacity duration-500 group-hover:opacity-0 ${
-                    item.tag === 'PRODUCTION' ? 'bg-[#d9531e] text-[#fbfbfb]' : 'bg-[#ff7f41] text-[#07070a]'
-                  }`}>
+                  <div className={`absolute top-5 right-5 px-3 py-1 text-[9px] font-mono tracking-[0.2em] font-medium select-none z-20 shadow-lg backdrop-blur-md transition-opacity duration-500 group-hover:opacity-0 ${item.tag === 'PRODUCTION' ? 'bg-[#d9531e] text-[#fbfbfb]' : 'bg-[#ff7f41] text-[#07070a]'
+                    }`}>
                     {item.tag}
                   </div>
                   {isProjected && (
@@ -338,7 +415,7 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
                       <span>{t("INV_PROJECTED_ACTIVE", lang)}</span>
                     </div>
                   )}
-                  
+
                   {/* Subtle gradient overlay to blend image nicely */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#161210]/80 via-transparent to-transparent z-10 pointer-events-none"></div>
                 </div>
@@ -348,7 +425,7 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
                     <div className={`text-[#ff7f41] ${lang === 'fa' ? 'font-sans' : 'font-mono tracking-[0.2em]'} text-[10px] mb-4 uppercase font-medium`}>{item.category}</div>
                     <h3 className="text-2xl text-[#fbfbfb] group-hover:text-[#ff7f41] transition-colors duration-300 mb-4 font-display font-medium tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text group-hover:from-[#ff7f41] group-hover:to-white group-hover:text-transparent">{item.name}</h3>
                     <p className="font-sans text-sm text-[#c2b5ad] leading-relaxed mb-6 font-light">{item.desc}</p>
-                    
+
                     {/* Live Power Consumption Chart Module */}
                     <div className="mt-6 mb-6 bg-[#0b0908]/90 border border-[#fbfbfb]/5 p-4 rounded-sm">
                       <div className="flex justify-between items-center mb-3">
@@ -384,7 +461,7 @@ const Inventory: React.FC<InventoryProps> = ({ lang, activeProductIndex, setActi
 
                   <div className="flex justify-between items-center pt-6 border-t border-[#fbfbfb]/10">
                     <span className="text-[#85746a] font-mono text-[10px] tracking-[0.2em] uppercase">{item.specs}</span>
-                    <button 
+                    <button
                       onClick={() => handleSelect(i)}
                       className={`flex items-center gap-2 ${lang === 'fa' ? 'font-sans' : 'font-mono tracking-widest'} text-xs text-[#ff7f41] hover:text-[#d9531e] font-medium transition-colors uppercase w-fit cursor-pointer`}
                     >

@@ -199,6 +199,39 @@ const productMetadata = [
       bl: "BUS TYPE: ETH",
       br: "RESPONSE: <1ms"
     }
+  },
+  {
+    modelKey: 'bain-marie',
+    name: "Laboratory Incubator Oven",
+    category: "THERMAL // MODULE_04",
+    stats: {
+      tl: "TEMP: 250.0°C",
+      tr: "NODE: 0x9A44",
+      bl: "DUAL PT1000",
+      br: "STABILITY: ±0.1°C"
+    }
+  },
+  {
+    modelKey: 'mixer',
+    name: "Refrigerated Cooler Incubator",
+    category: "CRYO-SYS // MODULE_05",
+    stats: {
+      tl: "COOLING: CASCADE",
+      tr: "NODE: 0x3F18",
+      bl: "RANGE: -10..+60°C",
+      br: "VIBRATION: LOW"
+    }
+  },
+  {
+    modelKey: 'blue-pill',
+    name: "Laboratory Autoclave",
+    category: "PRESSURE // MODULE_06",
+    stats: {
+      tl: "PRESSURE: 2.2 BAR",
+      tr: "NODE: 0x7E01",
+      bl: "SAFETY: SIL-2",
+      br: "CYCLE: 134°C"
+    }
   }
 ];
 

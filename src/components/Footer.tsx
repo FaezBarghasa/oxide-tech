@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import OxideLogo from './OxideLogo';
 import { t } from '../lib/i18n';
 
 interface FooterProps {
@@ -23,7 +24,10 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
     <footer className="border-t border-[#ff7f41]/10 bg-[#14110f]">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-20 py-20 max-w-[1440px] mx-auto text-start">
         <div className="col-span-12 md:col-span-4">
-          <div className="text-xl text-[#fbfbfb] mb-6 font-display font-semibold tracking-tight">{t("FOOT_TITLE", lang)}</div>
+          <div className="flex items-center gap-3 mb-6">
+            <OxideLogo className="w-8 h-8" />
+            <div className="text-xl text-[#fbfbfb] font-display font-semibold tracking-tight">{t("FOOT_TITLE", lang)}</div>
+          </div>
           <p className="font-sans text-sm text-[#c2b5ad] max-w-sm leading-relaxed font-light">
             {t("FOOT_DESC", lang)}
           </p>

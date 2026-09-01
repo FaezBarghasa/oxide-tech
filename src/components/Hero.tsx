@@ -132,14 +132,14 @@ const Hero: React.FC<HeroProps> = ({ lang, activeProductIndex, setActiveProductI
           </div>
           
           {/* Hologram projection switcher */}
-          <div className="flex flex-col sm:flex-row justify-between items-center bg-[#161210]/80 backdrop-blur-md border border-[#fbfbfb]/10 p-3 text-xs font-mono rounded-sm shadow-xl mt-4 max-w-[400px] mx-auto lg:mx-0 w-full gap-3 sm:gap-0">
+          <div className="flex flex-col sm:flex-row justify-between items-center bg-[#161210]/80 backdrop-blur-md border border-[#fbfbfb]/10 p-3 text-xs font-mono rounded-sm shadow-xl mt-4 max-w-[480px] mx-auto lg:mx-0 w-full gap-3 sm:gap-0">
             <span className={`text-[#85746a] ${lang === 'fa' ? 'font-sans' : 'font-mono tracking-widest'} text-[10px]`}>{t("HERO_HW_SELECT", lang)}</span>
-            <div className="flex gap-2 w-full sm:w-auto justify-between sm:justify-start">
-              {[0, 1, 2].map((idx) => (
+            <div className="flex flex-wrap gap-1.5 w-full sm:w-auto justify-between sm:justify-start">
+              {[0, 1, 2, 3, 4, 5].map((idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveProductIndex(idx)}
-                  className={`px-4 py-2 text-[10px] tracking-widest transition-all duration-300 ${
+                  className={`px-3 py-1.5 text-[10px] tracking-widest transition-all duration-300 ${
                     activeProductIndex === idx
                       ? 'bg-[#ff7f41]/10 text-[#ff7f41] border border-[#ff7f41]/30'
                       : 'text-[#85746a] hover:text-[#fbfbfb] border border-transparent hover:bg-[#fbfbfb]/5'

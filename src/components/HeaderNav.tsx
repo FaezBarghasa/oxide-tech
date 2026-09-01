@@ -24,58 +24,43 @@ export function Header({ lang, setLang, audioMuted, setAudioMuted }: any) {
               </filter>
             </defs>
 
-            {/* Abstract Symbol: Rusted Gear & Traces (based on abstract_logo_symbol.svg) */}
-            <g id="abstract_symbol" transform="translate(10, 0) scale(0.6)">
-              {/* Outer Gear Ring — 6-tooth gear referencing Rust */}
+            {/* Official Symbol: Octagon-O + X Cross with Vias */}
+            <g id="abstract_symbol" transform="translate(10, 10) scale(1)">
+              {/* X: full 45° diagonals */}
+              <line x1="20" y1="20" x2="80" y2="80" stroke="#C1552C" strokeWidth="4.5" strokeLinecap="round" />
+              <line x1="80" y1="20" x2="20" y2="80" stroke="#C1552C" strokeWidth="4.5" strokeLinecap="round" />
+
+              {/* O: standard octagon pad shape */}
               <polygon
-                points="35,24 42.2,21 40.9,7 59.1,7 57.8,21 65,24 71.2,28.8 82.7,20.6 91.9,36.4 79,42.2 80,50 79,57.8 91.9,63.6 82.7,79.4 71.2,71.2 65,76 57.8,79 59.1,93 40.9,93 42.2,79 35,76 28.8,71.2 17.3,79.4 8.1,63.6 21,57.8 20,50 21,42.2 8.1,36.4 17.3,20.6 28.8,28.8"
-                fill="none"
-                stroke="#ff7f41"
-                strokeWidth="1.8"
-                strokeOpacity="0.7"
-                strokeLinejoin="round"
-                className="origin-[50px_50px] animate-[spin_20s_linear_infinite]"
+                points="43,35 57,35 65,43 65,57 57,65 43,65 35,57 35,43"
+                fill="#0A0E14"
+                stroke="#C1552C"
+                strokeWidth="4"
               />
 
-              {/* Inner Hexagon — SiO₂ crystal lattice */}
-              <polygon
-                points="50,30 67.3,40 67.3,60 50,70 32.7,60 32.7,40"
-                fill="none"
-                stroke="#d9531e"
-                strokeWidth="1.5"
-                strokeOpacity="0.8"
-                className="origin-[50px_50px] animate-[spin_10s_linear_infinite_reverse]"
-              />
-
-              {/* Lattice cross-lines (crystal structure) */}
-              <g className="origin-[50px_50px] animate-[spin_10s_linear_infinite_reverse]">
-                <line x1="50" y1="30" x2="50" y2="70" stroke="#d9531e" strokeWidth="0.8" strokeOpacity="0.3" />
-                <line x1="67.3" y1="40" x2="32.7" y2="60" stroke="#d9531e" strokeWidth="0.8" strokeOpacity="0.3" />
-                <line x1="67.3" y1="60" x2="32.7" y2="40" stroke="#d9531e" strokeWidth="0.8" strokeOpacity="0.3" />
-                
-                {/* Hexagon vertex nodes */}
-                <circle cx="50" cy="30" r="1.2" fill="#d9531e" fillOpacity="0.8" />
-                <circle cx="67.3" cy="40" r="1.2" fill="#d9531e" fillOpacity="0.8" />
-                <circle cx="67.3" cy="60" r="1.2" fill="#d9531e" fillOpacity="0.8" />
-                <circle cx="50" cy="70" r="1.2" fill="#d9531e" fillOpacity="0.8" />
-                <circle cx="32.7" cy="60" r="1.2" fill="#d9531e" fillOpacity="0.8" />
-                <circle cx="32.7" cy="40" r="1.2" fill="#d9531e" fillOpacity="0.8" />
+              {/* Corner vias */}
+              <g transform="translate(20,20)">
+                <circle fill="#0A0E14" stroke="#C1552C" strokeWidth="3" r="6" />
+                <circle fill="#C1552C" r="2.2" />
+              </g>
+              <g transform="translate(80,20)">
+                <circle fill="#0A0E14" stroke="#C1552C" strokeWidth="3" r="6" />
+                <circle fill="#C1552C" r="2.2" />
+              </g>
+              <g transform="translate(80,80)">
+                <circle fill="#0A0E14" stroke="#C1552C" strokeWidth="3" r="6" />
+                <circle fill="#C1552C" r="2.2" />
+              </g>
+              <g transform="translate(20,80)">
+                <circle fill="#0A0E14" stroke="#C1552C" strokeWidth="3" r="6" />
+                <circle fill="#C1552C" r="2.2" />
               </g>
 
-              {/* Gear tooth tip nodes (IC pin / connection nodes) */}
-              <g className="origin-[50px_50px] animate-[spin_20s_linear_infinite]">
-                <circle cx="50" cy="4.5" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
-                <circle cx="89.5" cy="27.3" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
-                <circle cx="89.5" cy="72.7" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
-                <circle cx="50" cy="95.5" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
-                <circle cx="10.5" cy="72.7" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
-                <circle cx="10.5" cy="27.3" r="1.5" fill="#ff7f41" fillOpacity="0.8" />
+              {/* Center via */}
+              <g transform="translate(50,50)">
+                <circle fill="#0A0E14" stroke="#C1552C" strokeWidth="2" r="4" />
+                <circle fill="#C1552C" r="1.4" />
               </g>
-
-              {/* Central Core */}
-              <circle cx="50" cy="50" r="8" fill="#ff7f41" fillOpacity="0.95" />
-              <circle cx="50" cy="50" r="4" fill="#07070a" />
-              <circle cx="50" cy="50" r="2" fill="#eab308" className="animate-pulse" />
             </g>
 
             {/* Wordmark */}
