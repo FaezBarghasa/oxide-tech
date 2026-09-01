@@ -2,22 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import OxideLogo from './OxideLogo';
 import { t } from '../lib/i18n';
-import { FileText, Code2, Sparkles, Menu, X } from 'lucide-react';
+import { PhoneCall, Menu, X } from 'lucide-react';
 import { telemetry } from '../lib/analytics';
 
 interface NavigationProps {
   lang: 'fa' | 'en';
   setLang: (lang: 'fa' | 'en') => void;
-  onOpenWhitepaper?: () => void;
-  onOpenPortal?: () => void;
   onOpenContact?: () => void;
 }
 
 const Navigation: React.FC<NavigationProps> = ({ 
   lang, 
   setLang, 
-  onOpenWhitepaper, 
-  onOpenPortal,
   onOpenContact 
 }) => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -43,6 +39,7 @@ const Navigation: React.FC<NavigationProps> = ({
     { href: '#products', labelKey: 'NAV_PRODUCTS' },
     { href: '#architects', labelKey: 'NAV_ARCHITECTS' },
     { href: '#opensource', labelKey: 'NAV_OPENSOURCE' },
+    { href: '#contact', labelKey: 'NAV_CONTACT' },
   ];
 
   return (
@@ -92,34 +89,6 @@ const Navigation: React.FC<NavigationProps> = ({
               {t(link.labelKey, lang)}
             </a>
           ))}
-
-          {/* Developer Portal Trigger */}
-          {onOpenPortal && (
-            <button
-              onClick={() => {
-                telemetry.track('open_portal_nav', 'portal_view');
-                onOpenPortal();
-              }}
-              className="flex items-center gap-1.5 text-xs text-[#ff7f41] hover:text-[#fbfbfb] transition-colors font-mono cursor-pointer"
-            >
-              <Code2 className="w-3.5 h-3.5" />
-              <span>{t("NAV_PORTAL", lang)}</span>
-            </button>
-          )}
-
-          {/* Whitepaper Trigger */}
-          {onOpenWhitepaper && (
-            <button
-              onClick={() => {
-                telemetry.track('open_whitepaper_nav', 'whitepaper');
-                onOpenWhitepaper();
-              }}
-              className="flex items-center gap-1.5 text-xs text-[#eab308] hover:text-[#fde047] transition-colors font-mono cursor-pointer"
-            >
-              <FileText className="w-3.5 h-3.5" />
-              <span>{t("NAV_WHITEPAPER", lang)}</span>
-            </button>
-          )}
         </div>
 
         {/* Action Group */}
@@ -137,22 +106,20 @@ const Navigation: React.FC<NavigationProps> = ({
             {lang === 'fa' ? "EN" : "فا"}
           </button>
 
-          {/* Request Access Button */}
-          <button 
+          {/* Direct Phone / Contact Button */}
+          <a 
+            href="#contact"
             onClick={() => {
-              telemetry.track('request_access_nav', 'cta');
+              telemetry.track('contact_nav_click', 'cta');
               if (onOpenContact) {
                 onOpenContact();
-              } else {
-                const el = document.getElementById('contact');
-                el?.scrollIntoView({ behavior: 'smooth' });
               }
             }}
             className="bg-[#c1552c] hover:bg-[#d9531e] text-[#fbfbfb] text-xs font-semibold px-5 py-2 transition-all duration-300 shadow-[0_0_20px_rgba(193,85,44,0.4)] hover:shadow-[0_0_25px_rgba(255,127,65,0.65)] cursor-pointer rounded-sm flex items-center gap-2"
           >
-            <Sparkles className="w-3.5 h-3.5" />
+            <PhoneCall className="w-3.5 h-3.5" />
             <span>{t("NAV_GET_LICENSE", lang)}</span>
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -192,46 +159,19 @@ const Navigation: React.FC<NavigationProps> = ({
             </a>
           ))}
 
-          {onOpenPortal && (
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenPortal();
-              }}
-              className="flex items-center gap-2 text-sm text-[#ff7f41] py-1 text-start"
-            >
-              <Code2 className="w-4 h-4" />
-              <span>{t("NAV_PORTAL", lang)}</span>
-            </button>
-          )}
-
-          {onOpenWhitepaper && (
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenWhitepaper();
-              }}
-              className="flex items-center gap-2 text-sm text-[#eab308] py-1 text-start"
-            >
-              <FileText className="w-4 h-4" />
-              <span>{t("NAV_WHITEPAPER", lang)}</span>
-            </button>
-          )}
-
-          <button 
+          <a 
+            href="#contact"
             onClick={() => {
               setMobileMenuOpen(false);
               if (onOpenContact) {
                 onOpenContact();
-              } else {
-                const el = document.getElementById('contact');
-                el?.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="w-full bg-[#c1552c] text-[#fbfbfb] text-xs font-semibold py-2.5 rounded-sm text-center mt-2 shadow-[0_0_15px_rgba(193,85,44,0.5)]"
+            className="w-full bg-[#c1552c] text-[#fbfbfb] text-xs font-semibold py-2.5 rounded-sm text-center mt-2 shadow-[0_0_15px_rgba(193,85,44,0.5)] flex items-center justify-center gap-2"
           >
-            {t("NAV_GET_LICENSE", lang)}
-          </button>
+            <PhoneCall className="w-4 h-4" />
+            <span>{t("NAV_GET_LICENSE", lang)}</span>
+          </a>
         </motion.div>
       )}
     </nav>

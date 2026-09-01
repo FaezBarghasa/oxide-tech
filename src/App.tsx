@@ -6,42 +6,29 @@ import TechStack from './components/TechStack';
 import Inventory from './components/Inventory';
 import Architects from './components/Architects';
 import OpenSource from './components/OpenSource';
-import WhitepaperModal from './components/WhitepaperModal';
-import DeveloperPortal from './components/DeveloperPortal';
 import FloatingContact from './components/FloatingContact';
 import Footer from './components/Footer';
 import PCBBackground from './components/PCBBackground';
-import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, FileText, Send, CheckCircle2, Lock } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Phone, Mail, Copy, Check, PhoneCall, ExternalLink, ShieldCheck, MapPin } from 'lucide-react';
 import { t } from './lib/i18n';
 import { telemetry } from './lib/analytics';
 
 export default function App() {
   const [lang, setLang] = useState<'fa' | 'en'>('fa');
   const [activeProductIndex, setActiveProductIndex] = useState(0);
-  const [showContactForm, setShowContactForm] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [whitepaperOpen, setWhitepaperOpen] = useState(false);
-  const [portalOpen, setPortalOpen] = useState(false);
-
-  const [contactData, setContactData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    message: ''
-  });
+  const [copiedId, setCopiedId] = useState<string | null>(null);
 
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
   }, [lang]);
 
-  const handleContactSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (contactData.name && contactData.email) {
-      telemetry.track('contact_form_submit', 'cta', contactData.company, contactData.email);
-      setFormSubmitted(true);
-    }
+  const handleCopy = (text: string, id: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedId(id);
+    telemetry.track(`direct_copy_${id}`, 'cta');
+    setTimeout(() => setCopiedId(null), 2000);
   };
 
   const handleSelectProductFor3D = (idx: number) => {
@@ -49,6 +36,31 @@ export default function App() {
     const heroEl = document.getElementById('hero');
     heroEl?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const directContacts = [
+    {
+      id: "monib",
+      name: lang === 'fa' ? "منیب مختاری" : "Monib Mokhtari",
+      role: lang === 'fa' ? "مدیرعامل و معمار سیستم‌های نهفته" : "CEO & Embedded Systems Architect",
+      focus: lang === 'fa' ? "طراحی سخت‌افزار، معماری بردهای صنعتی و قراردادهای ایمنی" : "Hardware Co-Design, Industrial PCB & Safety Architecture",
+      phone: "+989123617481",
+      phoneDisplay: "+98 912 361 7481",
+      email: "monib.mokhtari@gmail.com",
+      accent: "#c1552c",
+      initials: "MM"
+    },
+    {
+      id: "faez",
+      name: lang === 'fa' ? "فائز برق‌آسا" : "Faez Barghasa",
+      role: lang === 'fa' ? "مدیر ارشد فناوری (CTO) و مهندس سیستم" : "CTO & Lead Systems Engineer",
+      focus: lang === 'fa' ? "توسعه هسته Rust no_std، پایپلاین‌های Zero-Copy و هوش لبه‌ای" : "Rust no_std, Zero-Copy DMA & Edge AI Deployment",
+      phone: "+989359180154",
+      phoneDisplay: "+98 935 918 0154",
+      email: "faez.barghasa@gmail.com",
+      accent: "#ff7f41",
+      initials: "FB"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-[#0b0908] text-[#fbfbfb] font-sans selection:bg-[#c1552c] selection:text-white relative overflow-hidden">
@@ -60,12 +72,9 @@ export default function App() {
       <Navigation 
         lang={lang} 
         setLang={setLang}
-        onOpenWhitepaper={() => setWhitepaperOpen(true)}
-        onOpenPortal={() => setPortalOpen(true)}
         onOpenContact={() => {
           const contactEl = document.getElementById('contact');
           contactEl?.scrollIntoView({ behavior: 'smooth' });
-          setShowContactForm(true);
         }}
       />
 
@@ -75,11 +84,6 @@ export default function App() {
           lang={lang}
           activeProductIndex={activeProductIndex}
           setActiveProductIndex={setActiveProductIndex}
-          onConsultationClick={() => {
-            const contactEl = document.getElementById('contact');
-            contactEl?.scrollIntoView({ behavior: 'smooth' });
-            setShowContactForm(true);
-          }}
         />
 
         {/* 6 Core Pillars Manifesto */}
@@ -102,220 +106,136 @@ export default function App() {
         {/* Open Source Showcase */}
         <OpenSource lang={lang} />
 
-        {/* Industrial Whitepaper Lead Magnet Banner */}
-        <motion.section
-          className="mb-32 relative py-12 px-6 sm:px-12 border border-[#c1552c]/40 bg-[#161210]/90 backdrop-blur-xl rounded-sm text-start max-w-5xl mx-auto overflow-hidden shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7 }}
-        >
-          {/* Top Orange Accent */}
-          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#c1552c] via-[#ff7f41] to-[#eab308]" />
-          
-          <div className="max-w-2xl">
-            <span className="font-mono text-xs text-[#ff7f41] font-bold uppercase tracking-wider block mb-2">
-              {t("WP_SUB", lang)}
-            </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-[#fbfbfb] mb-3 leading-snug">
-              {t("WP_TITLE", lang)}
-            </h3>
-            <p className="text-xs sm:text-sm text-[#c2b5ad] font-light leading-relaxed">
-              {t("WP_DESC", lang)}
-            </p>
-          </div>
-
-          <button
-            onClick={() => {
-              telemetry.track('open_whitepaper_banner', 'whitepaper');
-              setWhitepaperOpen(true);
-            }}
-            className="flex-shrink-0 bg-[#c1552c] hover:bg-[#d9531e] text-white px-6 py-3.5 rounded-sm font-bold text-xs tracking-wider transition-all duration-200 shadow-[0_0_20px_rgba(193,85,44,0.4)] hover:shadow-[0_0_25px_rgba(255,127,65,0.6)] flex items-center gap-2 cursor-pointer uppercase"
-          >
-            <FileText className="w-4 h-4" />
-            <span>{t("WP_BUTTON", lang)}</span>
-          </button>
-        </motion.section>
-
-        {/* Interactive Consultation / Contact Section */}
+        {/* Direct Phone & Gmail Contact Section (No Forms, Pure Direct Access) */}
         <motion.section
           id="contact"
-          className="mb-32 relative py-20 px-6 sm:px-12 border border-[#c1552c]/30 bg-[#161210]/80 backdrop-blur-xl rounded-sm text-center max-w-4xl mx-auto overflow-hidden shadow-2xl"
+          className="mb-32 relative py-16 px-6 sm:px-12 border border-[#c1552c]/40 bg-[#161210]/90 backdrop-blur-xl rounded-sm max-w-5xl mx-auto overflow-hidden shadow-2xl scroll-mt-24 text-start"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          {/* Top border line */}
-          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#c1552c] via-[#ff7f41] to-[#eab308]" />
+          {/* Top Border Gradient */}
+          <div className="absolute top-0 left-0 w-full h-[2.5px] bg-gradient-to-r from-[#c1552c] via-[#ff7f41] to-[#eab308]" />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-32 bg-[#c1552c]/10 blur-[80px] pointer-events-none"></div>
 
-          <div className="relative z-10 max-w-2xl mx-auto">
+          {/* Section Header */}
+          <div className="mb-10 text-start">
             <span className="font-mono text-xs tracking-widest text-[#ff7f41] uppercase block mb-3 font-bold">
-              // TECHNICAL INQUIRY
+              {t("CONTACT_SUB", lang)}
             </span>
-            <h2 className="text-3xl sm:text-4xl text-[#fbfbfb] mb-4 font-bold tracking-tight">
-              {lang === 'fa' ? "مشاوره و استقرار راهکارهای صنعتی" : "Enterprise System Architecture Consultation"}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#fbfbfb] font-bold tracking-tight">
+              {t("CONTACT_TITLE", lang)}
             </h2>
-            <p className="text-xs sm:text-sm text-[#c2b5ad] mb-10 leading-relaxed font-light">
-              {lang === 'fa' 
-                ? "برای مشاوره فنی در زمینه طراحی همزمان سخت‌افزار، هوش مصنوعی لبه (Edge AI) و پشته‌های بدون هیپ MQTT، با معماران فنی ما در ارتباط باشید."
-                : "Initiate technical dialogue regarding sovereign STM32 hardware-software co-design, deterministic Edge AI, and heap-free IIoT stacks."}
+            <p className="text-xs sm:text-sm text-[#c2b5ad] mt-2 font-light leading-relaxed max-w-3xl">
+              {t("CONTACT_DESC", lang)}
             </p>
+          </div>
 
-            <AnimatePresence mode="wait">
-              {!showContactForm ? (
-                <motion.div
-                  key="cta-buttons"
-                  className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                >
-                  <button
-                    onClick={() => setShowContactForm(true)}
-                    className="w-full sm:w-auto bg-[#c1552c] hover:bg-[#d9531e] text-white px-8 py-3.5 text-xs font-bold tracking-wider hover:shadow-[0_0_25px_rgba(255,127,65,0.6)] transition-all cursor-pointer rounded-sm uppercase"
-                  >
-                    {lang === 'fa' ? "درخواست مشاوره تخصصی" : "REQUEST CONSULTATION"}
-                  </button>
-                  <button
-                    onClick={() => setPortalOpen(true)}
-                    className="w-full sm:w-auto border border-[#c1552c]/40 text-[#ff7f41] hover:text-white hover:bg-[#c1552c]/15 px-8 py-3.5 text-xs font-mono font-semibold tracking-wider transition-all cursor-pointer rounded-sm uppercase"
-                  >
-                    {t("NAV_PORTAL", lang)}
-                  </button>
-                </motion.div>
-              ) : !formSubmitted ? (
-                <motion.form
-                  key="contact-form"
-                  onSubmit={handleContactSubmit}
-                  className="bg-[#0b0908]/95 backdrop-blur-md border border-[#c1552c]/30 p-6 sm:p-8 text-start space-y-4 rounded-sm max-w-lg mx-auto shadow-2xl relative"
-                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                >
-                  <div className="flex justify-between items-center pb-3 border-b border-[#c1552c]/20 mb-2">
-                    <span className="font-mono text-[10px] text-[#ff7f41] tracking-widest uppercase font-bold">
-                      SECURE_SESSION // TLS_v1.3
-                    </span>
+          {/* Direct Founders Contact Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {directContacts.map((c) => (
+              <div
+                key={c.id}
+                className="p-6 bg-[#0b0908]/90 border border-[#c1552c]/30 rounded-sm hover:border-[#ff7f41]/60 transition-all duration-300 relative group flex flex-col justify-between shadow-lg"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-12 h-12 rounded-sm flex items-center justify-center font-mono text-base font-bold text-white shadow-md border border-[#c1552c]/40"
+                        style={{ backgroundColor: `${c.accent}25` }}
+                      >
+                        {c.initials}
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-[#fbfbfb]">{c.name}</h3>
+                        <div className="text-[11px] font-mono text-[#ff7f41] font-medium">{c.role}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-[#85746a] leading-relaxed mb-5 font-light">
+                    {c.focus}
+                  </p>
+                </div>
+
+                <div className="space-y-2.5 pt-4 border-t border-white/5 font-mono text-xs">
+                  {/* Phone Call */}
+                  <div className="flex items-center justify-between p-2.5 rounded bg-[#161210] border border-white/5">
+                    <div className="flex items-center gap-2">
+                      <Phone className="w-4 h-4 text-[#ff7f41]" />
+                      <a 
+                        href={`tel:${c.phone}`}
+                        onClick={() => telemetry.track(`call_card_${c.id}`, 'cta')}
+                        className="text-[#fbfbfb] hover:text-[#ff7f41] dir-ltr text-xs font-bold"
+                      >
+                        {c.phoneDisplay}
+                      </a>
+                    </div>
                     <button
-                      type="button"
-                      onClick={() => setShowContactForm(false)}
-                      className="font-mono text-[10px] text-[#85746a] hover:text-white transition-colors cursor-pointer"
+                      onClick={() => handleCopy(c.phoneDisplay, `${c.id}_phone`)}
+                      className="text-[10px] text-[#85746a] hover:text-white px-2 py-1 bg-[#1b1714] rounded cursor-pointer transition-colors"
+                      title="Copy Phone Number"
                     >
-                      [ CLOSE ]
+                      {copiedId === `${c.id}_phone` ? (
+                        <span className="text-[#ff7f41] flex items-center gap-1"><Check className="w-3 h-3" /> COPIED</span>
+                      ) : (
+                        <span>COPY</span>
+                      )}
                     </button>
                   </div>
 
-                  <div>
-                    <label className="block font-mono text-[10px] text-[#c2b5ad] uppercase mb-1">
-                      {lang === 'fa' ? "نام و نام خانوادگی" : "Full Name"} *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={contactData.name}
-                      onChange={(e) => setContactData({...contactData, name: e.target.value})}
-                      className="w-full bg-[#1b1714] border border-[#c1552c]/30 p-2.5 text-xs text-[#fbfbfb] focus:border-[#ff7f41] outline-none rounded-sm"
-                      placeholder={lang === 'fa' ? "مهندس علوی" : "Eng. Name"}
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block font-mono text-[10px] text-[#c2b5ad] uppercase mb-1">
-                        {lang === 'fa' ? "سازمان / شرکت" : "Company"}
-                      </label>
-                      <input
-                        type="text"
-                        value={contactData.company}
-                        onChange={(e) => setContactData({...contactData, company: e.target.value})}
-                        className="w-full bg-[#1b1714] border border-[#c1552c]/30 p-2.5 text-xs text-[#fbfbfb] focus:border-[#ff7f41] outline-none rounded-sm"
-                        placeholder={lang === 'fa' ? "شرکت صنعتی" : "Company Name"}
-                      />
+                  {/* Gmail Mailto */}
+                  <div className="flex items-center justify-between p-2.5 rounded bg-[#161210] border border-white/5">
+                    <div className="flex items-center gap-2 truncate max-w-[240px] sm:max-w-[280px]">
+                      <Mail className="w-4 h-4 text-[#ff7f41] flex-shrink-0" />
+                      <a 
+                        href={`mailto:${c.email}`}
+                        onClick={() => telemetry.track(`email_card_${c.id}`, 'cta')}
+                        className="text-[#c2b5ad] hover:text-white text-xs truncate"
+                      >
+                        {c.email}
+                      </a>
                     </div>
-                    <div>
-                      <label className="block font-mono text-[10px] text-[#c2b5ad] uppercase mb-1">
-                        {lang === 'fa' ? "ایمیل سازمانی" : "Corporate Email"} *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={contactData.email}
-                        onChange={(e) => setContactData({...contactData, email: e.target.value})}
-                        className="w-full bg-[#1b1714] border border-[#c1552c]/30 p-2.5 text-xs font-mono text-[#fbfbfb] focus:border-[#ff7f41] outline-none rounded-sm dir-ltr text-start"
-                        placeholder="cto@domain.com"
-                      />
-                    </div>
+                    <button
+                      onClick={() => handleCopy(c.email, `${c.id}_email`)}
+                      className="text-[10px] text-[#85746a] hover:text-white px-2 py-1 bg-[#1b1714] rounded cursor-pointer transition-colors"
+                      title="Copy Gmail"
+                    >
+                      {copiedId === `${c.id}_email` ? (
+                        <span className="text-[#ff7f41] flex items-center gap-1"><Check className="w-3 h-3" /> COPIED</span>
+                      ) : (
+                        <span>COPY</span>
+                      )}
+                    </button>
                   </div>
+                </div>
+              </div>
+            ))}
+          </div>
 
-                  <div>
-                    <label className="block font-mono text-[10px] text-[#c2b5ad] uppercase mb-1">
-                      {lang === 'fa' ? "شرح نیازمندی‌های مهندسی" : "Technical Scope"}
-                    </label>
-                    <textarea
-                      rows={3}
-                      value={contactData.message}
-                      onChange={(e) => setContactData({...contactData, message: e.target.value})}
-                      className="w-full bg-[#1b1714] border border-[#c1552c]/30 p-2.5 text-xs text-[#fbfbfb] focus:border-[#ff7f41] outline-none rounded-sm resize-none"
-                      placeholder={lang === 'fa' ? "شرح پروژه، معماری سخت‌افزار یا پروتکل مورد نظر..." : "Describe MCU targets, protocols, or Edge AI specs..."}
-                    />
-                  </div>
+          {/* Central Lab & Office Inquiries */}
+          <div className="p-4 bg-[#0b0908] border border-[#c1552c]/25 rounded-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
+            <div className="flex items-center gap-2.5 text-[#c2b5ad]">
+              <MapPin className="w-4 h-4 text-[#ff7f41]" />
+              <span>{lang === 'fa' ? "دفتر مرکزی و آزمایشگاه سیستم‌های نهفته: تهران / کرج" : "HQ & Embedded Systems Lab: Tehran / Karaj, Iran"}</span>
+            </div>
 
-                  <button
-                    type="submit"
-                    className="w-full bg-[#c1552c] hover:bg-[#d9531e] text-white py-3 font-mono text-xs font-bold tracking-wider hover:shadow-[0_0_20px_rgba(193,85,44,0.6)] transition-all cursor-pointer rounded-sm uppercase mt-2 flex items-center justify-center gap-2"
-                  >
-                    <Send className="w-3.5 h-3.5" />
-                    <span>{lang === 'fa' ? "ارسال درخواست مهندسی" : "DISPATCH INQUIRY"}</span>
-                  </button>
-                </motion.form>
-              ) : (
-                <motion.div
-                  key="success"
-                  className="bg-[#c1552c]/10 border border-[#c1552c]/40 p-8 text-center max-w-md mx-auto space-y-3 rounded-sm backdrop-blur-md"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                >
-                  <CheckCircle2 className="w-10 h-10 text-[#ff7f41] mx-auto animate-bounce" />
-                  <div className="font-mono text-sm font-bold text-[#ff7f41] tracking-wider">
-                    {lang === 'fa' ? "پیام شما دریافت گردید" : "TRANSMISSION CONFIRMED"}
-                  </div>
-                  <p className="text-xs text-[#c2b5ad] leading-relaxed">
-                    {lang === 'fa'
-                      ? "درخواست فنی شما ثبت گردید. معماران ارشد سیستم در اسرع وقت با شما تماس خواهند گرفت."
-                      : "Your technical request has been logged. Senior system architects will review the requirements shortly."}
-                  </p>
-                  <button
-                    onClick={() => {
-                      setFormSubmitted(false);
-                      setShowContactForm(false);
-                      setContactData({ name: '', company: '', email: '', message: '' });
-                    }}
-                    className="mt-4 font-mono text-[10px] text-[#ff7f41] hover:text-white transition-colors cursor-pointer uppercase border border-[#c1552c]/30 px-3 py-1.5 rounded-sm hover:bg-[#c1552c]/15"
-                  >
-                    {lang === 'fa' ? "بازگشت" : "RETURN"}
-                  </button>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <div className="flex items-center gap-3">
+              <span className="text-[#85746a]">{lang === 'fa' ? "جیمیل سازمانی:" : "Corporate Gmail:"}</span>
+              <a 
+                href="mailto:oxidetech.embedded@gmail.com" 
+                className="text-[#ff7f41] font-bold hover:underline"
+              >
+                oxidetech.embedded@gmail.com
+              </a>
+            </div>
           </div>
         </motion.section>
       </main>
 
-      {/* Modals & Floating Tooling */}
-      <WhitepaperModal
-        isOpen={whitepaperOpen}
-        onClose={() => setWhitepaperOpen(false)}
-        lang={lang}
-      />
-
-      <DeveloperPortal
-        isOpen={portalOpen}
-        onClose={() => setPortalOpen(false)}
-        lang={lang}
-      />
-
+      {/* Floating Quick Direct Dial Tooling */}
       <FloatingContact lang={lang} />
 
       {/* Footer */}

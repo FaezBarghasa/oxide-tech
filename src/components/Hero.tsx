@@ -146,20 +146,13 @@ const Hero: React.FC<HeroProps> = ({
               )}
             </a>
             
-            <button
-              onClick={() => {
-                telemetry.track('consultation_hero_click', 'cta');
-                if (onConsultationClick) {
-                  onConsultationClick();
-                } else {
-                  const el = document.getElementById('contact');
-                  el?.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="w-full sm:w-auto border border-[#c1552c]/50 hover:border-[#ff7f41] text-[#ff7f41] hover:text-[#fbfbfb] hover:bg-[#c1552c]/15 px-8 py-3.5 text-xs font-mono font-semibold tracking-wider transition-all duration-300 uppercase rounded-sm text-center cursor-pointer"
+            <a
+              href="#contact"
+              onClick={() => telemetry.track('contact_hero_click', 'cta')}
+              className="w-full sm:w-auto border border-[#c1552c]/50 hover:border-[#ff7f41] text-[#ff7f41] hover:text-[#fbfbfb] hover:bg-[#c1552c]/15 px-8 py-3.5 text-xs font-mono font-semibold tracking-wider transition-all duration-300 uppercase rounded-sm text-center"
             >
               {t("HERO_CTA_SECONDARY", lang)}
-            </button>
+            </a>
           </motion.div>
         </motion.div>
 

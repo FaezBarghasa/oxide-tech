@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, MapPin, Mail, Phone, ExternalLink, ShieldCheck, Heart } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { MapPin, Mail, Phone, ExternalLink, Copy, Check } from 'lucide-react';
 import OxideLogo from './OxideLogo';
 import { t } from '../lib/i18n';
 import { telemetry } from '../lib/analytics';
@@ -10,16 +9,13 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ lang }) => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
+  const [copiedItem, setCopiedItem] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim() && email.includes('@')) {
-      telemetry.track('newsletter_subscribe', 'cta', email);
-      setSubscribed(true);
-      setEmail('');
-    }
+  const handleCopy = (text: string, id: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedItem(id);
+    telemetry.track(`footer_copy_${id}`, 'cta');
+    setTimeout(() => setCopiedItem(null), 2000);
   };
 
   return (
@@ -44,78 +40,77 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
           </div>
           
           {/* Col 2: Quick Links */}
-          <div className="col-span-6 md:col-span-2">
+          <div className="col-span-6 md:col-span-3">
             <div className="text-[#ff7f41] mb-4 uppercase text-xs font-mono font-bold tracking-wider">
               {t("FOOT_RESOURCES", lang)}
             </div>
             <ul className="flex flex-col gap-2.5 text-xs text-[#c2b5ad]">
-              <li><a href="#products" className="hover:text-[#ff7f41] transition-colors">{t("NAV_PRODUCTS", lang)}</a></li>
-              <li><a href="#tech" className="hover:text-[#ff7f41] transition-colors">{t("NAV_TECH", lang)}</a></li>
               <li><a href="#manifesto" className="hover:text-[#ff7f41] transition-colors">{t("NAV_MANIFESTO", lang)}</a></li>
+              <li><a href="#tech" className="hover:text-[#ff7f41] transition-colors">{t("NAV_TECH", lang)}</a></li>
+              <li><a href="#products" className="hover:text-[#ff7f41] transition-colors">{t("NAV_PRODUCTS", lang)}</a></li>
+              <li><a href="#architects" className="hover:text-[#ff7f41] transition-colors">{t("NAV_ARCHITECTS", lang)}</a></li>
               <li><a href="#opensource" className="hover:text-[#ff7f41] transition-colors">{t("NAV_OPENSOURCE", lang)}</a></li>
             </ul>
           </div>
           
-          {/* Col 3: Corporate Info */}
-          <div className="col-span-6 md:col-span-3">
+          {/* Col 3: Direct Phone Numbers */}
+          <div className="col-span-6 md:col-span-5">
             <div className="text-[#ff7f41] mb-4 uppercase text-xs font-mono font-bold tracking-wider">
-              {lang === 'fa' ? "اطلاعات سازمانی و ارتباط" : "Corporate & Contact"}
+              {lang === 'fa' ? "راه‌های ارتباط مستقیم تلفنی و جیمیل" : "Direct Phone & Gmail Contacts"}
             </div>
-            <ul className="flex flex-col gap-3 text-xs text-[#c2b5ad]">
-              <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#c1552c] flex-shrink-0 mt-0.5" />
-                <span>{lang === 'fa' ? "تهران، پارک فناوری / منطقه اداری" : "Tehran HQ / Technology District"}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#c1552c] flex-shrink-0" />
-                <a href="mailto:info@oxide-tech.com" className="font-mono hover:text-[#ff7f41]">info@oxide-tech.com</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#c1552c] flex-shrink-0" />
-                <span className="font-mono dir-ltr">+98 21 8800 0000</span>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Col 4: Newsletter / Telemetry Dispatch */}
-          <div className="col-span-12 md:col-span-3">
-            <div className="text-[#ff7f41] mb-4 uppercase text-xs font-mono font-bold tracking-wider">
-              {t("FOOT_UPDATES", lang)}
-            </div>
-            <p className="text-xs text-[#c2b5ad] mb-3 font-light">
-              {lang === 'fa' 
-                ? "دریافت آخرین به‌روزرسانی‌های فنی و لاگ‌های انتشار فریمورک Slint و Embassy"
-                : "Subscribe to Slint & Embassy embedded release dispatches."}
-            </p>
-            <AnimatePresence mode="wait">
-              {!subscribed ? (
-                <form onSubmit={handleSubmit} className="flex">
-                  <input 
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="bg-[#14110f] border border-[#c1552c]/30 px-3 py-2 w-full font-mono text-xs text-[#fbfbfb] placeholder-[#85746a] focus:border-[#ff7f41] focus:outline-none rounded-s-sm dir-ltr" 
-                    placeholder="engineer@enterprise.ir"
-                  />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              {/* Monib */}
+              <div className="p-3 bg-[#14110f] border border-[#c1552c]/25 rounded-sm space-y-1.5">
+                <div className="font-bold text-[#fbfbfb]">
+                  {lang === 'fa' ? "منیب مختاری (مدیرعامل)" : "Monib Mokhtari (CEO)"}
+                </div>
+                <div className="flex items-center justify-between text-[11px] font-mono">
+                  <a href="tel:+989123617481" className="text-[#ff7f41] hover:underline dir-ltr">+98 912 361 7481</a>
+                </div>
+                <div className="flex items-center justify-between text-[10px] font-mono text-[#c2b5ad]">
+                  <a href="mailto:monib.mokhtari@gmail.com" className="hover:text-white truncate">monib.mokhtari@gmail.com</a>
                   <button 
-                    type="submit" 
-                    className="bg-[#c1552c] hover:bg-[#d9531e] text-white px-4 transition-colors rounded-e-sm flex items-center justify-center cursor-pointer shadow-[0_0_10px_rgba(193,85,44,0.4)]"
+                    onClick={() => handleCopy("monib.mokhtari@gmail.com", "monib_f")}
+                    className="text-[#85746a] hover:text-[#ff7f41] cursor-pointer"
                   >
-                    <Send className="w-4 h-4"/>
+                    {copiedItem === "monib_f" ? <Check className="w-3 h-3 text-[#ff7f41]" /> : <Copy className="w-3 h-3" />}
                   </button>
-                </form>
-              ) : (
-                <motion.div 
-                  className="flex items-center gap-2 border border-[#c1552c]/40 bg-[#c1552c]/10 p-2.5 rounded-sm font-mono text-xs text-[#ff7f41]"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                </div>
+              </div>
+
+              {/* Faez */}
+              <div className="p-3 bg-[#14110f] border border-[#c1552c]/25 rounded-sm space-y-1.5">
+                <div className="font-bold text-[#fbfbfb]">
+                  {lang === 'fa' ? "فائز برغسا (مدیر فنی)" : "Faez Barghasa (CTO)"}
+                </div>
+                <div className="flex items-center justify-between text-[11px] font-mono">
+                  <a href="tel:+989359180154" className="text-[#ff7f41] hover:underline dir-ltr">+98 935 918 0154</a>
+                </div>
+                <div className="flex items-center justify-between text-[10px] font-mono text-[#c2b5ad]">
+                  <a href="mailto:faez.barghasa@gmail.com" className="hover:text-white truncate">faez.barghasa@gmail.com</a>
+                  <button 
+                    onClick={() => handleCopy("faez.barghasa@gmail.com", "faez_f")}
+                    className="text-[#85746a] hover:text-[#ff7f41] cursor-pointer"
+                  >
+                    {copiedItem === "faez_f" ? <Check className="w-3 h-3 text-[#ff7f41]" /> : <Copy className="w-3 h-3" />}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* General Inquiries */}
+            <div className="mt-3 flex items-center justify-between p-2.5 bg-[#14110f] border border-white/5 rounded-sm text-xs font-mono">
+              <span className="text-[#85746a]">{lang === 'fa' ? "جیمیل سازمانی:" : "Corporate Gmail:"}</span>
+              <div className="flex items-center gap-2">
+                <a href="mailto:oxidetech.embedded@gmail.com" className="text-[#ff7f41] hover:underline">oxidetech.embedded@gmail.com</a>
+                <button 
+                  onClick={() => handleCopy("oxidetech.embedded@gmail.com", "office_f")}
+                  className="text-[#85746a] hover:text-white cursor-pointer"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-[#ff7f41]" />
-                  <span>DISPATCH_LINK: CONNECTED</span>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                  {copiedItem === "office_f" ? <Check className="w-3 h-3 text-[#ff7f41]" /> : <Copy className="w-3 h-3" />}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         
@@ -124,7 +119,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
           <div>{t("FOOT_COPYRIGHT", lang)}</div>
           <div className="flex items-center gap-6">
             <span className="text-[#ff7f41]">RUST 1.85+ // NO_STD</span>
-            <span className="text-[#eab308]">SYSTEM: HEALTHY</span>
+            <span className="text-[#eab308]">SYSTEM: ONLINE</span>
           </div>
         </div>
       </div>
