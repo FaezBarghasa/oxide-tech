@@ -20,7 +20,7 @@ const Architects: React.FC<ArchitectsProps> = ({ lang }) => {
         lang === 'fa' ? "پیاده‌سازی فریمورک‌های بلادرنگ با RTIC v2 در میکروکنترلرهای STM32" : "Real-Time Embedded Systems with RTIC v2 on STM32",
         lang === 'fa' ? "مهندسی قابلیت اطمینان و استانداردهای ایمنی عملکردی" : "Functional Safety & High-Reliability Control"
       ],
-      githubUrl: "https://github.com/monib-mokhtari",
+      githubUrl: "https://github.com/MonibMo",
       accentColor: "#c1552c",
       initials: "MM",
       tags: ["STM32", "PCB EMI/EMC", "RTIC v2", "Hardware-Software Co-Design", "Functional Safety"]

@@ -17,7 +17,7 @@ const OpenSource: React.FC<OpenSourceProps> = ({ lang }) => {
         : "Lightweight zero-allocation async MQTT v5 client for bare-metal embedded targets with Embassy integration.",
       language: "Rust",
       tag: "no_std // IIoT // Embassy",
-      repoUrl: "https://github.com/FaezBarghasa",
+      repoUrl: "https://github.com/FaezBarghasa/mqtt-async-embedded",
     },
     {
       name: "Rotary_Library",
@@ -26,7 +26,7 @@ const OpenSource: React.FC<OpenSourceProps> = ({ lang }) => {
         : "Industrial-grade rotary encoder quadrature decoding engine with hardware debounce filters.",
       language: "C++ / Rust",
       tag: "Rotary // Quadrature // DSP",
-      repoUrl: "https://github.com/monib-mokhtari",
+      repoUrl: "https://github.com/MonibMo/Rotary_Library",
     },
     {
       name: "r_klipp",
@@ -35,7 +35,7 @@ const OpenSource: React.FC<OpenSourceProps> = ({ lang }) => {
         : "Fast native clipboard bridge daemon and CLI utility engineered in Rust for Wayland & headless sessions.",
       language: "Rust",
       tag: "CLI // Linux // IPC",
-      repoUrl: "https://github.com/FaezBarghasa",
+      repoUrl: "https://github.com/FaezBarghasa/r_klipp",
     },
     {
       name: "omid",
@@ -44,7 +44,7 @@ const OpenSource: React.FC<OpenSourceProps> = ({ lang }) => {
         : "High-throughput industrial telemetry engine designed for low-latency operational data ingestion.",
       language: "Rust",
       tag: "Telemetry // Stream // Analytics",
-      repoUrl: "https://github.com/FaezBarghasa",
+      repoUrl: "https://github.com/FaezBarghasa/omid",
     },
   ];
 
