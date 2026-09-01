@@ -26,7 +26,7 @@ export component ThermalControllerHMI inherits Window {
 
     width: 800px;
     height: 480px;
-    background: #0B1120;
+    background: #0B0908;
 
     VerticalLayout {
         padding: 24px;
@@ -36,20 +36,20 @@ export component ThermalControllerHMI inherits Window {
             text: "OXIDE // MODULE_03 STATE-SPACE MPC";
             font-size: 16px;
             font-family: "JetBrains Mono";
-            color: #3B82F6;
+            color: #C1552C;
         }
 
         Rectangle {
-            background: #1E293B;
+            background: #161210;
             border-width: 1px;
-            border-color: #3B82F6;
+            border-color: #C1552C;
             border-radius: 4px;
             height: 120px;
 
             Text {
                 text: "PV: " + root.current_temp + " °C | SP: " + root.target_temp + " °C";
                 font-size: 28px;
-                color: #F8FAFC;
+                color: #FBFBFB;
                 x: 20px;
                 y: 40px;
             }
@@ -113,7 +113,7 @@ async fn main(_spawner: Spawner) {
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         {/* Backdrop */}
         <motion.div
-          className="absolute inset-0 bg-[#070b14]/85 backdrop-blur-md"
+          className="absolute inset-0 bg-[#07070a]/85 backdrop-blur-md"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -122,88 +122,105 @@ async fn main(_spawner: Spawner) {
 
         {/* Modal Window */}
         <motion.div
-          className="relative z-10 w-full max-w-4xl bg-[#0f172a] border border-[#3b82f6]/40 rounded-sm shadow-[0_0_50px_rgba(59,130,246,0.3)] p-6 sm:p-8 text-start overflow-hidden max-h-[90vh] flex flex-col"
+          className="relative z-10 w-full max-w-3xl bg-[#161210] border border-[#c1552c]/40 rounded-sm shadow-[0_0_50px_rgba(193,85,44,0.25)] p-6 sm:p-8 text-start overflow-hidden flex flex-col max-h-[90vh]"
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
+          transition={{ duration: 0.3 }}
         >
           {/* Top Line */}
-          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#3b82f6] via-[#06b6d4] to-[#10b981]" />
-
-          {/* Close */}
-          <button
-            onClick={onClose}
-            className="absolute top-5 end-5 text-[#64748b] hover:text-white p-1 rounded-sm cursor-pointer"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#c1552c] via-[#ff7f41] to-[#eab308]" />
 
           {/* Header */}
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2.5 rounded-sm bg-[#3b82f6]/10 text-[#3b82f6]">
-              <Code2 className="w-6 h-6" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-[#f8fafc]">
-                {t("DEV_MODAL_TITLE", lang)}
-              </h3>
-              <p className="text-xs text-[#94a3b8] font-light">
-                {t("DEV_MODAL_DESC", lang)}
-              </p>
-            </div>
-          </div>
-
-          {/* Tabs & Copy Button */}
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3 mb-4">
-            <div className="flex gap-2">
-              <button
-                onClick={() => setActiveTab('slint')}
-                className={`text-xs font-mono px-3 py-1.5 rounded-sm transition-colors cursor-pointer ${
-                  activeTab === 'slint'
-                    ? 'bg-[#3b82f6] text-white font-bold'
-                    : 'text-[#94a3b8] hover:text-white bg-[#1e293b]'
-                }`}
-              >
-                {t("DEV_TAB_SLINT", lang)}
-              </button>
-
-              <button
-                onClick={() => setActiveTab('mqtt')}
-                className={`text-xs font-mono px-3 py-1.5 rounded-sm transition-colors cursor-pointer ${
-                  activeTab === 'mqtt'
-                    ? 'bg-[#3b82f6] text-white font-bold'
-                    : 'text-[#94a3b8] hover:text-white bg-[#1e293b]'
-                }`}
-              >
-                {t("DEV_TAB_MQTT", lang)}
-              </button>
-
-              <button
-                onClick={() => setActiveTab('embassy')}
-                className={`text-xs font-mono px-3 py-1.5 rounded-sm transition-colors cursor-pointer ${
-                  activeTab === 'embassy'
-                    ? 'bg-[#3b82f6] text-white font-bold'
-                    : 'text-[#94a3b8] hover:text-white bg-[#1e293b]'
-                }`}
-              >
-                {t("DEV_TAB_EMBASSY", lang)}
-              </button>
+          <div className="flex items-center justify-between pb-4 border-b border-[#c1552c]/20 mb-4">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-sm bg-[#c1552c]/15 text-[#ff7f41]">
+                <Code2 className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-[#fbfbfb]">
+                  {t("PORTAL_TITLE", lang)}
+                </h3>
+                <div className="text-[11px] font-mono text-[#ff7f41]">
+                  // DETERMINISTIC CODE ARTIFACTS
+                </div>
+              </div>
             </div>
 
             <button
-              onClick={handleCopy}
-              className="flex items-center gap-1.5 text-xs font-mono text-[#93c5fd] hover:text-white bg-[#1e293b] hover:bg-[#3b82f6] px-3 py-1.5 rounded-sm transition-colors cursor-pointer"
+              onClick={onClose}
+              className="text-[#85746a] hover:text-white p-1 cursor-pointer"
             >
-              {copied ? <Check className="w-3.5 h-3.5 text-[#10b981]" /> : <Copy className="w-3.5 h-3.5" />}
-              <span>{copied ? "COPIED" : "COPY CODE"}</span>
+              <X className="w-5 h-5" />
             </button>
           </div>
 
-          {/* Code Viewer Container */}
-          <div className="flex-1 overflow-auto bg-[#0b1120] border border-white/5 p-4 rounded-sm font-mono text-xs text-[#cbd5e1] leading-relaxed dir-ltr">
-            <pre tabIndex={0}>
+          {/* Tab Selector */}
+          <div className="flex gap-2 mb-4 border-b border-[#c1552c]/20 pb-2">
+            <button
+              onClick={() => {
+                setActiveTab('slint');
+                telemetry.track('select_tab_slint', 'portal_view');
+              }}
+              className={`font-mono text-xs px-3 py-1.5 rounded-sm transition-all cursor-pointer ${
+                activeTab === 'slint'
+                  ? 'bg-[#c1552c] text-white font-bold shadow-sm'
+                  : 'text-[#85746a] hover:text-[#ff7f41]'
+              }`}
+            >
+              [ SLINT HMI ]
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab('mqtt');
+                telemetry.track('select_tab_mqtt', 'portal_view');
+              }}
+              className={`font-mono text-xs px-3 py-1.5 rounded-sm transition-all cursor-pointer ${
+                activeTab === 'mqtt'
+                  ? 'bg-[#c1552c] text-white font-bold shadow-sm'
+                  : 'text-[#85746a] hover:text-[#ff7f41]'
+              }`}
+            >
+              [ NO_STD MQTT ]
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab('embassy');
+                telemetry.track('select_tab_embassy', 'portal_view');
+              }}
+              className={`font-mono text-xs px-3 py-1.5 rounded-sm transition-all cursor-pointer ${
+                activeTab === 'embassy'
+                  ? 'bg-[#c1552c] text-white font-bold shadow-sm'
+                  : 'text-[#85746a] hover:text-[#ff7f41]'
+              }`}
+            >
+              [ EMBASSY ZERO-COPY ]
+            </button>
+          </div>
+
+          {/* Code Viewer */}
+          <div className="relative flex-1 overflow-auto bg-[#0b0908] border border-[#c1552c]/30 p-4 rounded-sm font-mono text-xs text-[#c2b5ad] leading-relaxed">
+            <button
+              onClick={handleCopy}
+              className="absolute top-3 end-3 p-1.5 rounded bg-[#1b1714] hover:bg-[#c1552c] text-[#85746a] hover:text-white transition-all cursor-pointer flex items-center gap-1.5 text-[10px]"
+            >
+              {copied ? <Check className="w-3.5 h-3.5 text-[#ff7f41]" /> : <Copy className="w-3.5 h-3.5" />}
+              <span>{copied ? "COPIED" : "COPY"}</span>
+            </button>
+            <pre className="overflow-x-auto select-all dir-ltr text-start font-mono">
               <code>{snippets[activeTab]}</code>
             </pre>
+          </div>
+
+          {/* Footer Note */}
+          <div className="pt-4 mt-2 flex items-center justify-between text-[11px] font-mono text-[#85746a]">
+            <span>Rust 2024 • no_std certified • static analysis passed</span>
+            <button
+              onClick={onClose}
+              className="border border-[#c1552c]/30 text-[#ff7f41] hover:bg-[#c1552c]/15 px-4 py-1 rounded-sm text-xs cursor-pointer"
+            >
+              Close
+            </button>
           </div>
         </motion.div>
       </div>
