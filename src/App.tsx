@@ -163,12 +163,13 @@ export default function App() {
                 <div className="space-y-2.5 pt-4 border-t border-white/5 font-mono text-xs">
                   {/* Phone Call */}
                   <div className="flex items-center justify-between p-2.5 rounded bg-[#161210] border border-white/5">
-                    <div className="flex items-center gap-2">
-                      <Phone className="w-4 h-4 text-[#ff7f41]" />
+                    <div className="flex items-center gap-2" dir="ltr">
+                      <Phone className="w-4 h-4 text-[#ff7f41] flex-shrink-0" />
                       <a 
                         href={`tel:${c.phone}`}
                         onClick={() => telemetry.track(`call_card_${c.id}`, 'cta')}
-                        className="text-[#fbfbfb] hover:text-[#ff7f41] dir-ltr text-xs font-bold"
+                        className="text-[#fbfbfb] hover:text-[#ff7f41] text-xs font-bold font-mono tracking-wider dir-ltr"
+                        dir="ltr"
                       >
                         {c.phoneDisplay}
                       </a>
@@ -188,12 +189,13 @@ export default function App() {
 
                   {/* Gmail Mailto */}
                   <div className="flex items-center justify-between p-2.5 rounded bg-[#161210] border border-white/5">
-                    <div className="flex items-center gap-2 truncate max-w-[240px] sm:max-w-[280px]">
+                    <div className="flex items-center gap-2 truncate max-w-[240px] sm:max-w-[280px]" dir="ltr">
                       <Mail className="w-4 h-4 text-[#ff7f41] flex-shrink-0" />
                       <a 
                         href={`mailto:${c.email}`}
                         onClick={() => telemetry.track(`email_card_${c.id}`, 'cta')}
-                        className="text-[#c2b5ad] hover:text-white text-xs truncate"
+                        className="text-[#c2b5ad] hover:text-white text-xs truncate font-mono dir-ltr"
+                        dir="ltr"
                       >
                         {c.email}
                       </a>
@@ -218,7 +220,7 @@ export default function App() {
           {/* Central Lab & Office Inquiries */}
           <div className="p-4 bg-[#0b0908] border border-[#c1552c]/25 rounded-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
             <div className="flex items-center gap-2.5 text-[#c2b5ad]">
-              <MapPin className="w-4 h-4 text-[#ff7f41]" />
+              <MapPin className="w-4 h-4 text-[#ff7f41] flex-shrink-0" />
               <span>{lang === 'fa' ? "دفتر مرکزی و آزمایشگاه سیستم‌های نهفته: تهران / کرج" : "HQ & Embedded Systems Lab: Tehran / Karaj, Iran"}</span>
             </div>
 
@@ -226,7 +228,8 @@ export default function App() {
               <span className="text-[#85746a]">{lang === 'fa' ? "جیمیل سازمانی:" : "Corporate Gmail:"}</span>
               <a 
                 href="mailto:oxidetech.embedded@gmail.com" 
-                className="text-[#ff7f41] font-bold hover:underline"
+                className="text-[#ff7f41] font-bold hover:underline font-mono dir-ltr"
+                dir="ltr"
               >
                 oxidetech.embedded@gmail.com
               </a>

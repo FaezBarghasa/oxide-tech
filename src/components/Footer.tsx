@@ -81,7 +81,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
               {/* Faez */}
               <div className="p-3 bg-[#14110f] border border-[#c1552c]/25 rounded-sm space-y-1.5">
                 <div className="font-bold text-[#fbfbfb]">
-                  {lang === 'fa' ? "فائز برغسا (مدیر فنی)" : "Faez Barghasa (CTO)"}
+                  {lang === 'fa' ? "فائز برق‌آسا (مدیر فنی)" : "Faez Barghasa (CTO)"}
                 </div>
                 <div className="flex items-center justify-between text-[11px] font-mono">
                   <a href="tel:+989359180154" className="text-[#ff7f41] hover:underline dir-ltr">+98 935 918 0154</a>

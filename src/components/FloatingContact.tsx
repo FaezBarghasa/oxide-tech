@@ -30,7 +30,7 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
     },
     {
       id: "faez",
-      name: lang === 'fa' ? "فائز برغسا" : "Faez Barghasa",
+      name: lang === 'fa' ? "فائز برق‌آسا" : "Faez Barghasa",
       role: lang === 'fa' ? "مدیر ارشد فناوری (CTO)" : "CTO & Systems Eng",
       phone: "+989359180154",
       phoneDisplay: "+98 935 918 0154",

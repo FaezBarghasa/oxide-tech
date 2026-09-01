@@ -87,6 +87,16 @@
   border: 1px solid rgba(255, 127, 65, 0.12);
 }
 
+/* Ensure all phone numbers and email links are strictly Left-to-Right */
+.dir-ltr,
+a[href^="tel:"],
+a[href^="mailto:"],
+[data-ltr="true"] {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: left;
+}
+
 .glass-panel-hover {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
