@@ -94,36 +94,36 @@ const Hero: React.FC<HeroProps> = ({
           {/* System Status Eyebrow Badge */}
           <motion.div 
             variants={fadeInUp} 
-            className="backdrop-blur-md bg-[#3b82f6]/10 border border-[#3b82f6]/30 px-3.5 py-1.5 rounded-full text-[#60a5fa] mb-6 flex items-center gap-2.5 uppercase text-[10px] sm:text-xs font-mono tracking-wider shadow-[0_0_20px_rgba(59,130,246,0.15)]"
+            className="backdrop-blur-md bg-[#c1552c]/10 border border-[#c1552c]/35 px-3.5 py-1.5 rounded-full text-[#ff7f41] mb-6 flex items-center gap-2.5 uppercase text-[10px] sm:text-xs font-mono tracking-wider shadow-[0_0_20px_rgba(193,85,44,0.2)]"
           >
-            <span className="w-2 h-2 rounded-full bg-[#10b981] shadow-[0_0_10px_#10b981] animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-[#ff7f41] shadow-[0_0_10px_#ff7f41] animate-pulse"></span>
             <span>{t("HERO_STATUS", lang)}</span>
           </motion.div>
           
           {/* Main H1 Title */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#f8fafc] mb-6 font-bold tracking-tight leading-[1.2]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#fbfbfb] mb-6 font-bold tracking-tight leading-[1.2]">
             <span>{t("HERO_TITLE_H1", lang)}</span><br />
-            <span className="text-[#93c5fd] font-extrabold">{t("HERO_TITLE_H1_CONT", lang)}</span>
-            <div className="text-2xl sm:text-3xl md:text-4xl text-[#3b82f6] blinking-cursor block mt-2 bg-gradient-to-r from-[#3b82f6] via-[#06b6d4] to-[#60a5fa] text-transparent bg-clip-text font-mono">
+            <span className="text-[#ff7f41] font-extrabold">{t("HERO_TITLE_H1_CONT", lang)}</span>
+            <div className="text-2xl sm:text-3xl md:text-4xl text-[#ff7f41] blinking-cursor block mt-2 bg-gradient-to-r from-[#ff7f41] via-[#d9531e] to-[#eab308] text-transparent bg-clip-text font-mono">
               {currentText}
             </div>
           </h1>
           
           {/* Sub-text */}
-          <p className="text-sm md:text-base text-[#94a3b8] mb-8 leading-relaxed max-w-2xl font-light">
+          <p className="text-sm md:text-base text-[#c2b5ad] mb-8 leading-relaxed max-w-2xl font-light">
             {t("HERO_SUBTEXT", lang)}
           </p>
 
           {/* CEO Philosophical Quote Blockquote */}
           <motion.div
             variants={fadeInUp}
-            className="mb-8 p-4 rounded-sm bg-[#0f172a]/80 border-s-4 border-[#3b82f6] border border-white/5 backdrop-blur-md max-w-2xl text-start relative group"
+            className="mb-8 p-4 rounded-sm bg-[#161210]/90 border-s-4 border-[#c1552c] border border-white/5 backdrop-blur-md max-w-2xl text-start relative group shadow-lg"
           >
-            <MessageSquareQuote className="w-5 h-5 text-[#3b82f6]/50 mb-2" />
-            <p className="text-xs sm:text-sm text-[#cbd5e1] italic leading-relaxed mb-2 font-medium">
+            <MessageSquareQuote className="w-5 h-5 text-[#c1552c]/60 mb-2" />
+            <p className="text-xs sm:text-sm text-[#fbfbfb] italic leading-relaxed mb-2 font-medium">
               {t("HERO_QUOTE_CEO", lang)}
             </p>
-            <div className="text-[11px] font-mono text-[#60a5fa] font-semibold">
+            <div className="text-[11px] font-mono text-[#ff7f41] font-semibold">
               — {t("HERO_QUOTE_CEO_AUTHOR", lang)}
             </div>
           </motion.div>
@@ -136,7 +136,7 @@ const Hero: React.FC<HeroProps> = ({
             <a
               href="#tech"
               onClick={() => telemetry.track('explore_architecture_hero', 'cta')}
-              className="w-full sm:w-auto bg-[#3b82f6] hover:bg-[#2563eb] text-white px-8 py-3.5 text-xs font-bold tracking-wider hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] hover:-translate-y-0.5 transition-all duration-300 uppercase rounded-sm flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto bg-[#c1552c] hover:bg-[#d9531e] text-[#fbfbfb] px-8 py-3.5 text-xs font-bold tracking-wider hover:shadow-[0_0_25px_rgba(255,127,65,0.6)] hover:-translate-y-0.5 transition-all duration-300 uppercase rounded-sm flex items-center justify-center gap-2 group"
             >
               <span>{t("HERO_CTA_PRIMARY", lang)}</span>
               {lang === 'fa' ? (
@@ -156,7 +156,7 @@ const Hero: React.FC<HeroProps> = ({
                   el?.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="w-full sm:w-auto border border-[#3b82f6]/40 hover:border-[#3b82f6] text-[#93c5fd] hover:text-white hover:bg-[#3b82f6]/10 px-8 py-3.5 text-xs font-mono font-semibold tracking-wider transition-all duration-300 uppercase rounded-sm text-center cursor-pointer"
+              className="w-full sm:w-auto border border-[#c1552c]/50 hover:border-[#ff7f41] text-[#ff7f41] hover:text-[#fbfbfb] hover:bg-[#c1552c]/15 px-8 py-3.5 text-xs font-mono font-semibold tracking-wider transition-all duration-300 uppercase rounded-sm text-center cursor-pointer"
             >
               {t("HERO_CTA_SECONDARY", lang)}
             </button>
@@ -173,33 +173,33 @@ const Hero: React.FC<HeroProps> = ({
           onMouseLeave={() => setIs3DHovered(false)}
         >
           {/* Outer Cyber Glow Ambient */}
-          <div className="absolute inset-0 bg-[#3b82f6]/10 blur-[90px] rounded-full pointer-events-none" />
+          <div className="absolute inset-0 bg-[#c1552c]/15 blur-[90px] rounded-full pointer-events-none" />
 
           {/* Floating Live Telemetry Cards */}
-          <div className="absolute -top-4 right-2 sm:right-4 z-20 bg-[#0f172a]/90 backdrop-blur-md border border-[#3b82f6]/30 px-3 py-2 rounded-sm shadow-xl flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#10b981] animate-ping" />
-            <span className="font-mono text-[10px] text-[#34d399] font-bold">YOLO_INFERENCE: 12ms</span>
+          <div className="absolute -top-4 right-2 sm:right-4 z-20 bg-[#161210]/95 backdrop-blur-md border border-[#c1552c]/40 px-3 py-2 rounded-sm shadow-xl flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#eab308] animate-ping" />
+            <span className="font-mono text-[10px] text-[#eab308] font-bold">YOLO_INFERENCE: 12ms</span>
           </div>
 
-          <div className="absolute top-1/3 -left-4 sm:-left-6 z-20 bg-[#0f172a]/90 backdrop-blur-md border border-[#06b6d4]/30 px-3 py-2 rounded-sm shadow-xl flex items-center gap-2">
-            <Cpu className="w-3.5 h-3.5 text-[#06b6d4]" />
-            <span className="font-mono text-[10px] text-[#67e8f9] font-bold">ZERO_COPY_DMA: OK</span>
+          <div className="absolute top-1/3 -left-4 sm:-left-6 z-20 bg-[#161210]/95 backdrop-blur-md border border-[#ff7f41]/40 px-3 py-2 rounded-sm shadow-xl flex items-center gap-2">
+            <Cpu className="w-3.5 h-3.5 text-[#ff7f41]" />
+            <span className="font-mono text-[10px] text-[#ff7f41] font-bold">ZERO_COPY_DMA: OK</span>
           </div>
 
-          <div className="absolute -bottom-4 left-4 z-20 bg-[#0f172a]/90 backdrop-blur-md border border-[#3b82f6]/30 px-3 py-2 rounded-sm shadow-xl flex items-center gap-2">
-            <Activity className="w-3.5 h-3.5 text-[#3b82f6]" />
-            <span className="font-mono text-[10px] text-[#93c5fd] font-bold">MQTT_HEAP_FREE: 100%</span>
+          <div className="absolute -bottom-4 left-4 z-20 bg-[#161210]/95 backdrop-blur-md border border-[#c1552c]/40 px-3 py-2 rounded-sm shadow-xl flex items-center gap-2">
+            <Activity className="w-3.5 h-3.5 text-[#c1552c]" />
+            <span className="font-mono text-[10px] text-[#c2b5ad] font-bold">MQTT_HEAP_FREE: 100%</span>
           </div>
 
           {/* Core Hologram / 3D Canvas */}
-          <div className="relative z-10 w-full h-[440px] flex items-center justify-center rounded-xl bg-[#0f172a]/40 border border-white/5 backdrop-blur-sm p-4">
+          <div className="relative z-10 w-full h-[440px] flex items-center justify-center rounded-xl bg-[#14110f]/60 border border-[#ff7f41]/15 backdrop-blur-sm p-4">
             <HologramViewer 
               activeProductIndex={activeProductIndex} 
               isPaused={is3DHovered} 
             />
             
             {/* Viewport Control Label */}
-            <div className="absolute bottom-3 right-3 text-[10px] font-mono text-[#64748b] bg-[#0b1120]/80 px-2 py-1 rounded border border-white/5">
+            <div className="absolute bottom-3 right-3 text-[10px] font-mono text-[#85746a] bg-[#0b0908]/90 px-2 py-1 rounded border border-white/5">
               {is3DHovered ? "⏸ PAUSED" : "⟳ AUTO-ROTATING"}
             </div>
           </div>

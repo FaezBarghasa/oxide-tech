@@ -333,7 +333,7 @@ const HologramViewer: React.FC<HologramViewerProps> = ({ activeProductIndex, isP
             ctx.lineTo(p2.x, p2.y);
             
             const alpha = Math.min(1.0, 0.25 + p1.scale * 0.75);
-            ctx.strokeStyle = `rgba(59, 130, 246, ${alpha * 0.85})`;
+            ctx.strokeStyle = `rgba(255, 127, 65, ${alpha * 0.9})`;
             ctx.lineWidth = 1.4;
             ctx.stroke();
           }
@@ -342,7 +342,7 @@ const HologramViewer: React.FC<HologramViewerProps> = ({ activeProductIndex, isP
         // Draw vertices
         activeModel.vertices.forEach((v) => {
           const p = project(v.x, v.y, v.z, width, height);
-          ctx.fillStyle = '#06b6d4';
+          ctx.fillStyle = '#eab308';
           ctx.beginPath();
           ctx.arc(p.x, p.y, Math.max(1, 2.0 * p.scale), 0, Math.PI * 2);
           ctx.fill();
@@ -389,22 +389,22 @@ const HologramViewer: React.FC<HologramViewerProps> = ({ activeProductIndex, isP
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-[440px] border border-[#3b82f6]/20 bg-[#0b1120]/80 rounded-lg overflow-hidden flex items-center justify-center cursor-grab active:cursor-grabbing group select-none shadow-[inset_0_0_40px_rgba(59,130,246,0.08)]"
+      className="relative w-full h-[440px] border border-[#c1552c]/30 bg-[#0b0908]/90 rounded-lg overflow-hidden flex items-center justify-center cursor-grab active:cursor-grabbing group select-none shadow-[inset_0_0_40px_rgba(193,85,44,0.12)]"
     >
       {/* Background Grid */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#3b82f6]/5 pointer-events-none z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#c1552c]/5 pointer-events-none z-10" />
 
       {/* Technical Corner Metric Badges */}
-      <div className="absolute top-3 left-3 font-mono text-[10px] text-[#38bdf8] z-20 bg-[#0f172a]/70 px-2 py-0.5 rounded border border-white/5">
+      <div className="absolute top-3 left-3 font-mono text-[10px] text-[#ff7f41] z-20 bg-[#161210]/80 px-2 py-0.5 rounded border border-[#ff7f41]/20">
         {currentMetadata.stats.tl}
       </div>
-      <div className="absolute top-3 right-3 font-mono text-[10px] text-[#38bdf8] z-20 bg-[#0f172a]/70 px-2 py-0.5 rounded border border-white/5">
+      <div className="absolute top-3 right-3 font-mono text-[10px] text-[#ff7f41] z-20 bg-[#161210]/80 px-2 py-0.5 rounded border border-[#ff7f41]/20">
         {currentMetadata.stats.tr}
       </div>
-      <div className="absolute bottom-3 left-3 font-mono text-[10px] text-[#94a3b8] z-20 bg-[#0f172a]/70 px-2 py-0.5 rounded border border-white/5">
+      <div className="absolute bottom-3 left-3 font-mono text-[10px] text-[#c2b5ad] z-20 bg-[#161210]/80 px-2 py-0.5 rounded border border-white/5">
         {currentMetadata.stats.bl}
       </div>
-      <div className="absolute bottom-3 right-3 font-mono text-[10px] text-[#10b981] font-bold z-20 bg-[#0f172a]/70 px-2 py-0.5 rounded border border-[#10b981]/30 animate-pulse">
+      <div className="absolute bottom-3 right-3 font-mono text-[10px] text-[#eab308] font-bold z-20 bg-[#161210]/80 px-2 py-0.5 rounded border border-[#eab308]/40 animate-pulse">
         {currentMetadata.stats.br}
       </div>
 
@@ -414,8 +414,8 @@ const HologramViewer: React.FC<HologramViewerProps> = ({ activeProductIndex, isP
           onClick={() => setAutoRot(prev => !prev)}
           className={`px-2 py-0.5 border text-[9px] font-mono tracking-wider uppercase cursor-pointer rounded-sm transition-colors ${
             autoRot 
-              ? 'border-[#10b981]/50 bg-[#10b981]/10 text-[#34d399]' 
-              : 'border-[#64748b]/30 bg-transparent text-[#94a3b8]'
+              ? 'border-[#ff7f41]/50 bg-[#ff7f41]/10 text-[#ff7f41]' 
+              : 'border-[#85746a]/40 bg-transparent text-[#85746a]'
           }`}
         >
           {autoRot ? 'AutoRotate: ON' : 'AutoRotate: OFF'}
@@ -425,7 +425,7 @@ const HologramViewer: React.FC<HologramViewerProps> = ({ activeProductIndex, isP
             setYaw(0.8);
             setPitch(0.35);
           }}
-          className="px-2 py-0.5 border border-[#3b82f6]/30 hover:bg-[#3b82f6]/10 text-[#93c5fd] text-[9px] font-mono tracking-wider uppercase cursor-pointer rounded-sm transition-colors"
+          className="px-2 py-0.5 border border-[#c1552c]/40 hover:bg-[#c1552c]/15 text-[#ff7f41] text-[9px] font-mono tracking-wider uppercase cursor-pointer rounded-sm transition-colors"
         >
           Reset View
         </button>
@@ -439,11 +439,11 @@ const HologramViewer: React.FC<HologramViewerProps> = ({ activeProductIndex, isP
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerUp}
         className="block w-full h-full touch-none z-10"
-        style={{ filter: 'drop-shadow(0 0 15px rgba(59,130,246,0.35))' }}
+        style={{ filter: 'drop-shadow(0 0 15px rgba(255,127,65,0.45))' }}
       />
 
       {/* Drag Hint */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 font-mono text-[9px] tracking-widest text-[#64748b] opacity-70 pointer-events-none group-hover:opacity-100 transition-opacity">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 font-mono text-[9px] tracking-widest text-[#85746a] opacity-75 pointer-events-none group-hover:opacity-100 transition-opacity">
         DRAG TO ROTATE 3D SYSTEM
       </div>
     </div>
