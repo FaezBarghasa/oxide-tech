@@ -162,7 +162,7 @@ export default function PCBBackground() {
             { angle: 135, length: bus1DiagLen },
             { angle: 90, length: gridUnit * 4 }
           ],
-          t % 3 === 0 ? '#ff7f41' : t % 3 === 1 ? '#d9531e' : '#eab308',
+          t % 3 === 0 ? '#ff7f41' : t % 3 === 1 ? '#c1552c' : '#eab308',
           0.15 + (t % 3) * 0.15
         );
 
@@ -232,7 +232,7 @@ export default function PCBBackground() {
         const sx = Math.round(rawSx / gridUnit) * gridUnit;
         const sy = Math.round(rawSy / gridUnit) * gridUnit;
 
-        const colors = ['#ff7f41', '#d9531e', '#eab308'];
+        const colors = ['#c1552c', '#ff7f41', '#d9531e', '#eab308'];
         const color = colors[Math.floor(Math.random() * colors.length)];
 
         // Strict PCB Rules: start orthogonal, 45 degree chamfer, resume orthogonal
@@ -652,8 +652,8 @@ export default function PCBBackground() {
         const coreTraceColor = trace.color;
         const glowAlpha = 0.08 + (scrollState.progress * 0.06) + (proximityFactor * 0.22);
         
-        ctx.strokeStyle = coreTraceColor === '#d9531e' 
-          ? `rgba(217, 83, 30, ${glowAlpha})` 
+        ctx.strokeStyle = coreTraceColor === '#c1552c' 
+          ? `rgba(193, 85, 44, ${glowAlpha})` 
           : coreTraceColor === '#eab308' 
           ? `rgba(234, 179, 8, ${glowAlpha})` 
           : `rgba(255, 127, 65, ${glowAlpha})`;

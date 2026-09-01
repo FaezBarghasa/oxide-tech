@@ -2,14 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import OxideLogo from './OxideLogo';
 import { t } from '../lib/i18n';
+import { FileText, Code2, Sparkles, Menu, X } from 'lucide-react';
+import { telemetry } from '../lib/analytics';
 
 interface NavigationProps {
   lang: 'fa' | 'en';
   setLang: (lang: 'fa' | 'en') => void;
+  onOpenWhitepaper?: () => void;
+  onOpenPortal?: () => void;
+  onOpenContact?: () => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ lang, setLang }) => {
+const Navigation: React.FC<NavigationProps> = ({ 
+  lang, 
+  setLang, 
+  onOpenWhitepaper, 
+  onOpenPortal,
+  onOpenContact 
+}) => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,60 +30,210 @@ const Navigation: React.FC<NavigationProps> = ({ lang, setLang }) => {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
       setScrollProgress(scrollPercent);
+      setIsScrolled(scrollTop > 40);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { href: '#manifesto', labelKey: 'NAV_MANIFESTO' },
+    { href: '#tech', labelKey: 'NAV_TECH' },
+    { href: '#products', labelKey: 'NAV_PRODUCTS' },
+    { href: '#architects', labelKey: 'NAV_ARCHITECTS' },
+    { href: '#opensource', labelKey: 'NAV_OPENSOURCE' },
+  ];
+
   return (
-    <nav dir="ltr" className="fixed top-0 left-0 w-full z-50 bg-[#07070a]/90 backdrop-blur-xl border-b border-[#ff7f41]/15">
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-[#0b0908]/90 backdrop-blur-2xl border-b border-[#c1552c]/25 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.6)]' 
+        : 'bg-[#0b0908]/60 backdrop-blur-md border-b border-[#ff7f41]/10 py-4'
+    }`}>
       {/* Scroll Progress Bar */}
       <div 
-        className="absolute top-0 left-0 h-[3px] bg-gradient-to-r from-[#d9531e] to-[#eab308] transition-all duration-75"
+        className="absolute top-0 left-0 h-[2.5px] bg-gradient-to-r from-[#d9531e] via-[#ff7f41] to-[#eab308] transition-all duration-75"
         style={{ width: `${scrollProgress}%` }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-20 h-20 flex justify-between items-center">
-        {/* Logo Lockup with Geometric Mark */}
-        <a href="#" className="flex items-center gap-3 group">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        {/* Logo Lockup */}
+        <a 
+          href="#" 
+          className="flex items-center gap-3 group focus:outline-none"
+          onClick={() => telemetry.track('logo_click', 'navigation')}
+        >
           <motion.div 
-            className="w-10 h-10 relative flex items-center justify-center cursor-pointer"
+            className="w-9 h-9 sm:w-10 sm:h-10 relative flex items-center justify-center cursor-pointer"
             whileHover={{ rotate: 90, scale: 1.05 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <OxideLogo className="w-full h-full drop-shadow-[0_0_8px_rgba(200,90,40,0.35)]" animated />
+            <OxideLogo className="w-full h-full drop-shadow-[0_0_12px_rgba(193,85,44,0.55)]" />
           </motion.div>
 
           {/* Wordmark */}
-          <div className="font-display text-xl font-semibold tracking-tight">
-            <span className="text-[#f8fafc]">oxide</span>
-            <span className="text-[#c2b5ad]">-</span>
-            <span className="text-[#d9531e]">tech</span>
+          <div className="font-mono text-lg sm:text-xl font-bold tracking-tight">
+            <span className="text-[#fbfbfb]">oxide</span>
+            <span className="text-[#85746a]">-</span>
+            <span className="text-[#ff7f41] group-hover:text-[#d9531e] transition-colors">tech</span>
           </div>
         </a>
 
-        {/* Navigation Links */}
-        <div className="hidden md:flex gap-10">
-          <a className={`${lang === 'fa' ? 'font-sans' : 'font-mono tracking-[0.15em]'} text-[12px] font-bold text-[#ff7f41] border-b border-[#ff7f41]/30 pb-1`} href="#philosophy">{t("NAV_PHILOSOPHY", lang)}</a>
-          <a className={`${lang === 'fa' ? 'font-sans' : 'font-mono tracking-[0.15em]'} text-[12px] font-bold text-[#94a3b8] hover:text-[#d9531e] transition-colors`} href="#journey">{t("NAV_JOURNEY", lang)}</a>
-          <a className={`${lang === 'fa' ? 'font-sans' : 'font-mono tracking-[0.15em]'} text-[12px] font-bold text-[#94a3b8] hover:text-[#d9531e] transition-colors`} href="#products">{t("NAV_PRODUCTS", lang)}</a>
-          <a className={`${lang === 'fa' ? 'font-sans' : 'font-mono tracking-[0.15em]'} text-[12px] font-bold text-[#94a3b8] hover:text-[#d9531e] transition-colors`} href="#team">{t("NAV_TEAM", lang)}</a>
+        {/* Desktop Navigation Links */}
+        <div className="hidden lg:flex items-center gap-7">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`text-xs font-medium text-[#c2b5ad] hover:text-[#ff7f41] transition-colors duration-200 py-1 hover:border-b-2 hover:border-[#ff7f41]`}
+              onClick={() => telemetry.track(`nav_${link.labelKey}`, 'navigation')}
+            >
+              {t(link.labelKey, lang)}
+            </a>
+          ))}
+
+          {/* Developer Portal Trigger */}
+          {onOpenPortal && (
+            <button
+              onClick={() => {
+                telemetry.track('open_portal_nav', 'portal_view');
+                onOpenPortal();
+              }}
+              className="flex items-center gap-1.5 text-xs text-[#ff7f41] hover:text-[#fbfbfb] transition-colors font-mono cursor-pointer"
+            >
+              <Code2 className="w-3.5 h-3.5" />
+              <span>{t("NAV_PORTAL", lang)}</span>
+            </button>
+          )}
+
+          {/* Whitepaper Trigger */}
+          {onOpenWhitepaper && (
+            <button
+              onClick={() => {
+                telemetry.track('open_whitepaper_nav', 'whitepaper');
+                onOpenWhitepaper();
+              }}
+              className="flex items-center gap-1.5 text-xs text-[#eab308] hover:text-[#fde047] transition-colors font-mono cursor-pointer"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>{t("NAV_WHITEPAPER", lang)}</span>
+            </button>
+          )}
         </div>
 
         {/* Action Group */}
-        <div className="flex items-center gap-4">
+        <div className="hidden sm:flex items-center gap-3">
+          {/* Language Toggle */}
           <button 
-            onClick={() => setLang(lang === 'en' ? 'fa' : 'en')}
-            className="border border-[#ff7f41]/30 hover:border-[#ff7f41] text-[#ff7f41] hover:bg-[#ff7f41]/5 font-mono text-xs font-bold px-3 py-2 transition-all duration-300 cursor-pointer rounded-sm"
+            onClick={() => {
+              const next = lang === 'en' ? 'fa' : 'en';
+              setLang(next);
+              telemetry.track(`toggle_lang_${next}`, 'navigation');
+            }}
+            className="border border-[#c1552c]/40 hover:border-[#ff7f41] text-[#ff7f41] hover:text-[#fbfbfb] hover:bg-[#c1552c]/15 font-mono text-xs font-semibold px-3 py-1.5 transition-all duration-200 cursor-pointer rounded-sm"
+            title="Toggle Language (Farsi / English)"
           >
             {lang === 'fa' ? "EN" : "فا"}
           </button>
-          <button className={`bg-[#ff7f41] hover:bg-[#d9531e] text-[#07070a] hover:text-[#f8fafc] ${lang === 'fa' ? 'font-sans' : 'font-mono tracking-[0.15em]'} text-xs font-bold px-6 py-2.5 transition-all duration-300 transform active:translate-y-[1px] shadow-[0_0_15px_rgba(255,127,65,0.2)] hover:shadow-[0_0_20px_rgba(217,83,30,0.35)] cursor-pointer`}>
-            {t("NAV_GET_LICENSE", lang)}
+
+          {/* Request Access Button */}
+          <button 
+            onClick={() => {
+              telemetry.track('request_access_nav', 'cta');
+              if (onOpenContact) {
+                onOpenContact();
+              } else {
+                const el = document.getElementById('contact');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="bg-[#c1552c] hover:bg-[#d9531e] text-[#fbfbfb] text-xs font-semibold px-5 py-2 transition-all duration-300 shadow-[0_0_20px_rgba(193,85,44,0.4)] hover:shadow-[0_0_25px_rgba(255,127,65,0.65)] cursor-pointer rounded-sm flex items-center gap-2"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>{t("NAV_GET_LICENSE", lang)}</span>
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="flex lg:hidden items-center gap-2">
+          <button 
+            onClick={() => setLang(lang === 'en' ? 'fa' : 'en')}
+            className="border border-[#c1552c]/40 text-[#ff7f41] font-mono text-xs px-2.5 py-1 rounded-sm"
+          >
+            {lang === 'fa' ? "EN" : "فا"}
+          </button>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-[#c2b5ad] hover:text-white p-2 rounded-sm"
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
+
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <motion.div 
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          exit={{ opacity: 0, height: 0 }}
+          className="lg:hidden bg-[#14110f] border-b border-[#c1552c]/20 px-6 py-5 flex flex-col gap-4"
+        >
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-sm font-medium text-[#c2b5ad] hover:text-[#ff7f41] py-1"
+            >
+              {t(link.labelKey, lang)}
+            </a>
+          ))}
+
+          {onOpenPortal && (
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenPortal();
+              }}
+              className="flex items-center gap-2 text-sm text-[#ff7f41] py-1 text-start"
+            >
+              <Code2 className="w-4 h-4" />
+              <span>{t("NAV_PORTAL", lang)}</span>
+            </button>
+          )}
+
+          {onOpenWhitepaper && (
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenWhitepaper();
+              }}
+              className="flex items-center gap-2 text-sm text-[#eab308] py-1 text-start"
+            >
+              <FileText className="w-4 h-4" />
+              <span>{t("NAV_WHITEPAPER", lang)}</span>
+            </button>
+          )}
+
+          <button 
+            onClick={() => {
+              setMobileMenuOpen(false);
+              if (onOpenContact) {
+                onOpenContact();
+              } else {
+                const el = document.getElementById('contact');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="w-full bg-[#c1552c] text-[#fbfbfb] text-xs font-semibold py-2.5 rounded-sm text-center mt-2 shadow-[0_0_15px_rgba(193,85,44,0.5)]"
+          >
+            {t("NAV_GET_LICENSE", lang)}
+          </button>
+        </motion.div>
+      )}
     </nav>
   );
 };

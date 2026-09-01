@@ -6,13 +6,14 @@ interface OxideLogoProps {
   traceColor?: string;
   viaBg?: string;
   viaRing?: string;
+  animated?: boolean;
 }
 
 export const OxideLogo: React.FC<OxideLogoProps> = ({
   className = 'w-10 h-10',
   size,
   traceColor = '#C1552C',
-  viaBg = '#0A0E14',
+  viaBg = '#0B0908',
   viaRing = '#C1552C',
 }) => {
   return (
@@ -69,7 +70,7 @@ export const OxideLogo: React.FC<OxideLogoProps> = ({
       {/* O: standard octagon pad shape (chamfered square) */}
       <polygon
         points="43,35 57,35 65,43 65,57 57,65 43,65 35,57 35,43"
-        fill="var(--via-bg, #0A0E14)"
+        fill="var(--via-bg, #0B0908)"
         stroke="var(--trace-color, #C1552C)"
         strokeWidth="4"
       />
