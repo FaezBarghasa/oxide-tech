@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { t } from '../lib/i18n';
-import { GitBranch, ExternalLink, Star, Terminal } from 'lucide-react';
+import { GitBranch, ExternalLink } from 'lucide-react';
 import { telemetry } from '../lib/analytics';
 
 interface OpenSourceProps {
@@ -12,7 +12,7 @@ const OpenSource: React.FC<OpenSourceProps> = ({ lang }) => {
   const repos = [
     {
       name: "mqtt-async-embedded",
-      desc: lang === 'fa' 
+      desc: lang === 'fa'
         ? "کلاینت فوق سبک، ناهمگام و بدون هیپ (Zero-Alloc) پروتکل MQTT v5 برای تارگت‌های no_std میکروکنترلری (STM32 & ESP32)."
         : "Lightweight zero-allocation async MQTT v5 client for bare-metal embedded targets with Embassy integration.",
       language: "Rust",
@@ -51,37 +51,36 @@ const OpenSource: React.FC<OpenSourceProps> = ({ lang }) => {
   return (
     <section id="opensource" className="mb-32 scroll-mt-24">
       {/* Section Header */}
-      <motion.div 
+      <motion.div
         className="mb-14 text-start"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
-        <span className="text-xs font-mono tracking-widest text-[#ff7f41] uppercase block mb-3 font-bold">
+        <span className="font-display text-xs font-mono tracking-widest text-[#ff7f41] uppercase block mb-3 font-bold">
           {t("OSS_SUB", lang)}
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#fbfbfb] font-bold tracking-tight">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-[#fbfbfb] font-bold tracking-tight">
           {t("OSS_TITLE", lang)}
         </h2>
-        <p className="text-sm text-[#c2b5ad] mt-3 max-w-2xl font-light">
-          {t("OSS_DESC", lang)}
-        </p>
-        <div className="h-[2px] w-20 bg-gradient-to-r from-[#c1552c] to-[#ff7f41] mt-4 rounded-full"></div>
+        <p className="text-sm text-[#c2b5ad] mt-3 max-w-2xl font-light">{t("OSS_DESC", lang)}</p>
+        <div className="h-[2px] w-20 bg-gradient-to-r from-[#c1552c] to-[#ff7f41] mt-4 rounded-full" />
       </motion.div>
 
-      {/* 2x2 Repos Grid */}
+      {/* 2×2 Repos Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {repos.map((repo, idx) => (
           <motion.div
             key={idx}
-            className="bg-[#161210]/80 backdrop-blur-xl border border-[#ff7f41]/15 p-7 rounded-sm hover:border-[#c1552c]/60 transition-all duration-300 flex flex-col justify-between group shadow-lg text-start relative overflow-hidden"
+            className="surface-card p-7 rounded-sm flex flex-col justify-between group text-start relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
-            transition={{ duration: 0.5, delay: idx * 0.1 }}
+            transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ y: -4, transition: { type: 'spring', stiffness: 380, damping: 26 } }}
           >
-            {/* Top Hover Line */}
+            {/* Top Hover Accent */}
             <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#c1552c] to-[#ff7f41] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             <div>
@@ -89,37 +88,36 @@ const OpenSource: React.FC<OpenSourceProps> = ({ lang }) => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2 text-[#ff7f41] font-mono text-sm font-bold">
                   <GitBranch className="w-4 h-4 text-[#c1552c]" />
-                  <span>{repo.name}</span>
+                  <span className="font-display">{repo.name}</span>
                 </div>
 
+                {/* Language badge with animated pulse dot */}
                 <span className="text-[10px] font-mono text-[#ff7f41] bg-[#c1552c]/10 border border-[#c1552c]/20 px-2 py-0.5 rounded-xs flex items-center gap-1 font-semibold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff7f41]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff7f41] animate-pulse" />
                   <span>{repo.language}</span>
                 </span>
               </div>
 
               {/* Description */}
-              <p className="text-xs sm:text-sm text-[#c2b5ad] leading-relaxed mb-6 font-light">
-                {repo.desc}
-              </p>
+              <p className="text-xs sm:text-sm text-[#c2b5ad] leading-relaxed mb-6 font-light">{repo.desc}</p>
             </div>
 
             {/* Footer */}
             <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-              <span className="font-mono text-[10px] text-[#85746a]">
-                {repo.tag}
-              </span>
+              <span className="font-mono text-[10px] text-[#85746a]">{repo.tag}</span>
 
-              <a
+              <motion.a
                 href={repo.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => telemetry.track(`view_repo_${repo.name}`, 'opensource_click')}
-                className="inline-flex items-center gap-1.5 text-xs font-mono text-[#ff7f41] hover:text-white hover:bg-[#c1552c] border border-[#c1552c]/30 px-3 py-1.5 rounded-sm transition-all duration-200"
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.1 }}
+                className="inline-flex items-center gap-2 text-xs font-mono text-[#ff7f41] hover:text-white hover:bg-[#c1552c] border border-[#c1552c]/30 px-3.5 py-1.5 rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7f41]"
               >
                 <span>{t("OSS_VIEW_GITHUB", lang)}</span>
                 <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         ))}

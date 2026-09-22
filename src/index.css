@@ -1,24 +1,144 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-primary: #0b0908;
-  --color-bg-secondary: #14110f;
-  --color-bg-tertiary: #1b1714;
-  --color-bg-card: rgba(22, 18, 16, 0.75);
-  --color-accent-orange: #c1552c;
+  /* ── Core Palette ──────────────────────────────────────── */
+  --color-bg-primary:         #0b0908;
+  --color-bg-secondary:       #14110f;
+  --color-bg-tertiary:        #1b1714;
+  --color-bg-card:            rgba(22, 18, 16, 0.82);
+  --color-accent-orange:      #c1552c;
   --color-accent-orange-bright: #ff7f41;
-  --color-accent-ember: #d9531e;
-  --color-accent-gold: #eab308;
-  --color-accent-emerald: #10b981;
-  --color-text-primary: #fbfbfb;
-  --color-text-secondary: #c2b5ad;
-  --color-text-muted: #85746a;
-  --color-border-subtle: rgba(255, 127, 65, 0.12);
-  --color-border-accent: rgba(193, 85, 44, 0.35);
-  --font-sans: 'Vazirmatn', 'Yekan Bakh', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --color-accent-ember:       #d9531e;
+  --color-accent-gold:        #eab308;
+  --color-accent-emerald:     #10b981;
+  --color-text-primary:       #fbfbfb;
+  --color-text-secondary:     #c2b5ad;
+  --color-text-muted:         #85746a;
+  --color-border-subtle:      rgba(255, 127, 65, 0.12);
+  --color-border-accent:      rgba(193, 85, 44, 0.35);
+
+  /* ── Typography ───────────────────────────────────────── */
+  --font-display: 'Space Grotesk', 'Vazirmatn', system-ui, sans-serif;
+  --font-sans:    'Vazirmatn', 'Yekan Bakh', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* ── Motion ───────────────────────────────────────────── */
+  --ease-spring:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-expo:   cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ── Elevation Surfaces ──────────────────────────────────── */
+/* Base → Card → Elevated → Modal */
+.surface-base {
+  background-color: rgba(11, 9, 8, 0.95);
+  border: 1px solid rgba(255, 127, 65, 0.08);
+}
+
+.surface-card {
+  background-color: rgba(22, 18, 16, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 127, 65, 0.14);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.055),
+    0 4px 24px -4px rgba(0, 0, 0, 0.5),
+    0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.surface-elevated {
+  background-color: rgba(27, 23, 20, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(193, 85, 44, 0.28);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    0 8px 32px -8px rgba(0, 0, 0, 0.65),
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(193, 85, 44, 0.08);
+}
+
+.surface-modal {
+  background-color: rgba(22, 18, 16, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(193, 85, 44, 0.45);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.10),
+    0 24px 64px -16px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(193, 85, 44, 0.15),
+    0 0 80px rgba(193, 85, 44, 0.08);
+}
+
+/* ── Glass Panel (legacy, kept for compat) ───────────────── */
+.glass-panel {
+  background-color: rgba(22, 18, 16, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 127, 65, 0.12);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ── Nav underline (zero layout shift) ──────────────────── */
+.nav-link {
+  position: relative;
+  transition: color 200ms ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ff7f41;
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 200ms var(--ease-spring);
+}
+
+html[dir="rtl"] .nav-link::after {
+  transform-origin: right center;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── LTR enforcement (phones, emails) ───────────────────── */
+.dir-ltr,
+a[href^="tel:"],
+a[href^="mailto:"],
+[data-ltr="true"] {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: left;
+}
+
+/* ── Glass Panel Hover (legacy) ─────────────────────────── */
+.glass-panel-hover {
+  transition: all 0.3s var(--ease-spring);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(193, 85, 44, 0.45);
+  box-shadow: 0 10px 30px -10px rgba(193, 85, 44, 0.25);
+  transform: translateY(-3px);
+}
+
+/* ── Scrollbars ──────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0b0908; }
+::-webkit-scrollbar-thumb {
+  background: rgba(193, 85, 44, 0.35);
+  border-radius: 3px;
+  transition: background 200ms var(--ease-spring);
+}
+::-webkit-scrollbar-thumb:hover { background: #ff7f41; }
+
+/* ── Base ─────────────────────────────────────────────────── */
 @layer base {
   :root {
     --pcb-grid: radial-gradient(circle, rgba(193, 85, 44, 0.16) 1px, transparent 1px);
@@ -38,12 +158,14 @@
     line-height: 1.6;
   }
 
+  .font-display {
+    font-family: var(--font-display);
+  }
+
   .pcb-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background-image: var(--pcb-grid);
     background-size: 44px 44px;
     opacity: 0.3;
@@ -55,7 +177,12 @@
     width: 100%;
     height: 120px;
     z-index: 99;
-    background: linear-gradient(0deg, rgba(193, 85, 44, 0) 0%, rgba(193, 85, 44, 0.04) 50%, rgba(193, 85, 44, 0) 100%);
+    background: linear-gradient(
+      0deg,
+      rgba(193, 85, 44, 0) 0%,
+      rgba(193, 85, 44, 0.04) 50%,
+      rgba(193, 85, 44, 0) 100%
+    );
     position: fixed;
     top: -120px;
     animation: scanline 9s linear infinite;
@@ -63,7 +190,7 @@
   }
 
   @keyframes scanline {
-    0% { top: -120px; }
+    0%   { top: -120px; }
     100% { top: 100%; }
   }
 
@@ -75,66 +202,37 @@
 
   @keyframes blink {
     from, to { opacity: 1; }
-    50% { opacity: 0; }
+    50%       { opacity: 0; }
   }
 }
 
-/* Glassmorphism & Card Utility Classes */
-.glass-panel {
-  background-color: rgba(22, 18, 16, 0.75);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 127, 65, 0.12);
+/* ── Animations ──────────────────────────────────────────── */
+
+/* Infinite scroll ticker — two copies side by side */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* Ensure all phone numbers and email links are strictly Left-to-Right */
-.dir-ltr,
-a[href^="tel:"],
-a[href^="mailto:"],
-[data-ltr="true"] {
-  direction: ltr !important;
-  unicode-bidi: isolate !important;
-  text-align: left;
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 30s linear infinite;
+  will-change: transform;
 }
 
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.ticker-track:hover {
+  animation-play-state: paused;
 }
 
-.glass-panel-hover:hover {
-  border-color: rgba(193, 85, 44, 0.45);
-  box-shadow: 0 10px 30px -10px rgba(193, 85, 44, 0.25);
-  transform: translateY(-3px);
-}
-
-/* Custom Scrollbars */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #0b0908;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(193, 85, 44, 0.35);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #ff7f41;
-}
-
-/* 3D Animations */
+/* GPU-promoted hologram canvas */
 @keyframes hologram-float {
-  0%, 100% {
-    transform: translateY(0px) rotateY(0deg);
-  }
-  50% {
-    transform: translateY(-12px) rotateY(4deg);
-  }
+  0%, 100% { transform: translateY(0px) rotateY(0deg); }
+  50%       { transform: translateY(-12px) rotateY(4deg); }
 }
 
 @keyframes spin-slow {
-  0% { transform: rotate(0deg); }
+  0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
@@ -149,6 +247,11 @@ a[href^="mailto:"],
   }
 }
 
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .animate-hologram-float {
   animation: hologram-float 8s ease-in-out infinite;
 }
@@ -159,4 +262,11 @@ a[href^="mailto:"],
 
 .animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Focus ring system (Emil keyboard ergonomics) */
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #ff7f41, 0 0 0 4px rgba(255, 127, 65, 0.25);
+  border-radius: 2px;
 }

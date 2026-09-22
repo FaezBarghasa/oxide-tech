@@ -7,6 +7,17 @@ interface FloatingContactProps {
   lang: 'fa' | 'en';
 }
 
+// Stagger variants for contact entries
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.05, delayChildren: 0.05 } },
+};
+
+const itemVariants = {
+  hidden:  { opacity: 0, y: 10, scale: 0.96 },
+  visible: { opacity: 1, y: 0,  scale: 1,   transition: { ease: [0.16, 1, 0.3, 1], duration: 0.3 } },
+};
+
 const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
   const [open, setOpen] = useState(false);
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
@@ -21,31 +32,31 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
   const contacts = [
     {
       id: "monib",
-      name: lang === 'fa' ? "منیب مختاری" : "Monib Mokhtari",
-      role: lang === 'fa' ? "مدیرعامل و معمار سیستم" : "CEO & Architect",
-      phone: "+989123617481",
+      name:         lang === 'fa' ? "منیب مختاری" : "Monib Mokhtari",
+      role:         lang === 'fa' ? "مدیرعامل و معمار سیستم" : "CEO & Architect",
+      phone:        "+989123617481",
       phoneDisplay: "+98 912 361 7481",
-      email: "monib.mokhtari85@gmail.com",
-      accent: "#c1552c"
+      email:        "monib.mokhtari85@gmail.com",
+      accent:       "#c1552c",
     },
     {
       id: "faez",
-      name: lang === 'fa' ? "فائز برق‌آسا" : "Faez Barghasa",
-      role: lang === 'fa' ? "مدیر ارشد فناوری (CTO)" : "CTO & Systems Eng",
-      phone: "+989359180154",
+      name:         lang === 'fa' ? "فائز برق‌آسا" : "Faez Barghasa",
+      role:         lang === 'fa' ? "مدیر ارشد فناوری (CTO)" : "CTO & Systems Eng",
+      phone:        "+989359180154",
       phoneDisplay: "+98 935 918 0154",
-      email: "faez.barghasa.org@gmail.com",
-      accent: "#ff7f41"
+      email:        "faez.barghasa.org@gmail.com",
+      accent:       "#ff7f41",
     },
     {
       id: "office",
-      name: lang === 'fa' ? "جیمیل سازمانی اکساید تک" : "Oxide Tech Corporate",
-      role: lang === 'fa' ? "ارتباطات رسمی" : "Corporate Gmail",
-      phone: null,
+      name:         lang === 'fa' ? "جیمیل سازمانی اکساید تک" : "Oxide Tech Corporate",
+      role:         lang === 'fa' ? "ارتباطات رسمی" : "Corporate Gmail",
+      phone:        null,
       phoneDisplay: null,
-      email: "oxide.embedded@gmail.com",
-      accent: "#eab308"
-    }
+      email:        "oxide.embedded@gmail.com",
+      accent:       "#eab308",
+    },
   ];
 
   return (
@@ -53,43 +64,52 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: 15, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 15, scale: 0.9 }}
-            className="mb-3 w-80 bg-[#161210] border border-[#c1552c]/50 p-4 rounded-sm shadow-[0_10px_35px_rgba(0,0,0,0.85)] text-start space-y-3 backdrop-blur-xl"
+            key="contact-panel"
+            initial={{ opacity: 0, y: 16, scale: 0.88 }}
+            animate={{ opacity: 1, y: 0,  scale: 1 }}
+            exit={  { opacity: 0, y: 16, scale: 0.88 }}
+            transition={{ type: 'spring', stiffness: 350, damping: 28 }}
+            className="mb-3 w-80 surface-modal p-4 rounded-sm text-start space-y-3"
           >
+            {/* Header */}
             <div className="flex items-center justify-between border-b border-[#c1552c]/20 pb-2">
               <span className="text-xs font-bold text-[#fbfbfb] flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
                 <span>{lang === 'fa' ? "ارتباط مستقیم با مهندسان" : "Direct Engineering Lines"}</span>
               </span>
-              <button 
+              <motion.button
                 onClick={() => setOpen(false)}
-                className="text-[#85746a] hover:text-white p-0.5 cursor-pointer"
+                whileTap={{ scale: 0.88 }}
+                className="text-[#85746a] hover:text-white p-0.5 cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7f41] rounded"
               >
                 <X className="w-4 h-4" />
-              </button>
+              </motion.button>
             </div>
 
-            <div className="space-y-2.5">
+            {/* Staggered contact entries */}
+            <motion.div
+              className="space-y-2.5"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
               {contacts.map((c) => (
-                <div 
-                  key={c.id} 
-                  className="p-2.5 rounded-sm bg-[#0b0908] border border-[#c1552c]/20 hover:border-[#c1552c]/50 transition-colors"
+                <motion.div
+                  key={c.id}
+                  variants={itemVariants}
+                  className="p-2.5 rounded-sm bg-[#0b0908] border border-[#c1552c]/20 hover:border-[#c1552c]/50 transition-colors duration-200"
                 >
                   <div className="flex items-center justify-between mb-1.5">
                     <span className="text-xs font-bold text-[#fbfbfb]">{c.name}</span>
-                    <span className="text-[9px] font-mono text-[#ff7f41]">{c.role}</span>
+                    <span className="text-[9px] font-mono" style={{ color: c.accent }}>{c.role}</span>
                   </div>
 
                   <div className="flex items-center gap-1.5 text-[11px] font-mono" dir="ltr">
-                    {/* Call Link if available */}
                     {c.phone && c.phoneDisplay ? (
                       <a
                         href={`tel:${c.phone}`}
                         onClick={() => telemetry.track(`call_${c.id}`, 'cta')}
-                        className="flex-1 flex items-center gap-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#ff7f41] hover:text-white px-2 py-1 rounded transition-colors dir-ltr"
-                        title="Call direct line"
+                        className="flex-1 flex items-center gap-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#ff7f41] hover:text-white px-2 py-1 rounded transition-all duration-150 dir-ltr"
                         dir="ltr"
                       >
                         <Phone className="w-3 h-3 flex-shrink-0" />
@@ -99,8 +119,7 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
                       <a
                         href={`mailto:${c.email}`}
                         onClick={() => telemetry.track(`email_${c.id}`, 'cta')}
-                        className="flex-1 flex items-center gap-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#c2b5ad] hover:text-white px-2 py-1 rounded transition-colors dir-ltr truncate text-[10px]"
-                        title="Send Gmail"
+                        className="flex-1 flex items-center gap-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#c2b5ad] hover:text-white px-2 py-1 rounded transition-all duration-150 dir-ltr truncate text-[10px]"
                         dir="ltr"
                       >
                         <Mail className="w-3 h-3 flex-shrink-0 text-[#ff7f41]" />
@@ -108,23 +127,21 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
                       </a>
                     )}
 
-                    {/* Email Link if phone was primary */}
                     {c.phone && (
                       <a
                         href={`mailto:${c.email}`}
                         onClick={() => telemetry.track(`email_${c.id}`, 'cta')}
-                        className="flex items-center justify-center p-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#c2b5ad] hover:text-white rounded transition-colors dir-ltr"
-                        title="Send Gmail"
+                        className="flex items-center justify-center p-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#c2b5ad] hover:text-white rounded transition-all duration-150 dir-ltr"
                         dir="ltr"
                       >
                         <Mail className="w-3.5 h-3.5" />
                       </a>
                     )}
 
-                    {/* Copy Email Button */}
-                    <button
+                    <motion.button
                       onClick={() => handleCopy(c.email, `${c.id}_email`)}
-                      className="p-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#85746a] hover:text-white rounded transition-colors cursor-pointer"
+                      whileTap={{ scale: 0.88 }}
+                      className="p-1.5 bg-[#1b1714] hover:bg-[#c1552c] text-[#85746a] hover:text-white rounded transition-all duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#ff7f41]"
                       title="Copy Gmail"
                     >
                       {copiedItem === `${c.id}_email` ? (
@@ -132,11 +149,11 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
                       ) : (
                         <Copy className="w-3.5 h-3.5" />
                       )}
-                    </button>
+                    </motion.button>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             <div className="text-[9px] font-mono text-[#85746a] text-center pt-1 border-t border-white/5">
               // Direct access to core decision makers
@@ -145,17 +162,20 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
         )}
       </AnimatePresence>
 
-      {/* Trigger Button */}
-      <button
+      {/* FAB Trigger — spring hover/tap */}
+      <motion.button
         onClick={() => {
           setOpen(!open);
           telemetry.track('floating_contact_toggle', 'cta');
         }}
-        className="w-13 h-13 rounded-full bg-[#c1552c] hover:bg-[#d9531e] text-white shadow-[0_0_25px_rgba(193,85,44,0.75)] flex items-center justify-center cursor-pointer transition-transform hover:scale-105 active:scale-95"
+        whileHover={{ scale: 1.10 }}
+        whileTap={  { scale: 0.88 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+        className="w-13 h-13 rounded-full bg-[#c1552c] hover:bg-[#d9531e] text-white shadow-[0_0_25px_rgba(193,85,44,0.75)] flex items-center justify-center cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7f41] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0908]"
         aria-label="Direct Phone & Gmail Contacts"
       >
         <PhoneCall className="w-5 h-5" />
-      </button>
+      </motion.button>
     </div>
   );
 };
