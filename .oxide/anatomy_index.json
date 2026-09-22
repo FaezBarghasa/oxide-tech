@@ -2,23 +2,174 @@
   "project_name": "oxide-tech",
   "root_path": "/home/jrad/WebstormProjects/oxide-tech",
   "files": {
+    "src/components/HologramViewer.tsx": {
+      "relative_path": "src/components/HologramViewer.tsx",
+      "language": "typescript",
+      "size_bytes": 14716,
+      "line_count": 453,
+      "content_hash": "202f77d160a99e1bd8b5523ad72f04a8dbcbd2c3a311e9f958a329fee5ae700b",
+      "symbols": [
+        {
+          "name": "HoloVertex",
+          "qualified_name": "HoloVertex",
+          "kind": "interface",
+          "start_line": 3,
+          "end_line": 7,
+          "signature": "interface HoloVertex {"
+        },
+        {
+          "name": "HoloModel",
+          "qualified_name": "HoloModel",
+          "kind": "interface",
+          "start_line": 9,
+          "end_line": 12,
+          "signature": "interface HoloModel {"
+        },
+        {
+          "name": "HologramViewerProps",
+          "qualified_name": "HologramViewerProps",
+          "kind": "interface",
+          "start_line": 142,
+          "end_line": 145,
+          "signature": "interface HologramViewerProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T10:40:12.653072766Z"
+    },
+    "src/page.tsx": {
+      "relative_path": "src/page.tsx",
+      "language": "typescript",
+      "size_bytes": 186,
+      "line_count": 10,
+      "content_hash": "5ba93ce5b728663da94d5bc0137387fa159d87ea2a986e9e2435fc4cb798c893",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.683807387Z"
+    },
     "package.json": {
       "relative_path": "package.json",
       "language": "json",
-      "size_bytes": 902,
+      "size_bytes": 883,
       "line_count": 37,
-      "content_hash": "eefb73cb60696505dcc484b9bcb7244334dac282a5e224aab4bcc752ce99b9e6",
+      "content_hash": "a32f53037603af677af9963e1ae5d0ef67d0f1fb8d5976a9e13ef302fbc883e9",
       "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.835742453Z"
+      "last_scanned_at": "2026-09-22T10:40:12.638988934Z"
     },
-    "tsconfig.json": {
-      "relative_path": "tsconfig.json",
-      "language": "json",
-      "size_bytes": 508,
-      "line_count": 26,
-      "content_hash": "e93e15c3794e43a117964ea191ae985cbedea70c41d3d82b2e20aa8d07374fe4",
+    "src/components/Architects.tsx": {
+      "relative_path": "src/components/Architects.tsx",
+      "language": "typescript",
+      "size_bytes": 8116,
+      "line_count": 172,
+      "content_hash": "d3fd5ee0c95f383130dcb1e36cedac2f604bd5a17186b2a047b04d5e44e06ad6",
+      "symbols": [
+        {
+          "name": "ArchitectsProps",
+          "qualified_name": "ArchitectsProps",
+          "kind": "interface",
+          "start_line": 7,
+          "end_line": 9,
+          "signature": "interface ArchitectsProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T10:40:12.677223771Z"
+    },
+    "src/App.tsx": {
+      "relative_path": "src/App.tsx",
+      "language": "typescript",
+      "size_bytes": 11279,
+      "line_count": 251,
+      "content_hash": "6d106a7e74aa50926b6fc04f187e1fadea5d5a814277e2b992f9d4fe9be2cae0",
       "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.884842549Z"
+      "last_scanned_at": "2026-09-22T10:40:12.683669659Z"
+    },
+    "src/lib/datasheet.ts": {
+      "relative_path": "src/lib/datasheet.ts",
+      "language": "typescript",
+      "size_bytes": 938,
+      "line_count": 32,
+      "content_hash": "6d0406b2f16e9dbcdd7cca727d6e93684069c0144414a21f78f6ec6f007f2c4e",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.680917482Z"
+    },
+    "src/components/Hero.tsx": {
+      "relative_path": "src/components/Hero.tsx",
+      "language": "typescript",
+      "size_bytes": 10310,
+      "line_count": 244,
+      "content_hash": "c1f10e3aa9339f851df47940aecc5316a95e7213947289ec498d0a07fde49ff8",
+      "symbols": [
+        {
+          "name": "HeroProps",
+          "qualified_name": "HeroProps",
+          "kind": "interface",
+          "start_line": 8,
+          "end_line": 13,
+          "signature": "interface HeroProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T10:40:12.650543802Z"
+    },
+    "src/components/IndustrialDashboard.tsx": {
+      "relative_path": "src/components/IndustrialDashboard.tsx",
+      "language": "typescript",
+      "size_bytes": 3409,
+      "line_count": 86,
+      "content_hash": "304d91722da8eb554b13e38efb49b7ad1684fdcc7d881f8ea72f0792ffc173eb",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.670477495Z"
+    },
+    "src/components/HeaderNav.tsx": {
+      "relative_path": "src/components/HeaderNav.tsx",
+      "language": "typescript",
+      "size_bytes": 9044,
+      "line_count": 156,
+      "content_hash": "18e7e59739ac2bfd7b7cee1689abdeb4565d813a083b2583b6f87715d2fa81c2",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.673817388Z"
+    },
+    "pnpm-lock.yaml": {
+      "relative_path": "pnpm-lock.yaml",
+      "language": "yaml",
+      "size_bytes": 97635,
+      "line_count": 3048,
+      "content_hash": "b0deeae59b944c2eb595d851a6a13a149755f0a3cf2f04628ed9905a30c4beb2",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.688151742Z"
+    },
+    "src/lib/audio.ts": {
+      "relative_path": "src/lib/audio.ts",
+      "language": "typescript",
+      "size_bytes": 743,
+      "line_count": 20,
+      "content_hash": "54004f4899dc1f7048af324b3bfd545a0bbdcdde7155df3c444d68e7555659bf",
+      "symbols": [
+        {
+          "name": "playHardwareTone",
+          "qualified_name": "playHardwareTone",
+          "kind": "function",
+          "start_line": 1,
+          "end_line": 20,
+          "signature": "function playHardwareTone(frequency: number, duration: number, muted: boolean) {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T10:40:12.680601659Z"
+    },
+    "pnpm-workspace.yaml": {
+      "relative_path": "pnpm-workspace.yaml",
+      "language": "yaml",
+      "size_bytes": 143,
+      "line_count": 7,
+      "content_hash": "5ba337c22edb60ad983c776a15888176bb89aa413cc4d9f079655120458b3366",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.688639725Z"
+    },
+    "src/layout.tsx": {
+      "relative_path": "src/layout.tsx",
+      "language": "typescript",
+      "size_bytes": 206,
+      "line_count": 13,
+      "content_hash": "d7ee23996f13dc936216942b831dcfe10ebd022fb8dd6e4d1ce9a418b1fde240",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.683753958Z"
     },
     "docs/oxide-tech-visual-identity.md": {
       "relative_path": "docs/oxide-tech-visual-identity.md",
@@ -1348,32 +1499,23 @@
           "signature": "## Version History"
         }
       ],
-      "last_scanned_at": "2026-09-22T09:26:14.885404147Z"
+      "last_scanned_at": "2026-09-22T10:40:12.688528118Z"
     },
-    "src/components/OpenSource.tsx": {
-      "relative_path": "src/components/OpenSource.tsx",
+    "src/main.tsx": {
+      "relative_path": "src/main.tsx",
       "language": "typescript",
-      "size_bytes": 5887,
-      "line_count": 131,
-      "content_hash": "999ce7d7bc3e62ceb4af0710fa8eeb2c5a7c1fbfdb24cce5d4d4abc118746d21",
-      "symbols": [
-        {
-          "name": "OpenSourceProps",
-          "qualified_name": "OpenSourceProps",
-          "kind": "interface",
-          "start_line": 7,
-          "end_line": 9,
-          "signature": "interface OpenSourceProps {"
-        }
-      ],
-      "last_scanned_at": "2026-09-22T09:26:14.863602726Z"
+      "size_bytes": 231,
+      "line_count": 10,
+      "content_hash": "5580d48b0fec68698a113d45a640b88d479dc35eb1f4b87c51f67c6cc81cee9b",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.679696931Z"
     },
     "src/components/FloatingContact.tsx": {
       "relative_path": "src/components/FloatingContact.tsx",
       "language": "typescript",
-      "size_bytes": 7047,
-      "line_count": 163,
-      "content_hash": "0d6b0d75f57b63da68ad25f80c896a09ea1b155b440f18a666f4dc904084852f",
+      "size_bytes": 8135,
+      "line_count": 183,
+      "content_hash": "c05d950c1de09353091650eec13976ed137f2f2851810b550f14d6872f0c0054",
       "symbols": [
         {
           "name": "FloatingContactProps",
@@ -1384,104 +1526,7 @@
           "signature": "interface FloatingContactProps {"
         }
       ],
-      "last_scanned_at": "2026-09-22T09:26:14.843354309Z"
-    },
-    "src/main.tsx": {
-      "relative_path": "src/main.tsx",
-      "language": "typescript",
-      "size_bytes": 231,
-      "line_count": 10,
-      "content_hash": "5580d48b0fec68698a113d45a640b88d479dc35eb1f4b87c51f67c6cc81cee9b",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.877164203Z"
-    },
-    "src/vite-env.d.ts": {
-      "relative_path": "src/vite-env.d.ts",
-      "language": "typescript",
-      "size_bytes": 38,
-      "line_count": 1,
-      "content_hash": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.877176076Z"
-    },
-    "index.html": {
-      "relative_path": "index.html",
-      "language": "html",
-      "size_bytes": 2633,
-      "line_count": 35,
-      "content_hash": "5c3bb2eef38071c29b129b5595cd7868ea507f27acff332cd27fd13381618123",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.885540688Z"
-    },
-    "src/components/OxideLogo.tsx": {
-      "relative_path": "src/components/OxideLogo.tsx",
-      "language": "typescript",
-      "size_bytes": 2647,
-      "line_count": 93,
-      "content_hash": "8b4a7bd685af2bcc0dd8b70e96e3fc90734084043e463d6325ee7aa9a9077ae5",
-      "symbols": [
-        {
-          "name": "OxideLogoProps",
-          "qualified_name": "OxideLogoProps",
-          "kind": "interface",
-          "start_line": 3,
-          "end_line": 10,
-          "signature": "interface OxideLogoProps {"
-        }
-      ],
-      "last_scanned_at": "2026-09-22T09:26:14.844570117Z"
-    },
-    "src/components/HologramViewer.tsx": {
-      "relative_path": "src/components/HologramViewer.tsx",
-      "language": "typescript",
-      "size_bytes": 14716,
-      "line_count": 453,
-      "content_hash": "202f77d160a99e1bd8b5523ad72f04a8dbcbd2c3a311e9f958a329fee5ae700b",
-      "symbols": [
-        {
-          "name": "HoloVertex",
-          "qualified_name": "HoloVertex",
-          "kind": "interface",
-          "start_line": 3,
-          "end_line": 7,
-          "signature": "interface HoloVertex {"
-        },
-        {
-          "name": "HoloModel",
-          "qualified_name": "HoloModel",
-          "kind": "interface",
-          "start_line": 9,
-          "end_line": 12,
-          "signature": "interface HoloModel {"
-        },
-        {
-          "name": "HologramViewerProps",
-          "qualified_name": "HologramViewerProps",
-          "kind": "interface",
-          "start_line": 142,
-          "end_line": 145,
-          "signature": "interface HologramViewerProps {"
-        }
-      ],
-      "last_scanned_at": "2026-09-22T09:26:14.849389416Z"
-    },
-    "server.js": {
-      "relative_path": "server.js",
-      "language": "javascript",
-      "size_bytes": 655,
-      "line_count": 21,
-      "content_hash": "b20803c0ebc95b619f1537809535f990961a1bd82efdad9844c4f94ee5b57da3",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.884662077Z"
-    },
-    "public/sitemap.xml": {
-      "relative_path": "public/sitemap.xml",
-      "language": "xml",
-      "size_bytes": 1089,
-      "line_count": 39,
-      "content_hash": "cb7387edd13a31099fbf4bd38c2e054de9dd0e74c45d24650946f73ec9f6656e",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.885160748Z"
+      "last_scanned_at": "2026-09-22T10:40:12.646813285Z"
     },
     "README.md": {
       "relative_path": "README.md",
@@ -1563,25 +1608,25 @@
           "signature": "### 4. Run the Production Server"
         }
       ],
-      "last_scanned_at": "2026-09-22T09:26:14.835786384Z"
+      "last_scanned_at": "2026-09-22T10:40:12.639031677Z"
     },
-    "src/components/Manifesto.tsx": {
-      "relative_path": "src/components/Manifesto.tsx",
+    "src/components/OpenSource.tsx": {
+      "relative_path": "src/components/OpenSource.tsx",
       "language": "typescript",
-      "size_bytes": 5620,
-      "line_count": 155,
-      "content_hash": "56166c70724584001f760dce55966301585d1690e33406c6773bb5054f95335e",
+      "size_bytes": 6131,
+      "line_count": 129,
+      "content_hash": "803e824b6d71fa3b9884b92a41301b53972007d00d832effcc52ca6cb3267ef2",
       "symbols": [
         {
-          "name": "ManifestoProps",
-          "qualified_name": "ManifestoProps",
+          "name": "OpenSourceProps",
+          "qualified_name": "OpenSourceProps",
           "kind": "interface",
-          "start_line": 14,
-          "end_line": 16,
-          "signature": "interface ManifestoProps {"
+          "start_line": 7,
+          "end_line": 9,
+          "signature": "interface OpenSourceProps {"
         }
       ],
-      "last_scanned_at": "2026-09-22T09:26:14.873103596Z"
+      "last_scanned_at": "2026-09-22T10:40:12.666428779Z"
     },
     "src/components/Inventory.tsx": {
       "relative_path": "src/components/Inventory.tsx",
@@ -1599,43 +1644,140 @@
           "signature": "interface InventoryProps {"
         }
       ],
-      "last_scanned_at": "2026-09-22T09:26:14.866468897Z"
+      "last_scanned_at": "2026-09-22T10:40:12.669128714Z"
     },
-    "src/components/IndustrialDashboard.tsx": {
-      "relative_path": "src/components/IndustrialDashboard.tsx",
+    "src/components/Navigation.tsx": {
+      "relative_path": "src/components/Navigation.tsx",
       "language": "typescript",
-      "size_bytes": 3409,
-      "line_count": 86,
-      "content_hash": "304d91722da8eb554b13e38efb49b7ad1684fdcc7d881f8ea72f0792ffc173eb",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.867904357Z"
+      "size_bytes": 9018,
+      "line_count": 196,
+      "content_hash": "7c668cabfc8e85b2d4c83104438699787720328e3bdc36afd6b8ac507ffd9ed4",
+      "symbols": [
+        {
+          "name": "NavigationProps",
+          "qualified_name": "NavigationProps",
+          "kind": "interface",
+          "start_line": 8,
+          "end_line": 12,
+          "signature": "interface NavigationProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T10:40:12.641756546Z"
     },
-    "src/layout.tsx": {
-      "relative_path": "src/layout.tsx",
+    "src/index.css": {
+      "relative_path": "src/index.css",
+      "language": "css",
+      "size_bytes": 7820,
+      "line_count": 272,
+      "content_hash": "d1554c1818e6139cd7e03c7aae1b252de5f56229502e7b6c8b3b599b544ffcf3",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.680956664Z"
+    },
+    "deploy.sh": {
+      "relative_path": "deploy.sh",
+      "language": "bash",
+      "size_bytes": 10676,
+      "line_count": 241,
+      "content_hash": "da5778294ec5b16abc61c335903e25837c4f44be117171cd24e982c0eaea3bfd",
+      "symbols": [
+        {
+          "name": "step",
+          "qualified_name": "step",
+          "kind": "function",
+          "start_line": 25,
+          "end_line": 25,
+          "signature": "step()  { echo -e \"\\n${BOLD}${GREEN}▶ $*${RESET}\"; }"
+        },
+        {
+          "name": "warn",
+          "qualified_name": "warn",
+          "kind": "function",
+          "start_line": 26,
+          "end_line": 26,
+          "signature": "warn()  { echo -e \"${YELLOW}⚠ $*${RESET}\"; }"
+        },
+        {
+          "name": "error",
+          "qualified_name": "error",
+          "kind": "function",
+          "start_line": 27,
+          "end_line": 27,
+          "signature": "error() { echo -e \"${RED}✖ $*${RESET}\"; exit 1; }"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T10:40:12.687954649Z"
+    },
+    "server.js": {
+      "relative_path": "server.js",
+      "language": "javascript",
+      "size_bytes": 655,
+      "line_count": 21,
+      "content_hash": "b20803c0ebc95b619f1537809535f990961a1bd82efdad9844c4f94ee5b57da3",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.687162716Z"
+    },
+    "vite.config.ts": {
+      "relative_path": "vite.config.ts",
       "language": "typescript",
-      "size_bytes": 206,
-      "line_count": 13,
-      "content_hash": "d7ee23996f13dc936216942b831dcfe10ebd022fb8dd6e4d1ce9a418b1fde240",
+      "size_bytes": 708,
+      "line_count": 22,
+      "content_hash": "c7b7cc4b3a6b6a08f0a4fb916bb4d4e41804d5767611bce43d4c1ad53a198192",
       "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.881269927Z"
+      "last_scanned_at": "2026-09-22T10:40:12.688236041Z"
     },
-    ".idea/vcs.xml": {
-      "relative_path": ".idea/vcs.xml",
-      "language": "xml",
-      "size_bytes": 167,
+    "metadata.json": {
+      "relative_path": "metadata.json",
+      "language": "json",
+      "size_bytes": 223,
       "line_count": 6,
-      "content_hash": "6323e12648862a0a96fc0d7877672817d6cd91e2c2a3c3d78f1090db23c6e88e",
+      "content_hash": "033304b2aface8119b8ae87f55468f9a84270feac512d0bfb197f2168cbdda0e",
       "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.835845749Z"
+      "last_scanned_at": "2026-09-22T10:40:12.687062982Z"
     },
-    "src/lib/i18n.ts": {
-      "relative_path": "src/lib/i18n.ts",
-      "language": "typescript",
-      "size_bytes": 26789,
-      "line_count": 337,
-      "content_hash": "630db448516a61cb707c7a2dd60da8738365f02723d081219c594648ca657f5d",
+    "index.html": {
+      "relative_path": "index.html",
+      "language": "html",
+      "size_bytes": 2900,
+      "line_count": 38,
+      "content_hash": "22f9ebf8ebfe9d21248d4603988b49f66b5b2b7e259285e756b2cf177ddd8c97",
       "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.877975137Z"
+      "last_scanned_at": "2026-09-22T10:40:12.688662284Z"
+    },
+    "abstract_logo_symbol.svg": {
+      "relative_path": "abstract_logo_symbol.svg",
+      "language": "svg",
+      "size_bytes": 1802,
+      "line_count": 58,
+      "content_hash": "68f5dabe5ae27f397fc6ab37bcb15b04407e57485df7fb5d69806548e86a9c87",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.639005556Z"
+    },
+    "assets/abstract_logo_symbol.svg": {
+      "relative_path": "assets/abstract_logo_symbol.svg",
+      "language": "svg",
+      "size_bytes": 1803,
+      "line_count": 58,
+      "content_hash": "0d29e7dabd98ac0a8863455219bf09969b1da0f4ccf51120c113fd9b6f4713e3",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.687200709Z"
+    },
+    "src/components/Manifesto.tsx": {
+      "relative_path": "src/components/Manifesto.tsx",
+      "language": "typescript",
+      "size_bytes": 5500,
+      "line_count": 120,
+      "content_hash": "975021d112a588b9a642f1c0e774a8c181940ed1966dc7c5ddade137572fe042",
+      "symbols": [
+        {
+          "name": "ManifestoProps",
+          "qualified_name": "ManifestoProps",
+          "kind": "interface",
+          "start_line": 14,
+          "end_line": 16,
+          "signature": "interface ManifestoProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T10:40:12.675447560Z"
     },
     "src/lib/analytics.ts": {
       "relative_path": "src/lib/analytics.ts",
@@ -1685,106 +1827,7 @@
           "signature": "public getRecentEvents(): AnalyticsEvent[] {"
         }
       ],
-      "last_scanned_at": "2026-09-22T09:26:14.878331330Z"
-    },
-    "src/page.tsx": {
-      "relative_path": "src/page.tsx",
-      "language": "typescript",
-      "size_bytes": 186,
-      "line_count": 10,
-      "content_hash": "5ba93ce5b728663da94d5bc0137387fa159d87ea2a986e9e2435fc4cb798c893",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.881322169Z"
-    },
-    "pnpm-lock.yaml": {
-      "relative_path": "pnpm-lock.yaml",
-      "language": "yaml",
-      "size_bytes": 98934,
-      "line_count": 3071,
-      "content_hash": "bed93ee17cad70becbe68a4b17c007ba0b92c1f3f064c6fb2ccb32f61472c152",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.885031331Z"
-    },
-    "src/components/Footer.tsx": {
-      "relative_path": "src/components/Footer.tsx",
-      "language": "typescript",
-      "size_bytes": 7150,
-      "line_count": 130,
-      "content_hash": "066471557816efb227c9cd87c9184bd381a3806bf357fa9c92de8a35b5e56d3b",
-      "symbols": [
-        {
-          "name": "FooterProps",
-          "qualified_name": "FooterProps",
-          "kind": "interface",
-          "start_line": 7,
-          "end_line": 9,
-          "signature": "interface FooterProps {"
-        }
-      ],
-      "last_scanned_at": "2026-09-22T09:26:14.851745043Z"
-    },
-    "src/lib/datasheet.ts": {
-      "relative_path": "src/lib/datasheet.ts",
-      "language": "typescript",
-      "size_bytes": 938,
-      "line_count": 32,
-      "content_hash": "6d0406b2f16e9dbcdd7cca727d6e93684069c0144414a21f78f6ec6f007f2c4e",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.878447687Z"
-    },
-    "metadata.json": {
-      "relative_path": "metadata.json",
-      "language": "json",
-      "size_bytes": 223,
-      "line_count": 6,
-      "content_hash": "033304b2aface8119b8ae87f55468f9a84270feac512d0bfb197f2168cbdda0e",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.884559968Z"
-    },
-    "src/components/Hero.tsx": {
-      "relative_path": "src/components/Hero.tsx",
-      "language": "typescript",
-      "size_bytes": 8743,
-      "line_count": 205,
-      "content_hash": "51221967aec222858bcca074a19f6e4a4ce285363aec20529e74318af091f341",
-      "symbols": [
-        {
-          "name": "HeroProps",
-          "qualified_name": "HeroProps",
-          "kind": "interface",
-          "start_line": 8,
-          "end_line": 13,
-          "signature": "interface HeroProps {"
-        }
-      ],
-      "last_scanned_at": "2026-09-22T09:26:14.846690656Z"
-    },
-    "src/components/TechStack.tsx": {
-      "relative_path": "src/components/TechStack.tsx",
-      "language": "typescript",
-      "size_bytes": 6234,
-      "line_count": 157,
-      "content_hash": "e59f90d38b355ac1b5c14f9246750a92f34b23e3eeb34a3267dfc32163334b9f",
-      "symbols": [
-        {
-          "name": "TechStackProps",
-          "qualified_name": "TechStackProps",
-          "kind": "interface",
-          "start_line": 6,
-          "end_line": 8,
-          "signature": "interface TechStackProps {"
-        }
-      ],
-      "last_scanned_at": "2026-09-22T09:26:14.876784263Z"
-    },
-    "src/App.tsx": {
-      "relative_path": "src/App.tsx",
-      "language": "typescript",
-      "size_bytes": 11151,
-      "line_count": 248,
-      "content_hash": "600b5efcb2279689594be4739add891c3e7985609b06f657229a9085d1da5707",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.881184441Z"
+      "last_scanned_at": "2026-09-22T10:40:12.680805876Z"
     },
     ".vscode/settings.json": {
       "relative_path": ".vscode/settings.json",
@@ -1793,25 +1836,34 @@
       "line_count": 4,
       "content_hash": "b600e0018746105bba4ea9a0929e4459e9694f5c7e58b9228426e81a8e4ddfe4",
       "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.885564434Z"
+      "last_scanned_at": "2026-09-22T10:40:12.688684843Z"
     },
-    "src/components/Architects.tsx": {
-      "relative_path": "src/components/Architects.tsx",
+    "src/lib/i18n.ts": {
+      "relative_path": "src/lib/i18n.ts",
       "language": "typescript",
-      "size_bytes": 6992,
-      "line_count": 150,
-      "content_hash": "8747d09842d9f2776ff4be85beff96a7da738ec45d26300d119a56661faa7f6d",
-      "symbols": [
-        {
-          "name": "ArchitectsProps",
-          "qualified_name": "ArchitectsProps",
-          "kind": "interface",
-          "start_line": 7,
-          "end_line": 9,
-          "signature": "interface ArchitectsProps {"
-        }
-      ],
-      "last_scanned_at": "2026-09-22T09:26:14.874717153Z"
+      "size_bytes": 27755,
+      "line_count": 347,
+      "content_hash": "ef5d2af9debdbe8e38ee49b6ccf8b960c639a2a52fcd2eb7ea82660e1af9f34f",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.680481741Z"
+    },
+    "public/sitemap.xml": {
+      "relative_path": "public/sitemap.xml",
+      "language": "xml",
+      "size_bytes": 1089,
+      "line_count": 39,
+      "content_hash": "cb7387edd13a31099fbf4bd38c2e054de9dd0e74c45d24650946f73ec9f6656e",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.688272847Z"
+    },
+    "tsconfig.json": {
+      "relative_path": "tsconfig.json",
+      "language": "json",
+      "size_bytes": 508,
+      "line_count": 26,
+      "content_hash": "e93e15c3794e43a117964ea191ae985cbedea70c41d3d82b2e20aa8d07374fe4",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.687304005Z"
     },
     "src/components/PCBBackground.tsx": {
       "relative_path": "src/components/PCBBackground.tsx",
@@ -1845,86 +1897,43 @@
           "signature": "function addParallelBus(startX: number, startY: number, count: number, spacing: number, directions: any[], color = '#00ff9f', depth = 0.25) {"
         }
       ],
-      "last_scanned_at": "2026-09-22T09:26:14.841217148Z"
+      "last_scanned_at": "2026-09-22T10:40:12.644658323Z"
     },
-    "src/components/Views.tsx": {
-      "relative_path": "src/components/Views.tsx",
+    ".idea/vcs.xml": {
+      "relative_path": ".idea/vcs.xml",
+      "language": "xml",
+      "size_bytes": 167,
+      "line_count": 6,
+      "content_hash": "6323e12648862a0a96fc0d7877672817d6cd91e2c2a3c3d78f1090db23c6e88e",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T10:40:12.639091042Z"
+    },
+    "src/components/Footer.tsx": {
+      "relative_path": "src/components/Footer.tsx",
       "language": "typescript",
-      "size_bytes": 31296,
-      "line_count": 459,
-      "content_hash": "6dcd4152da674a0b9ea06d5385d9090eb5453a66312cb7a089791504ef507836",
+      "size_bytes": 8552,
+      "line_count": 171,
+      "content_hash": "ae9fa2641c7af9461b7c2c9430421006d8cfd34ff5000543c45f4b87112604e3",
       "symbols": [
         {
-          "name": "GatewayView",
-          "qualified_name": "GatewayView",
-          "kind": "function",
-          "start_line": 9,
-          "end_line": 70,
-          "signature": "function GatewayView({ audioMuted, setView, lang }: any) {"
-        },
-        {
-          "name": "t",
-          "qualified_name": "t",
-          "kind": "method",
-          "start_line": 349,
-          "end_line": 349,
-          "signature": "t(\"DS // \", lang)}{t(p.titleKey, lang)}"
-        }
-      ],
-      "last_scanned_at": "2026-09-22T09:26:14.862148269Z"
-    },
-    "abstract_logo_symbol.svg": {
-      "relative_path": "abstract_logo_symbol.svg",
-      "language": "svg",
-      "size_bytes": 1802,
-      "line_count": 58,
-      "content_hash": "68f5dabe5ae27f397fc6ab37bcb15b04407e57485df7fb5d69806548e86a9c87",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.835759075Z"
-    },
-    "assets/abstract_logo_symbol.svg": {
-      "relative_path": "assets/abstract_logo_symbol.svg",
-      "language": "svg",
-      "size_bytes": 1803,
-      "line_count": 58,
-      "content_hash": "0d29e7dabd98ac0a8863455219bf09969b1da0f4ccf51120c113fd9b6f4713e3",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.884697696Z"
-    },
-    "src/components/TechBox.tsx": {
-      "relative_path": "src/components/TechBox.tsx",
-      "language": "typescript",
-      "size_bytes": 1584,
-      "line_count": 40,
-      "content_hash": "346429e9f1ba8b340848828baa3410bbc2cbb4cc3e80cb10282ea037e250dc50",
-      "symbols": [
-        {
-          "name": "TechBoxProps",
-          "qualified_name": "TechBoxProps",
+          "name": "FooterProps",
+          "qualified_name": "FooterProps",
           "kind": "interface",
-          "start_line": 3,
-          "end_line": 11,
-          "signature": "interface TechBoxProps extends React.HTMLAttributes<HTMLDivElement> {"
-        },
-        {
-          "name": "TechBox",
-          "qualified_name": "TechBox",
-          "kind": "function",
-          "start_line": 13,
-          "end_line": 31,
-          "signature": "function TechBox({ children, variant = 'panel', interactive = false, innerClassName = '', className = '', ...props }: TechBoxProps) {"
+          "start_line": 8,
+          "end_line": 10,
+          "signature": "interface FooterProps {"
         }
       ],
-      "last_scanned_at": "2026-09-22T09:26:14.877076341Z"
+      "last_scanned_at": "2026-09-22T10:40:12.655436693Z"
     },
-    "src/index.css": {
-      "relative_path": "src/index.css",
-      "language": "css",
-      "size_bytes": 3618,
-      "line_count": 162,
-      "content_hash": "ac88cfb802fcd7a643e67c629d535c362ec8fb40c2a6bf92818e5039709f0daa",
+    "src/vite-env.d.ts": {
+      "relative_path": "src/vite-env.d.ts",
+      "language": "typescript",
+      "size_bytes": 38,
+      "line_count": 1,
+      "content_hash": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
       "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.878476182Z"
+      "last_scanned_at": "2026-09-22T10:40:12.679709992Z"
     },
     "docs/oxide-tech-product-design-guide.md": {
       "relative_path": "docs/oxide-tech-product-design-guide.md",
@@ -2350,7 +2359,95 @@
           "signature": "#### Stat Card"
         }
       ],
-      "last_scanned_at": "2026-09-22T09:26:14.885503881Z"
+      "last_scanned_at": "2026-09-22T10:40:12.688626665Z"
+    },
+    "src/components/TechBox.tsx": {
+      "relative_path": "src/components/TechBox.tsx",
+      "language": "typescript",
+      "size_bytes": 1584,
+      "line_count": 40,
+      "content_hash": "346429e9f1ba8b340848828baa3410bbc2cbb4cc3e80cb10282ea037e250dc50",
+      "symbols": [
+        {
+          "name": "TechBoxProps",
+          "qualified_name": "TechBoxProps",
+          "kind": "interface",
+          "start_line": 3,
+          "end_line": 11,
+          "signature": "interface TechBoxProps extends React.HTMLAttributes<HTMLDivElement> {"
+        },
+        {
+          "name": "TechBox",
+          "qualified_name": "TechBox",
+          "kind": "function",
+          "start_line": 13,
+          "end_line": 31,
+          "signature": "function TechBox({ children, variant = 'panel', interactive = false, innerClassName = '', className = '', ...props }: TechBoxProps) {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T10:40:12.679618569Z"
+    },
+    "src/components/OxideLogo.tsx": {
+      "relative_path": "src/components/OxideLogo.tsx",
+      "language": "typescript",
+      "size_bytes": 2647,
+      "line_count": 93,
+      "content_hash": "8b4a7bd685af2bcc0dd8b70e96e3fc90734084043e463d6325ee7aa9a9077ae5",
+      "symbols": [
+        {
+          "name": "OxideLogoProps",
+          "qualified_name": "OxideLogoProps",
+          "kind": "interface",
+          "start_line": 3,
+          "end_line": 10,
+          "signature": "interface OxideLogoProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T10:40:12.647982782Z"
+    },
+    "src/components/Views.tsx": {
+      "relative_path": "src/components/Views.tsx",
+      "language": "typescript",
+      "size_bytes": 31296,
+      "line_count": 459,
+      "content_hash": "6dcd4152da674a0b9ea06d5385d9090eb5453a66312cb7a089791504ef507836",
+      "symbols": [
+        {
+          "name": "GatewayView",
+          "qualified_name": "GatewayView",
+          "kind": "function",
+          "start_line": 9,
+          "end_line": 70,
+          "signature": "function GatewayView({ audioMuted, setView, lang }: any) {"
+        },
+        {
+          "name": "t",
+          "qualified_name": "t",
+          "kind": "method",
+          "start_line": 349,
+          "end_line": 349,
+          "signature": "t(\"DS // \", lang)}{t(p.titleKey, lang)}"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T10:40:12.665049128Z"
+    },
+    "src/components/TechStack.tsx": {
+      "relative_path": "src/components/TechStack.tsx",
+      "language": "typescript",
+      "size_bytes": 8188,
+      "line_count": 192,
+      "content_hash": "9ee77dfd15912e289c9317e8cfc8f64242c227d436e5ad1d2b90fbb2d56246fd",
+      "symbols": [
+        {
+          "name": "TechStackProps",
+          "qualified_name": "TechStackProps",
+          "kind": "interface",
+          "start_line": 6,
+          "end_line": 8,
+          "signature": "interface TechStackProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T10:40:12.679332428Z"
     },
     ".idea/modules.xml": {
       "relative_path": ".idea/modules.xml",
@@ -2359,72 +2456,9 @@
       "line_count": 8,
       "content_hash": "4946f71ad0a575ebd20d45769dc938dac91c219e3c96b60353e851f04689f49e",
       "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.835831501Z"
-    },
-    "src/components/HeaderNav.tsx": {
-      "relative_path": "src/components/HeaderNav.tsx",
-      "language": "typescript",
-      "size_bytes": 9044,
-      "line_count": 156,
-      "content_hash": "18e7e59739ac2bfd7b7cee1689abdeb4565d813a083b2583b6f87715d2fa81c2",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.871548217Z"
-    },
-    "src/components/Navigation.tsx": {
-      "relative_path": "src/components/Navigation.tsx",
-      "language": "typescript",
-      "size_bytes": 7031,
-      "line_count": 181,
-      "content_hash": "5327605f671b7f745e028910f43068e0908c6798263352709334f7866e742f2f",
-      "symbols": [
-        {
-          "name": "NavigationProps",
-          "qualified_name": "NavigationProps",
-          "kind": "interface",
-          "start_line": 8,
-          "end_line": 12,
-          "signature": "interface NavigationProps {"
-        }
-      ],
-      "last_scanned_at": "2026-09-22T09:26:14.838004282Z"
-    },
-    "vite.config.ts": {
-      "relative_path": "vite.config.ts",
-      "language": "typescript",
-      "size_bytes": 708,
-      "line_count": 22,
-      "content_hash": "c7b7cc4b3a6b6a08f0a4fb916bb4d4e41804d5767611bce43d4c1ad53a198192",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.885128691Z"
-    },
-    "pnpm-workspace.yaml": {
-      "relative_path": "pnpm-workspace.yaml",
-      "language": "yaml",
-      "size_bytes": 72,
-      "line_count": 4,
-      "content_hash": "41bc33aa5327fe5a13bae4e9b787e3ac5ae7d990e121b0d1c3353c6708cc3686",
-      "symbols": [],
-      "last_scanned_at": "2026-09-22T09:26:14.885516942Z"
-    },
-    "src/lib/audio.ts": {
-      "relative_path": "src/lib/audio.ts",
-      "language": "typescript",
-      "size_bytes": 743,
-      "line_count": 20,
-      "content_hash": "54004f4899dc1f7048af324b3bfd545a0bbdcdde7155df3c444d68e7555659bf",
-      "symbols": [
-        {
-          "name": "playHardwareTone",
-          "qualified_name": "playHardwareTone",
-          "kind": "function",
-          "start_line": 1,
-          "end_line": 20,
-          "signature": "function playHardwareTone(frequency: number, duration: number, muted: boolean) {"
-        }
-      ],
-      "last_scanned_at": "2026-09-22T09:26:14.878097430Z"
+      "last_scanned_at": "2026-09-22T10:40:12.639076794Z"
     }
   },
-  "total_symbols": 252,
-  "last_updated": "2026-09-22T09:26:14.885594117Z"
+  "total_symbols": 255,
+  "last_updated": "2026-09-22T10:40:12.688721649Z"
 }
