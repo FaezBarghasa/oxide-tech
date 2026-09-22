@@ -43,8 +43,8 @@ export default function App() {
       name: lang === 'fa' ? "منیب مختاری" : "Monib Mokhtari",
       role: lang === 'fa' ? "مدیرعامل و معمار سیستم‌های نهفته" : "CEO & Embedded Systems Architect",
       focus: lang === 'fa' ? "طراحی سخت‌افزار، معماری بردهای صنعتی و قراردادهای ایمنی" : "Hardware Co-Design, Industrial PCB & Safety Architecture",
-      phone: "+989123617481",
-      phoneDisplay: "+98 912 361 7481",
+      phone: "+989123069848",
+      phoneDisplay: "+98 912 3069 848",
       email: "monib.mokhtari85@gmail.com",
       accent: "#c1552c",
       initials: "MM"
@@ -54,8 +54,8 @@ export default function App() {
       name: lang === 'fa' ? "فائز برق‌آسا" : "Faez Barghasa",
       role: lang === 'fa' ? "مدیر ارشد فناوری (CTO) و مهندس سیستم" : "CTO & Lead Systems Engineer",
       focus: lang === 'fa' ? "توسعه هسته Rust no_std، پایپلاین‌های Zero-Copy و هوش لبه‌ای" : "Rust no_std, Zero-Copy DMA & Edge AI Deployment",
-      phone: "+989359180154",
-      phoneDisplay: "+98 935 918 0154",
+      phone: "+989355085393",
+      phoneDisplay: "+98 935 5085 393",
       email: "faez.barghasa.org@gmail.com",
       accent: "#ff7f41",
       initials: "FB"
