@@ -4,21 +4,21 @@
 # Usage:
 #   chmod +x deploy.sh
 #   sudo ./deploy.sh                          # HTTP only (localhost preview)
-#   sudo DOMAIN=oxide-tech.ir ./deploy.sh     # Nginx + Let's Encrypt TLS
-#   sudo DOMAIN=oxide-tech.ir SKIP_TLS=1 ./deploy.sh  # Nginx, no TLS
+#   sudo DOMAIN=oxide-tech.com ./deploy.sh     # Nginx + Let's Encrypt TLS
+#   sudo DOMAIN=oxide-tech.com SKIP_TLS=1 ./deploy.sh  # Nginx, no TLS
 # =============================================================================
 
 set -euo pipefail
 
 # ── Config ───────────────────────────────────────────────────────────────────
-DOMAIN="${DOMAIN:-}"
+DOMAIN="${DOMAIN:-oxide-tech.com}"
 SKIP_TLS="${SKIP_TLS:-0}"
 APP_DIR="/var/www/oxide-tech"
 REPO_URL="${REPO_URL:-}"          # optional: git clone source
 NODE_VERSION="22"
 PNPM_VERSION="9"
 NGINX_SITE="oxide-tech"
-CERTBOT_EMAIL="${CERTBOT_EMAIL:-admin@oxide-tech.ir}"
+CERTBOT_EMAIL="${CERTBOT_EMAIL:-oxide.embedded@gmail.com}"
 
 # ── Colors ───────────────────────────────────────────────────────────────────
 BOLD="\033[1m"; GREEN="\033[32m"; YELLOW="\033[33m"; RED="\033[31m"; RESET="\033[0m"
