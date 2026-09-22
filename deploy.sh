@@ -120,7 +120,7 @@ cat > "/etc/nginx/sites-available/${NGINX_SITE}" <<NGINX
 server {
     listen 80;
     listen [::]:80;
-    server_name ${DOMAIN:-_};
+    server_name ${DOMAIN:-_} www.${DOMAIN:-_};
 
     root ${APP_DIR}/dist;
     index index.html;

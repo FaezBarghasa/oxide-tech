@@ -14,8 +14,8 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden:  { opacity: 0, y: 10, scale: 0.96 },
-  visible: { opacity: 1, y: 0,  scale: 1,   transition: { ease: [0.16, 1, 0.3, 1], duration: 0.3 } },
+  hidden: { opacity: 0, y: 10, scale: 0.96 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { ease: [0.16, 1, 0.3, 1], duration: 0.3 } },
 };
 
 const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
@@ -32,30 +32,30 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
   const contacts = [
     {
       id: "monib",
-      name:         lang === 'fa' ? "منیب مختاری" : "Monib Mokhtari",
-      role:         lang === 'fa' ? "مدیرعامل و معمار سیستم" : "CEO & Architect",
-      phone:        "+989123617481",
-      phoneDisplay: "+98 912 361 7481",
-      email:        "monib.mokhtari85@gmail.com",
-      accent:       "#c1552c",
+      name: lang === 'fa' ? "منیب مختاری" : "Monib Mokhtari",
+      role: lang === 'fa' ? "مدیرعامل و معمار سیستم" : "CEO & Architect",
+      phone: "+989123069848",
+      phoneDisplay: "+98 912 3069 848",
+      email: "monib.mokhtari85@gmail.com",
+      accent: "#c1552c",
     },
     {
       id: "faez",
-      name:         lang === 'fa' ? "فائز برق‌آسا" : "Faez Barghasa",
-      role:         lang === 'fa' ? "مدیر ارشد فناوری (CTO)" : "CTO & Systems Eng",
-      phone:        "+989359180154",
-      phoneDisplay: "+98 935 918 0154",
-      email:        "faez.barghasa.org@gmail.com",
-      accent:       "#ff7f41",
+      name: lang === 'fa' ? "فائز برق‌آسا" : "Faez Barghasa",
+      role: lang === 'fa' ? "مدیر ارشد فناوری (CTO)" : "CTO & Systems Eng",
+      phone: "+989355085393",
+      phoneDisplay: "+98 935 5085 393",
+      email: "faez.barghasa.org@gmail.com",
+      accent: "#ff7f41",
     },
     {
       id: "office",
-      name:         lang === 'fa' ? "جیمیل سازمانی اکساید تک" : "Oxide Tech Corporate",
-      role:         lang === 'fa' ? "ارتباطات رسمی" : "Corporate Gmail",
-      phone:        null,
+      name: lang === 'fa' ? "جیمیل سازمانی اکساید تک" : "Oxide Tech Corporate",
+      role: lang === 'fa' ? "ارتباطات رسمی" : "Corporate Gmail",
+      phone: null,
       phoneDisplay: null,
-      email:        "oxide.embedded@gmail.com",
-      accent:       "#eab308",
+      email: "oxide.embedded@gmail.com",
+      accent: "#eab308",
     },
   ];
 
@@ -66,8 +66,8 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
           <motion.div
             key="contact-panel"
             initial={{ opacity: 0, y: 16, scale: 0.88 }}
-            animate={{ opacity: 1, y: 0,  scale: 1 }}
-            exit={  { opacity: 0, y: 16, scale: 0.88 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 16, scale: 0.88 }}
             transition={{ type: 'spring', stiffness: 350, damping: 28 }}
             className="mb-3 w-80 surface-modal p-4 rounded-sm text-start space-y-3"
           >
@@ -169,7 +169,7 @@ const FloatingContact: React.FC<FloatingContactProps> = ({ lang }) => {
           telemetry.track('floating_contact_toggle', 'cta');
         }}
         whileHover={{ scale: 1.10 }}
-        whileTap={  { scale: 0.88 }}
+        whileTap={{ scale: 0.88 }}
         transition={{ type: 'spring', stiffness: 400, damping: 20 }}
         className="w-13 h-13 rounded-full bg-[#c1552c] hover:bg-[#d9531e] text-white shadow-[0_0_25px_rgba(193,85,44,0.75)] flex items-center justify-center cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7f41] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0908]"
         aria-label="Direct Phone & Gmail Contacts"
