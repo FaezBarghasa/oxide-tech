@@ -109,11 +109,11 @@ export default function App() {
         {/* Direct Phone & Gmail Contact Section (No Forms, Pure Direct Access) */}
         <motion.section
           id="contact"
-          className="mb-32 relative py-16 px-6 sm:px-12 border border-[#c1552c]/40 bg-[#161210]/90 backdrop-blur-xl rounded-sm max-w-5xl mx-auto overflow-hidden shadow-2xl scroll-mt-24 text-start"
+          className="mb-32 relative py-16 px-6 sm:px-12 surface-elevated rounded-sm max-w-5xl mx-auto overflow-hidden shadow-2xl scroll-mt-24 text-start"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Top Border Gradient */}
           <div className="absolute top-0 left-0 w-full h-[2.5px] bg-gradient-to-r from-[#c1552c] via-[#ff7f41] to-[#eab308]" />
@@ -135,9 +135,10 @@ export default function App() {
           {/* Direct Founders Contact Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {directContacts.map((c) => (
-              <div
+              <motion.div
                 key={c.id}
-                className="p-6 bg-[#0b0908]/90 border border-[#c1552c]/30 rounded-sm hover:border-[#ff7f41]/60 transition-all duration-300 relative group flex flex-col justify-between shadow-lg"
+                className="p-6 surface-card rounded-sm relative group flex flex-col justify-between"
+                whileHover={{ y: -4, transition: { type: 'spring', stiffness: 380, damping: 26 } }}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -174,8 +175,9 @@ export default function App() {
                         {c.phoneDisplay}
                       </a>
                     </div>
-                    <button
+                    <motion.button
                       onClick={() => handleCopy(c.phoneDisplay, `${c.id}_phone`)}
+                      whileTap={{ scale: 0.88 }}
                       className="text-[10px] text-[#85746a] hover:text-white px-2 py-1 bg-[#1b1714] rounded cursor-pointer transition-colors"
                       title="Copy Phone Number"
                     >
@@ -184,7 +186,7 @@ export default function App() {
                       ) : (
                         <span>COPY</span>
                       )}
-                    </button>
+                    </motion.button>
                   </div>
 
                   {/* Gmail Mailto */}
@@ -200,8 +202,9 @@ export default function App() {
                         {c.email}
                       </a>
                     </div>
-                    <button
+                    <motion.button
                       onClick={() => handleCopy(c.email, `${c.id}_email`)}
+                      whileTap={{ scale: 0.88 }}
                       className="text-[10px] text-[#85746a] hover:text-white px-2 py-1 bg-[#1b1714] rounded cursor-pointer transition-colors"
                       title="Copy Gmail"
                     >
@@ -210,10 +213,10 @@ export default function App() {
                       ) : (
                         <span>COPY</span>
                       )}
-                    </button>
+                    </motion.button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
