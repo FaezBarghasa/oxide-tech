@@ -1,0 +1,2430 @@
+{
+  "project_name": "oxide-tech",
+  "root_path": "/home/jrad/WebstormProjects/oxide-tech",
+  "files": {
+    "package.json": {
+      "relative_path": "package.json",
+      "language": "json",
+      "size_bytes": 902,
+      "line_count": 37,
+      "content_hash": "eefb73cb60696505dcc484b9bcb7244334dac282a5e224aab4bcc752ce99b9e6",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.835742453Z"
+    },
+    "tsconfig.json": {
+      "relative_path": "tsconfig.json",
+      "language": "json",
+      "size_bytes": 508,
+      "line_count": 26,
+      "content_hash": "e93e15c3794e43a117964ea191ae985cbedea70c41d3d82b2e20aa8d07374fe4",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.884842549Z"
+    },
+    "docs/oxide-tech-visual-identity.md": {
+      "relative_path": "docs/oxide-tech-visual-identity.md",
+      "language": "markdown",
+      "size_bytes": 34443,
+      "line_count": 1205,
+      "content_hash": "3fdd5cee6efe8fc026b1d316f69e1e75a6b824783860e350c72463884930beaa",
+      "symbols": [
+        {
+          "name": "oxide-tech Visual Identity System",
+          "qualified_name": "H1: oxide-tech Visual Identity System",
+          "kind": "module",
+          "start_line": 1,
+          "end_line": 1,
+          "signature": "# oxide-tech Visual Identity System"
+        },
+        {
+          "name": "The Embedded Rust Authority — Brand Guidelines v1.0",
+          "qualified_name": "H3: The Embedded Rust Authority — Brand Guidelines v1.0",
+          "kind": "module",
+          "start_line": 2,
+          "end_line": 2,
+          "signature": "### The Embedded Rust Authority — Brand Guidelines v1.0"
+        },
+        {
+          "name": "Table of Contents",
+          "qualified_name": "H2: Table of Contents",
+          "kind": "module",
+          "start_line": 9,
+          "end_line": 9,
+          "signature": "## Table of Contents"
+        },
+        {
+          "name": "1. Brand Foundation",
+          "qualified_name": "H2: 1. Brand Foundation",
+          "kind": "module",
+          "start_line": 27,
+          "end_line": 27,
+          "signature": "## 1. Brand Foundation"
+        },
+        {
+          "name": "1.1 The Name: oxide-tech",
+          "qualified_name": "H3: 1.1 The Name: oxide-tech",
+          "kind": "module",
+          "start_line": 29,
+          "end_line": 29,
+          "signature": "### 1.1 The Name: oxide-tech"
+        },
+        {
+          "name": "1.2 Brand Essence",
+          "qualified_name": "H3: 1.2 Brand Essence",
+          "kind": "module",
+          "start_line": 39,
+          "end_line": 39,
+          "signature": "### 1.2 Brand Essence"
+        },
+        {
+          "name": "1.3 Brand Pillars",
+          "qualified_name": "H3: 1.3 Brand Pillars",
+          "kind": "module",
+          "start_line": 45,
+          "end_line": 45,
+          "signature": "### 1.3 Brand Pillars"
+        },
+        {
+          "name": "1.4 Brand Personality",
+          "qualified_name": "H3: 1.4 Brand Personality",
+          "kind": "module",
+          "start_line": 55,
+          "end_line": 55,
+          "signature": "### 1.4 Brand Personality"
+        },
+        {
+          "name": "1.5 Brand Archetype",
+          "qualified_name": "H3: 1.5 Brand Archetype",
+          "kind": "module",
+          "start_line": 65,
+          "end_line": 65,
+          "signature": "### 1.5 Brand Archetype"
+        },
+        {
+          "name": "2. Brand Positioning",
+          "qualified_name": "H2: 2. Brand Positioning",
+          "kind": "module",
+          "start_line": 74,
+          "end_line": 74,
+          "signature": "## 2. Brand Positioning"
+        },
+        {
+          "name": "2.1 Market Position",
+          "qualified_name": "H3: 2.1 Market Position",
+          "kind": "module",
+          "start_line": 76,
+          "end_line": 76,
+          "signature": "### 2.1 Market Position"
+        },
+        {
+          "name": "2.2 Target Audiences",
+          "qualified_name": "H3: 2.2 Target Audiences",
+          "kind": "module",
+          "start_line": 86,
+          "end_line": 86,
+          "signature": "### 2.2 Target Audiences"
+        },
+        {
+          "name": "2.3 Brand Promise",
+          "qualified_name": "H3: 2.3 Brand Promise",
+          "kind": "module",
+          "start_line": 100,
+          "end_line": 100,
+          "signature": "### 2.3 Brand Promise"
+        },
+        {
+          "name": "2.4 Competitive Differentiation",
+          "qualified_name": "H3: 2.4 Competitive Differentiation",
+          "kind": "module",
+          "start_line": 104,
+          "end_line": 104,
+          "signature": "### 2.4 Competitive Differentiation"
+        },
+        {
+          "name": "3. Logo System",
+          "qualified_name": "H2: 3. Logo System",
+          "kind": "module",
+          "start_line": 116,
+          "end_line": 116,
+          "signature": "## 3. Logo System"
+        },
+        {
+          "name": "3.1 The Mark: Abstract Geometric Identity",
+          "qualified_name": "H3: 3.1 The Mark: Abstract Geometric Identity",
+          "kind": "module",
+          "start_line": 118,
+          "end_line": 118,
+          "signature": "### 3.1 The Mark: Abstract Geometric Identity"
+        },
+        {
+          "name": "3.2 Logo Anatomy",
+          "qualified_name": "H3: 3.2 Logo Anatomy",
+          "kind": "module",
+          "start_line": 127,
+          "end_line": 127,
+          "signature": "### 3.2 Logo Anatomy"
+        },
+        {
+          "name": "3.3 Logo Variations",
+          "qualified_name": "H3: 3.3 Logo Variations",
+          "kind": "module",
+          "start_line": 151,
+          "end_line": 151,
+          "signature": "### 3.3 Logo Variations"
+        },
+        {
+          "name": "Primary Logo (Oxide Copper)",
+          "qualified_name": "H4: Primary Logo (Oxide Copper)",
+          "kind": "module",
+          "start_line": 153,
+          "end_line": 153,
+          "signature": "#### Primary Logo (Oxide Copper)"
+        },
+        {
+          "name": "Monochrome Light",
+          "qualified_name": "H4: Monochrome Light",
+          "kind": "module",
+          "start_line": 158,
+          "end_line": 158,
+          "signature": "#### Monochrome Light"
+        },
+        {
+          "name": "Monochrome Dark",
+          "qualified_name": "H4: Monochrome Dark",
+          "kind": "module",
+          "start_line": 162,
+          "end_line": 162,
+          "signature": "#### Monochrome Dark"
+        },
+        {
+          "name": "3.4 Logo Lockups",
+          "qualified_name": "H3: 3.4 Logo Lockups",
+          "kind": "module",
+          "start_line": 166,
+          "end_line": 166,
+          "signature": "### 3.4 Logo Lockups"
+        },
+        {
+          "name": "Horizontal Lockup (Primary)",
+          "qualified_name": "H4: Horizontal Lockup (Primary)",
+          "kind": "module",
+          "start_line": 168,
+          "end_line": 168,
+          "signature": "#### Horizontal Lockup (Primary)"
+        },
+        {
+          "name": "Stacked Lockup",
+          "qualified_name": "H4: Stacked Lockup",
+          "kind": "module",
+          "start_line": 180,
+          "end_line": 180,
+          "signature": "#### Stacked Lockup"
+        },
+        {
+          "name": "Mark Only",
+          "qualified_name": "H4: Mark Only",
+          "kind": "module",
+          "start_line": 186,
+          "end_line": 186,
+          "signature": "#### Mark Only"
+        },
+        {
+          "name": "3.5 Clear Space",
+          "qualified_name": "H3: 3.5 Clear Space",
+          "kind": "module",
+          "start_line": 192,
+          "end_line": 192,
+          "signature": "### 3.5 Clear Space"
+        },
+        {
+          "name": "3.6 Minimum Sizes",
+          "qualified_name": "H3: 3.6 Minimum Sizes",
+          "kind": "module",
+          "start_line": 210,
+          "end_line": 210,
+          "signature": "### 3.6 Minimum Sizes"
+        },
+        {
+          "name": "3.7 Logo Misuse — NEVER Do This",
+          "qualified_name": "H3: 3.7 Logo Misuse — NEVER Do This",
+          "kind": "module",
+          "start_line": 221,
+          "end_line": 221,
+          "signature": "### 3.7 Logo Misuse — NEVER Do This"
+        },
+        {
+          "name": "4. Color System",
+          "qualified_name": "H2: 4. Color System",
+          "kind": "module",
+          "start_line": 236,
+          "end_line": 236,
+          "signature": "## 4. Color System"
+        },
+        {
+          "name": "4.1 Color Philosophy",
+          "qualified_name": "H3: 4.1 Color Philosophy",
+          "kind": "module",
+          "start_line": 238,
+          "end_line": 238,
+          "signature": "### 4.1 Color Philosophy"
+        },
+        {
+          "name": "4.2 Primary Palette",
+          "qualified_name": "H3: 4.2 Primary Palette",
+          "kind": "module",
+          "start_line": 246,
+          "end_line": 246,
+          "signature": "### 4.2 Primary Palette"
+        },
+        {
+          "name": "4.3 Secondary Palette",
+          "qualified_name": "H3: 4.3 Secondary Palette",
+          "kind": "module",
+          "start_line": 256,
+          "end_line": 256,
+          "signature": "### 4.3 Secondary Palette"
+        },
+        {
+          "name": "4.4 Neutral Palette",
+          "qualified_name": "H3: 4.4 Neutral Palette",
+          "kind": "module",
+          "start_line": 264,
+          "end_line": 264,
+          "signature": "### 4.4 Neutral Palette"
+        },
+        {
+          "name": "4.5 Semantic Colors",
+          "qualified_name": "H3: 4.5 Semantic Colors",
+          "kind": "module",
+          "start_line": 274,
+          "end_line": 274,
+          "signature": "### 4.5 Semantic Colors"
+        },
+        {
+          "name": "4.6 Gradients",
+          "qualified_name": "H3: 4.6 Gradients",
+          "kind": "module",
+          "start_line": 283,
+          "end_line": 283,
+          "signature": "### 4.6 Gradients"
+        },
+        {
+          "name": "Primary Gradient (Brand)",
+          "qualified_name": "H4: Primary Gradient (Brand)",
+          "kind": "module",
+          "start_line": 285,
+          "end_line": 285,
+          "signature": "#### Primary Gradient (Brand)"
+        },
+        {
+          "name": "Button Gradient",
+          "qualified_name": "H4: Button Gradient",
+          "kind": "module",
+          "start_line": 291,
+          "end_line": 291,
+          "signature": "#### Button Gradient"
+        },
+        {
+          "name": "Innovation Gradient",
+          "qualified_name": "H4: Innovation Gradient",
+          "kind": "module",
+          "start_line": 297,
+          "end_line": 297,
+          "signature": "#### Innovation Gradient"
+        },
+        {
+          "name": "Glow Gradient (Radial)",
+          "qualified_name": "H4: Glow Gradient (Radial)",
+          "kind": "module",
+          "start_line": 303,
+          "end_line": 303,
+          "signature": "#### Glow Gradient (Radial)"
+        },
+        {
+          "name": "4.7 Color Accessibility",
+          "qualified_name": "H3: 4.7 Color Accessibility",
+          "kind": "module",
+          "start_line": 309,
+          "end_line": 309,
+          "signature": "### 4.7 Color Accessibility"
+        },
+        {
+          "name": "4.8 Color in Context",
+          "qualified_name": "H3: 4.8 Color in Context",
+          "kind": "module",
+          "start_line": 326,
+          "end_line": 326,
+          "signature": "### 4.8 Color in Context"
+        },
+        {
+          "name": "Dark Mode (Default)",
+          "qualified_name": "H4: Dark Mode (Default)",
+          "kind": "module",
+          "start_line": 328,
+          "end_line": 328,
+          "signature": "#### Dark Mode (Default)"
+        },
+        {
+          "name": "Light Mode (Future consideration)",
+          "qualified_name": "H4: Light Mode (Future consideration)",
+          "kind": "module",
+          "start_line": 334,
+          "end_line": 334,
+          "signature": "#### Light Mode (Future consideration)"
+        },
+        {
+          "name": "5. Typography System",
+          "qualified_name": "H2: 5. Typography System",
+          "kind": "module",
+          "start_line": 342,
+          "end_line": 342,
+          "signature": "## 5. Typography System"
+        },
+        {
+          "name": "5.1 Typography Philosophy",
+          "qualified_name": "H3: 5.1 Typography Philosophy",
+          "kind": "module",
+          "start_line": 344,
+          "end_line": 344,
+          "signature": "### 5.1 Typography Philosophy"
+        },
+        {
+          "name": "5.2 Font Families",
+          "qualified_name": "H3: 5.2 Font Families",
+          "kind": "module",
+          "start_line": 351,
+          "end_line": 351,
+          "signature": "### 5.2 Font Families"
+        },
+        {
+          "name": "Primary Typeface: Space Grotesk",
+          "qualified_name": "H4: Primary Typeface: Space Grotesk",
+          "kind": "module",
+          "start_line": 353,
+          "end_line": 353,
+          "signature": "#### Primary Typeface: Space Grotesk"
+        },
+        {
+          "name": "Monospace Typeface: JetBrains Mono",
+          "qualified_name": "H4: Monospace Typeface: JetBrains Mono",
+          "kind": "module",
+          "start_line": 359,
+          "end_line": 359,
+          "signature": "#### Monospace Typeface: JetBrains Mono"
+        },
+        {
+          "name": "Body Typeface: Inter",
+          "qualified_name": "H4: Body Typeface: Inter",
+          "kind": "module",
+          "start_line": 365,
+          "end_line": 365,
+          "signature": "#### Body Typeface: Inter"
+        },
+        {
+          "name": "5.3 Type Scale",
+          "qualified_name": "H3: 5.3 Type Scale",
+          "kind": "module",
+          "start_line": 371,
+          "end_line": 371,
+          "signature": "### 5.3 Type Scale"
+        },
+        {
+          "name": "5.4 Typography Rules",
+          "qualified_name": "H3: 5.4 Typography Rules",
+          "kind": "module",
+          "start_line": 392,
+          "end_line": 392,
+          "signature": "### 5.4 Typography Rules"
+        },
+        {
+          "name": "Headlines",
+          "qualified_name": "H4: Headlines",
+          "kind": "module",
+          "start_line": 394,
+          "end_line": 394,
+          "signature": "#### Headlines"
+        },
+        {
+          "name": "Body Text",
+          "qualified_name": "H4: Body Text",
+          "kind": "module",
+          "start_line": 400,
+          "end_line": 400,
+          "signature": "#### Body Text"
+        },
+        {
+          "name": "Technical Content",
+          "qualified_name": "H4: Technical Content",
+          "kind": "module",
+          "start_line": 406,
+          "end_line": 406,
+          "signature": "#### Technical Content"
+        },
+        {
+          "name": "5.5 Special Typography Treatments",
+          "qualified_name": "H3: 5.5 Special Typography Treatments",
+          "kind": "module",
+          "start_line": 417,
+          "end_line": 417,
+          "signature": "### 5.5 Special Typography Treatments"
+        },
+        {
+          "name": "Gradient Text",
+          "qualified_name": "H4: Gradient Text",
+          "kind": "module",
+          "start_line": 419,
+          "end_line": 419,
+          "signature": "#### Gradient Text"
+        },
+        {
+          "name": "Monospace Labels",
+          "qualified_name": "H4: Monospace Labels",
+          "kind": "module",
+          "start_line": 427,
+          "end_line": 427,
+          "signature": "#### Monospace Labels"
+        },
+        {
+          "name": "Blinking Cursor",
+          "qualified_name": "H4: Blinking Cursor",
+          "kind": "module",
+          "start_line": 437,
+          "end_line": 437,
+          "signature": "#### Blinking Cursor"
+        },
+        {
+          "name": "6. Iconography",
+          "qualified_name": "H2: 6. Iconography",
+          "kind": "module",
+          "start_line": 448,
+          "end_line": 448,
+          "signature": "## 6. Iconography"
+        },
+        {
+          "name": "6.1 Icon Style",
+          "qualified_name": "H3: 6.1 Icon Style",
+          "kind": "module",
+          "start_line": 450,
+          "end_line": 450,
+          "signature": "### 6.1 Icon Style"
+        },
+        {
+          "name": "6.2 Icon Categories",
+          "qualified_name": "H3: 6.2 Icon Categories",
+          "kind": "module",
+          "start_line": 458,
+          "end_line": 458,
+          "signature": "### 6.2 Icon Categories"
+        },
+        {
+          "name": "Hardware Icons",
+          "qualified_name": "H4: Hardware Icons",
+          "kind": "module",
+          "start_line": 460,
+          "end_line": 460,
+          "signature": "#### Hardware Icons"
+        },
+        {
+          "name": "Software Icons",
+          "qualified_name": "H4: Software Icons",
+          "kind": "module",
+          "start_line": 465,
+          "end_line": 465,
+          "signature": "#### Software Icons"
+        },
+        {
+          "name": "Concept Icons",
+          "qualified_name": "H4: Concept Icons",
+          "kind": "module",
+          "start_line": 470,
+          "end_line": 470,
+          "signature": "#### Concept Icons"
+        },
+        {
+          "name": "6.3 Icon Specifications",
+          "qualified_name": "H3: 6.3 Icon Specifications",
+          "kind": "module",
+          "start_line": 476,
+          "end_line": 476,
+          "signature": "### 6.3 Icon Specifications"
+        },
+        {
+          "name": "6.4 Icon Usage",
+          "qualified_name": "H3: 6.4 Icon Usage",
+          "kind": "module",
+          "start_line": 484,
+          "end_line": 484,
+          "signature": "### 6.4 Icon Usage"
+        },
+        {
+          "name": "7. Imagery & Photography",
+          "qualified_name": "H2: 7. Imagery & Photography",
+          "kind": "module",
+          "start_line": 493,
+          "end_line": 493,
+          "signature": "## 7. Imagery & Photography"
+        },
+        {
+          "name": "7.1 Photography Style",
+          "qualified_name": "H3: 7.1 Photography Style",
+          "kind": "module",
+          "start_line": 495,
+          "end_line": 495,
+          "signature": "### 7.1 Photography Style"
+        },
+        {
+          "name": "7.2 Image Treatment",
+          "qualified_name": "H3: 7.2 Image Treatment",
+          "kind": "module",
+          "start_line": 503,
+          "end_line": 503,
+          "signature": "### 7.2 Image Treatment"
+        },
+        {
+          "name": "7.3 Image Sources",
+          "qualified_name": "H3: 7.3 Image Sources",
+          "kind": "module",
+          "start_line": 511,
+          "end_line": 511,
+          "signature": "### 7.3 Image Sources"
+        },
+        {
+          "name": "7.4 Image Specifications",
+          "qualified_name": "H3: 7.4 Image Specifications",
+          "kind": "module",
+          "start_line": 517,
+          "end_line": 517,
+          "signature": "### 7.4 Image Specifications"
+        },
+        {
+          "name": "Product Images",
+          "qualified_name": "H4: Product Images",
+          "kind": "module",
+          "start_line": 519,
+          "end_line": 519,
+          "signature": "#### Product Images"
+        },
+        {
+          "name": "Hero Images",
+          "qualified_name": "H4: Hero Images",
+          "kind": "module",
+          "start_line": 525,
+          "end_line": 525,
+          "signature": "#### Hero Images"
+        },
+        {
+          "name": "Card Images",
+          "qualified_name": "H4: Card Images",
+          "kind": "module",
+          "start_line": 530,
+          "end_line": 530,
+          "signature": "#### Card Images"
+        },
+        {
+          "name": "7.5 Prohibited Imagery",
+          "qualified_name": "H3: 7.5 Prohibited Imagery",
+          "kind": "module",
+          "start_line": 535,
+          "end_line": 535,
+          "signature": "### 7.5 Prohibited Imagery"
+        },
+        {
+          "name": "8. Graphic Elements",
+          "qualified_name": "H2: 8. Graphic Elements",
+          "kind": "module",
+          "start_line": 546,
+          "end_line": 546,
+          "signature": "## 8. Graphic Elements"
+        },
+        {
+          "name": "8.1 PCB Background Pattern",
+          "qualified_name": "H3: 8.1 PCB Background Pattern",
+          "kind": "module",
+          "start_line": 548,
+          "end_line": 548,
+          "signature": "### 8.1 PCB Background Pattern"
+        },
+        {
+          "name": "8.2 Scanline Overlay",
+          "qualified_name": "H3: 8.2 Scanline Overlay",
+          "kind": "module",
+          "start_line": 571,
+          "end_line": 571,
+          "signature": "### 8.2 Scanline Overlay"
+        },
+        {
+          "name": "8.3 Grid Overlay",
+          "qualified_name": "H3: 8.3 Grid Overlay",
+          "kind": "module",
+          "start_line": 588,
+          "end_line": 588,
+          "signature": "### 8.3 Grid Overlay"
+        },
+        {
+          "name": "8.4 Noise Texture",
+          "qualified_name": "H3: 8.4 Noise Texture",
+          "kind": "module",
+          "start_line": 602,
+          "end_line": 602,
+          "signature": "### 8.4 Noise Texture"
+        },
+        {
+          "name": "8.5 Hologram Effect",
+          "qualified_name": "H3: 8.5 Hologram Effect",
+          "kind": "module",
+          "start_line": 614,
+          "end_line": 614,
+          "signature": "### 8.5 Hologram Effect"
+        },
+        {
+          "name": "8.6 Gradient Borders",
+          "qualified_name": "H3: 8.6 Gradient Borders",
+          "kind": "module",
+          "start_line": 636,
+          "end_line": 636,
+          "signature": "### 8.6 Gradient Borders"
+        },
+        {
+          "name": "8.7 Glow Effects",
+          "qualified_name": "H3: 8.7 Glow Effects",
+          "kind": "module",
+          "start_line": 657,
+          "end_line": 657,
+          "signature": "### 8.7 Glow Effects"
+        },
+        {
+          "name": "9. Motion & Animation",
+          "qualified_name": "H2: 9. Motion & Animation",
+          "kind": "module",
+          "start_line": 670,
+          "end_line": 670,
+          "signature": "## 9. Motion & Animation"
+        },
+        {
+          "name": "9.1 Motion Philosophy",
+          "qualified_name": "H3: 9.1 Motion Philosophy",
+          "kind": "module",
+          "start_line": 672,
+          "end_line": 672,
+          "signature": "### 9.1 Motion Philosophy"
+        },
+        {
+          "name": "9.2 Easing Functions",
+          "qualified_name": "H3: 9.2 Easing Functions",
+          "kind": "module",
+          "start_line": 680,
+          "end_line": 680,
+          "signature": "### 9.2 Easing Functions"
+        },
+        {
+          "name": "9.3 Duration Guidelines",
+          "qualified_name": "H3: 9.3 Duration Guidelines",
+          "kind": "module",
+          "start_line": 689,
+          "end_line": 689,
+          "signature": "### 9.3 Duration Guidelines"
+        },
+        {
+          "name": "9.4 Reveal Animations",
+          "qualified_name": "H3: 9.4 Reveal Animations",
+          "kind": "module",
+          "start_line": 699,
+          "end_line": 699,
+          "signature": "### 9.4 Reveal Animations"
+        },
+        {
+          "name": "Fade Up",
+          "qualified_name": "H4: Fade Up",
+          "kind": "module",
+          "start_line": 701,
+          "end_line": 701,
+          "signature": "#### Fade Up"
+        },
+        {
+          "name": "Stagger Reveal",
+          "qualified_name": "H4: Stagger Reveal",
+          "kind": "module",
+          "start_line": 713,
+          "end_line": 713,
+          "signature": "#### Stagger Reveal"
+        },
+        {
+          "name": "Line Reveal (Hero)",
+          "qualified_name": "H4: Line Reveal (Hero)",
+          "kind": "module",
+          "start_line": 721,
+          "end_line": 721,
+          "signature": "#### Line Reveal (Hero)"
+        },
+        {
+          "name": "9.5 Interactive Animations",
+          "qualified_name": "H3: 9.5 Interactive Animations",
+          "kind": "module",
+          "start_line": 727,
+          "end_line": 727,
+          "signature": "### 9.5 Interactive Animations"
+        },
+        {
+          "name": "Button Hover",
+          "qualified_name": "H4: Button Hover",
+          "kind": "module",
+          "start_line": 729,
+          "end_line": 729,
+          "signature": "#### Button Hover"
+        },
+        {
+          "name": "Card Hover",
+          "qualified_name": "H4: Card Hover",
+          "kind": "module",
+          "start_line": 735,
+          "end_line": 735,
+          "signature": "#### Card Hover"
+        },
+        {
+          "name": "Magnetic Effect",
+          "qualified_name": "H4: Magnetic Effect",
+          "kind": "module",
+          "start_line": 742,
+          "end_line": 742,
+          "signature": "#### Magnetic Effect"
+        },
+        {
+          "name": "9.6 Loading States",
+          "qualified_name": "H3: 9.6 Loading States",
+          "kind": "module",
+          "start_line": 748,
+          "end_line": 748,
+          "signature": "### 9.6 Loading States"
+        },
+        {
+          "name": "Page Loader",
+          "qualified_name": "H4: Page Loader",
+          "kind": "module",
+          "start_line": 750,
+          "end_line": 750,
+          "signature": "#### Page Loader"
+        },
+        {
+          "name": "Skeleton Screens",
+          "qualified_name": "H4: Skeleton Screens",
+          "kind": "module",
+          "start_line": 755,
+          "end_line": 755,
+          "signature": "#### Skeleton Screens"
+        },
+        {
+          "name": "9.7 Reduced Motion",
+          "qualified_name": "H3: 9.7 Reduced Motion",
+          "kind": "module",
+          "start_line": 760,
+          "end_line": 760,
+          "signature": "### 9.7 Reduced Motion"
+        },
+        {
+          "name": "10. Layout & Grid System",
+          "qualified_name": "H2: 10. Layout & Grid System",
+          "kind": "module",
+          "start_line": 774,
+          "end_line": 774,
+          "signature": "## 10. Layout & Grid System"
+        },
+        {
+          "name": "10.1 Grid Structure",
+          "qualified_name": "H3: 10.1 Grid Structure",
+          "kind": "module",
+          "start_line": 776,
+          "end_line": 776,
+          "signature": "### 10.1 Grid Structure"
+        },
+        {
+          "name": "10.2 Breakpoints",
+          "qualified_name": "H3: 10.2 Breakpoints",
+          "kind": "module",
+          "start_line": 783,
+          "end_line": 783,
+          "signature": "### 10.2 Breakpoints"
+        },
+        {
+          "name": "10.3 Spacing Scale",
+          "qualified_name": "H3: 10.3 Spacing Scale",
+          "kind": "module",
+          "start_line": 792,
+          "end_line": 792,
+          "signature": "### 10.3 Spacing Scale"
+        },
+        {
+          "name": "10.4 Container Widths",
+          "qualified_name": "H3: 10.4 Container Widths",
+          "kind": "module",
+          "start_line": 808,
+          "end_line": 808,
+          "signature": "### 10.4 Container Widths"
+        },
+        {
+          "name": "10.5 Component Spacing",
+          "qualified_name": "H3: 10.5 Component Spacing",
+          "kind": "module",
+          "start_line": 818,
+          "end_line": 818,
+          "signature": "### 10.5 Component Spacing"
+        },
+        {
+          "name": "Cards",
+          "qualified_name": "H4: Cards",
+          "kind": "module",
+          "start_line": 820,
+          "end_line": 820,
+          "signature": "#### Cards"
+        },
+        {
+          "name": "Sections",
+          "qualified_name": "H4: Sections",
+          "kind": "module",
+          "start_line": 825,
+          "end_line": 825,
+          "signature": "#### Sections"
+        },
+        {
+          "name": "Buttons",
+          "qualified_name": "H4: Buttons",
+          "kind": "module",
+          "start_line": 829,
+          "end_line": 829,
+          "signature": "#### Buttons"
+        },
+        {
+          "name": "11. Voice & Tone",
+          "qualified_name": "H2: 11. Voice & Tone",
+          "kind": "module",
+          "start_line": 835,
+          "end_line": 835,
+          "signature": "## 11. Voice & Tone"
+        },
+        {
+          "name": "11.1 Voice Characteristics",
+          "qualified_name": "H3: 11.1 Voice Characteristics",
+          "kind": "module",
+          "start_line": 837,
+          "end_line": 837,
+          "signature": "### 11.1 Voice Characteristics"
+        },
+        {
+          "name": "11.2 Tone Variations",
+          "qualified_name": "H3: 11.2 Tone Variations",
+          "kind": "module",
+          "start_line": 849,
+          "end_line": 849,
+          "signature": "### 11.2 Tone Variations"
+        },
+        {
+          "name": "11.3 Writing Guidelines",
+          "qualified_name": "H3: 11.3 Writing Guidelines",
+          "kind": "module",
+          "start_line": 859,
+          "end_line": 859,
+          "signature": "### 11.3 Writing Guidelines"
+        },
+        {
+          "name": "Do:",
+          "qualified_name": "H4: Do:",
+          "kind": "module",
+          "start_line": 861,
+          "end_line": 861,
+          "signature": "#### Do:"
+        },
+        {
+          "name": "Don't:",
+          "qualified_name": "H4: Don't:",
+          "kind": "module",
+          "start_line": 869,
+          "end_line": 869,
+          "signature": "#### Don't:"
+        },
+        {
+          "name": "11.4 Key Phrases",
+          "qualified_name": "H3: 11.4 Key Phrases",
+          "kind": "module",
+          "start_line": 877,
+          "end_line": 877,
+          "signature": "### 11.4 Key Phrases"
+        },
+        {
+          "name": "11.5 Messaging Hierarchy",
+          "qualified_name": "H3: 11.5 Messaging Hierarchy",
+          "kind": "module",
+          "start_line": 898,
+          "end_line": 898,
+          "signature": "### 11.5 Messaging Hierarchy"
+        },
+        {
+          "name": "12. Applications",
+          "qualified_name": "H2: 12. Applications",
+          "kind": "module",
+          "start_line": 907,
+          "end_line": 907,
+          "signature": "## 12. Applications"
+        },
+        {
+          "name": "12.1 Digital Applications",
+          "qualified_name": "H3: 12.1 Digital Applications",
+          "kind": "module",
+          "start_line": 909,
+          "end_line": 909,
+          "signature": "### 12.1 Digital Applications"
+        },
+        {
+          "name": "Website",
+          "qualified_name": "H4: Website",
+          "kind": "module",
+          "start_line": 911,
+          "end_line": 911,
+          "signature": "#### Website"
+        },
+        {
+          "name": "Social Media",
+          "qualified_name": "H4: Social Media",
+          "kind": "module",
+          "start_line": 919,
+          "end_line": 919,
+          "signature": "#### Social Media"
+        },
+        {
+          "name": "Email",
+          "qualified_name": "H4: Email",
+          "kind": "module",
+          "start_line": 925,
+          "end_line": 925,
+          "signature": "#### Email"
+        },
+        {
+          "name": "Presentations",
+          "qualified_name": "H4: Presentations",
+          "kind": "module",
+          "start_line": 931,
+          "end_line": 931,
+          "signature": "#### Presentations"
+        },
+        {
+          "name": "12.2 Print Applications",
+          "qualified_name": "H3: 12.2 Print Applications",
+          "kind": "module",
+          "start_line": 937,
+          "end_line": 937,
+          "signature": "### 12.2 Print Applications"
+        },
+        {
+          "name": "Business Cards",
+          "qualified_name": "H4: Business Cards",
+          "kind": "module",
+          "start_line": 939,
+          "end_line": 939,
+          "signature": "#### Business Cards"
+        },
+        {
+          "name": "Letterhead",
+          "qualified_name": "H4: Letterhead",
+          "kind": "module",
+          "start_line": 945,
+          "end_line": 945,
+          "signature": "#### Letterhead"
+        },
+        {
+          "name": "Envelopes",
+          "qualified_name": "H4: Envelopes",
+          "kind": "module",
+          "start_line": 951,
+          "end_line": 951,
+          "signature": "#### Envelopes"
+        },
+        {
+          "name": "Brochures",
+          "qualified_name": "H4: Brochures",
+          "kind": "module",
+          "start_line": 956,
+          "end_line": 956,
+          "signature": "#### Brochures"
+        },
+        {
+          "name": "Packaging",
+          "qualified_name": "H4: Packaging",
+          "kind": "module",
+          "start_line": 962,
+          "end_line": 962,
+          "signature": "#### Packaging"
+        },
+        {
+          "name": "12.3 Merchandise",
+          "qualified_name": "H3: 12.3 Merchandise",
+          "kind": "module",
+          "start_line": 968,
+          "end_line": 968,
+          "signature": "### 12.3 Merchandise"
+        },
+        {
+          "name": "Apparel",
+          "qualified_name": "H4: Apparel",
+          "kind": "module",
+          "start_line": 970,
+          "end_line": 970,
+          "signature": "#### Apparel"
+        },
+        {
+          "name": "Tech Accessories",
+          "qualified_name": "H4: Tech Accessories",
+          "kind": "module",
+          "start_line": 975,
+          "end_line": 975,
+          "signature": "#### Tech Accessories"
+        },
+        {
+          "name": "Office",
+          "qualified_name": "H4: Office",
+          "kind": "module",
+          "start_line": 980,
+          "end_line": 980,
+          "signature": "#### Office"
+        },
+        {
+          "name": "12.4 Environmental",
+          "qualified_name": "H3: 12.4 Environmental",
+          "kind": "module",
+          "start_line": 985,
+          "end_line": 985,
+          "signature": "### 12.4 Environmental"
+        },
+        {
+          "name": "Office Signage",
+          "qualified_name": "H4: Office Signage",
+          "kind": "module",
+          "start_line": 987,
+          "end_line": 987,
+          "signature": "#### Office Signage"
+        },
+        {
+          "name": "Event Booths",
+          "qualified_name": "H4: Event Booths",
+          "kind": "module",
+          "start_line": 992,
+          "end_line": 992,
+          "signature": "#### Event Booths"
+        },
+        {
+          "name": "13. Do's and Don'ts",
+          "qualified_name": "H2: 13. Do's and Don'ts",
+          "kind": "module",
+          "start_line": 1000,
+          "end_line": 1000,
+          "signature": "## 13. Do's and Don'ts"
+        },
+        {
+          "name": "13.1 Logo Do's",
+          "qualified_name": "H3: 13.1 Logo Do's",
+          "kind": "module",
+          "start_line": 1002,
+          "end_line": 1002,
+          "signature": "### 13.1 Logo Do's"
+        },
+        {
+          "name": "13.2 Logo Don'ts",
+          "qualified_name": "H3: 13.2 Logo Don'ts",
+          "kind": "module",
+          "start_line": 1011,
+          "end_line": 1011,
+          "signature": "### 13.2 Logo Don'ts"
+        },
+        {
+          "name": "13.3 Color Do's",
+          "qualified_name": "H3: 13.3 Color Do's",
+          "kind": "module",
+          "start_line": 1022,
+          "end_line": 1022,
+          "signature": "### 13.3 Color Do's"
+        },
+        {
+          "name": "13.4 Color Don'ts",
+          "qualified_name": "H3: 13.4 Color Don'ts",
+          "kind": "module",
+          "start_line": 1030,
+          "end_line": 1030,
+          "signature": "### 13.4 Color Don'ts"
+        },
+        {
+          "name": "13.5 Typography Do's",
+          "qualified_name": "H3: 13.5 Typography Do's",
+          "kind": "module",
+          "start_line": 1038,
+          "end_line": 1038,
+          "signature": "### 13.5 Typography Do's"
+        },
+        {
+          "name": "13.6 Typography Don'ts",
+          "qualified_name": "H3: 13.6 Typography Don'ts",
+          "kind": "module",
+          "start_line": 1046,
+          "end_line": 1046,
+          "signature": "### 13.6 Typography Don'ts"
+        },
+        {
+          "name": "13.7 Imagery Do's",
+          "qualified_name": "H3: 13.7 Imagery Do's",
+          "kind": "module",
+          "start_line": 1054,
+          "end_line": 1054,
+          "signature": "### 13.7 Imagery Do's"
+        },
+        {
+          "name": "13.8 Imagery Don'ts",
+          "qualified_name": "H3: 13.8 Imagery Don'ts",
+          "kind": "module",
+          "start_line": 1062,
+          "end_line": 1062,
+          "signature": "### 13.8 Imagery Don'ts"
+        },
+        {
+          "name": "13.9 Motion Do's",
+          "qualified_name": "H3: 13.9 Motion Do's",
+          "kind": "module",
+          "start_line": 1070,
+          "end_line": 1070,
+          "signature": "### 13.9 Motion Do's"
+        },
+        {
+          "name": "13.10 Motion Don'ts",
+          "qualified_name": "H3: 13.10 Motion Don'ts",
+          "kind": "module",
+          "start_line": 1078,
+          "end_line": 1078,
+          "signature": "### 13.10 Motion Don'ts"
+        },
+        {
+          "name": "Appendix A: File Formats",
+          "qualified_name": "H2: Appendix A: File Formats",
+          "kind": "module",
+          "start_line": 1088,
+          "end_line": 1088,
+          "signature": "## Appendix A: File Formats"
+        },
+        {
+          "name": "Logo Files",
+          "qualified_name": "H3: Logo Files",
+          "kind": "module",
+          "start_line": 1090,
+          "end_line": 1090,
+          "signature": "### Logo Files"
+        },
+        {
+          "name": "Image Files",
+          "qualified_name": "H3: Image Files",
+          "kind": "module",
+          "start_line": 1096,
+          "end_line": 1096,
+          "signature": "### Image Files"
+        },
+        {
+          "name": "Font Files",
+          "qualified_name": "H3: Font Files",
+          "kind": "module",
+          "start_line": 1102,
+          "end_line": 1102,
+          "signature": "### Font Files"
+        },
+        {
+          "name": "Appendix B: Technical Specifications",
+          "qualified_name": "H2: Appendix B: Technical Specifications",
+          "kind": "module",
+          "start_line": 1110,
+          "end_line": 1110,
+          "signature": "## Appendix B: Technical Specifications"
+        },
+        {
+          "name": "Web Implementation",
+          "qualified_name": "H3: Web Implementation",
+          "kind": "module",
+          "start_line": 1112,
+          "end_line": 1112,
+          "signature": "### Web Implementation"
+        },
+        {
+          "name": "CSS Variables",
+          "qualified_name": "H4: CSS Variables",
+          "kind": "module",
+          "start_line": 1114,
+          "end_line": 1114,
+          "signature": "#### CSS Variables"
+        },
+        {
+          "name": "Font Loading",
+          "qualified_name": "H4: Font Loading",
+          "kind": "module",
+          "start_line": 1136,
+          "end_line": 1136,
+          "signature": "#### Font Loading"
+        },
+        {
+          "name": "Print Specifications",
+          "qualified_name": "H3: Print Specifications",
+          "kind": "module",
+          "start_line": 1143,
+          "end_line": 1143,
+          "signature": "### Print Specifications"
+        },
+        {
+          "name": "Color Mode",
+          "qualified_name": "H4: Color Mode",
+          "kind": "module",
+          "start_line": 1145,
+          "end_line": 1145,
+          "signature": "#### Color Mode"
+        },
+        {
+          "name": "Resolution",
+          "qualified_name": "H4: Resolution",
+          "kind": "module",
+          "start_line": 1149,
+          "end_line": 1149,
+          "signature": "#### Resolution"
+        },
+        {
+          "name": "Bleed",
+          "qualified_name": "H4: Bleed",
+          "kind": "module",
+          "start_line": 1153,
+          "end_line": 1153,
+          "signature": "#### Bleed"
+        },
+        {
+          "name": "Appendix C: Brand Assets",
+          "qualified_name": "H2: Appendix C: Brand Assets",
+          "kind": "module",
+          "start_line": 1159,
+          "end_line": 1159,
+          "signature": "## Appendix C: Brand Assets"
+        },
+        {
+          "name": "Download Locations",
+          "qualified_name": "H3: Download Locations",
+          "kind": "module",
+          "start_line": 1161,
+          "end_line": 1161,
+          "signature": "### Download Locations"
+        },
+        {
+          "name": "Asset Management",
+          "qualified_name": "H3: Asset Management",
+          "kind": "module",
+          "start_line": 1168,
+          "end_line": 1168,
+          "signature": "### Asset Management"
+        },
+        {
+          "name": "Appendix D: Contact & Support",
+          "qualified_name": "H2: Appendix D: Contact & Support",
+          "kind": "module",
+          "start_line": 1176,
+          "end_line": 1176,
+          "signature": "## Appendix D: Contact & Support"
+        },
+        {
+          "name": "Brand Questions",
+          "qualified_name": "H3: Brand Questions",
+          "kind": "module",
+          "start_line": 1178,
+          "end_line": 1178,
+          "signature": "### Brand Questions"
+        },
+        {
+          "name": "Approval Process",
+          "qualified_name": "H3: Approval Process",
+          "kind": "module",
+          "start_line": 1183,
+          "end_line": 1183,
+          "signature": "### Approval Process"
+        },
+        {
+          "name": "Version History",
+          "qualified_name": "H2: Version History",
+          "kind": "module",
+          "start_line": 1192,
+          "end_line": 1192,
+          "signature": "## Version History"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.885404147Z"
+    },
+    "src/components/OpenSource.tsx": {
+      "relative_path": "src/components/OpenSource.tsx",
+      "language": "typescript",
+      "size_bytes": 5887,
+      "line_count": 131,
+      "content_hash": "999ce7d7bc3e62ceb4af0710fa8eeb2c5a7c1fbfdb24cce5d4d4abc118746d21",
+      "symbols": [
+        {
+          "name": "OpenSourceProps",
+          "qualified_name": "OpenSourceProps",
+          "kind": "interface",
+          "start_line": 7,
+          "end_line": 9,
+          "signature": "interface OpenSourceProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.863602726Z"
+    },
+    "src/components/FloatingContact.tsx": {
+      "relative_path": "src/components/FloatingContact.tsx",
+      "language": "typescript",
+      "size_bytes": 7047,
+      "line_count": 163,
+      "content_hash": "0d6b0d75f57b63da68ad25f80c896a09ea1b155b440f18a666f4dc904084852f",
+      "symbols": [
+        {
+          "name": "FloatingContactProps",
+          "qualified_name": "FloatingContactProps",
+          "kind": "interface",
+          "start_line": 6,
+          "end_line": 8,
+          "signature": "interface FloatingContactProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.843354309Z"
+    },
+    "src/main.tsx": {
+      "relative_path": "src/main.tsx",
+      "language": "typescript",
+      "size_bytes": 231,
+      "line_count": 10,
+      "content_hash": "5580d48b0fec68698a113d45a640b88d479dc35eb1f4b87c51f67c6cc81cee9b",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.877164203Z"
+    },
+    "src/vite-env.d.ts": {
+      "relative_path": "src/vite-env.d.ts",
+      "language": "typescript",
+      "size_bytes": 38,
+      "line_count": 1,
+      "content_hash": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.877176076Z"
+    },
+    "index.html": {
+      "relative_path": "index.html",
+      "language": "html",
+      "size_bytes": 2633,
+      "line_count": 35,
+      "content_hash": "5c3bb2eef38071c29b129b5595cd7868ea507f27acff332cd27fd13381618123",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.885540688Z"
+    },
+    "src/components/OxideLogo.tsx": {
+      "relative_path": "src/components/OxideLogo.tsx",
+      "language": "typescript",
+      "size_bytes": 2647,
+      "line_count": 93,
+      "content_hash": "8b4a7bd685af2bcc0dd8b70e96e3fc90734084043e463d6325ee7aa9a9077ae5",
+      "symbols": [
+        {
+          "name": "OxideLogoProps",
+          "qualified_name": "OxideLogoProps",
+          "kind": "interface",
+          "start_line": 3,
+          "end_line": 10,
+          "signature": "interface OxideLogoProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.844570117Z"
+    },
+    "src/components/HologramViewer.tsx": {
+      "relative_path": "src/components/HologramViewer.tsx",
+      "language": "typescript",
+      "size_bytes": 14716,
+      "line_count": 453,
+      "content_hash": "202f77d160a99e1bd8b5523ad72f04a8dbcbd2c3a311e9f958a329fee5ae700b",
+      "symbols": [
+        {
+          "name": "HoloVertex",
+          "qualified_name": "HoloVertex",
+          "kind": "interface",
+          "start_line": 3,
+          "end_line": 7,
+          "signature": "interface HoloVertex {"
+        },
+        {
+          "name": "HoloModel",
+          "qualified_name": "HoloModel",
+          "kind": "interface",
+          "start_line": 9,
+          "end_line": 12,
+          "signature": "interface HoloModel {"
+        },
+        {
+          "name": "HologramViewerProps",
+          "qualified_name": "HologramViewerProps",
+          "kind": "interface",
+          "start_line": 142,
+          "end_line": 145,
+          "signature": "interface HologramViewerProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.849389416Z"
+    },
+    "server.js": {
+      "relative_path": "server.js",
+      "language": "javascript",
+      "size_bytes": 655,
+      "line_count": 21,
+      "content_hash": "b20803c0ebc95b619f1537809535f990961a1bd82efdad9844c4f94ee5b57da3",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.884662077Z"
+    },
+    "public/sitemap.xml": {
+      "relative_path": "public/sitemap.xml",
+      "language": "xml",
+      "size_bytes": 1089,
+      "line_count": 39,
+      "content_hash": "cb7387edd13a31099fbf4bd38c2e054de9dd0e74c45d24650946f73ec9f6656e",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.885160748Z"
+    },
+    "README.md": {
+      "relative_path": "README.md",
+      "language": "markdown",
+      "size_bytes": 2140,
+      "line_count": 50,
+      "content_hash": "3aeb19fc48112d3f529550274c8498dab3a6daf041c065fbe730a5fa88373190",
+      "symbols": [
+        {
+          "name": "oxide-tech",
+          "qualified_name": "H1: oxide-tech",
+          "kind": "module",
+          "start_line": 1,
+          "end_line": 1,
+          "signature": "# oxide-tech"
+        },
+        {
+          "name": "🛠️ Technology Stack",
+          "qualified_name": "H2: 🛠️ Technology Stack",
+          "kind": "module",
+          "start_line": 5,
+          "end_line": 5,
+          "signature": "## 🛠️ Technology Stack"
+        },
+        {
+          "name": "📡 Key Features",
+          "qualified_name": "H2: 📡 Key Features",
+          "kind": "module",
+          "start_line": 13,
+          "end_line": 13,
+          "signature": "## 📡 Key Features"
+        },
+        {
+          "name": "🚀 Getting Started",
+          "qualified_name": "H2: 🚀 Getting Started",
+          "kind": "module",
+          "start_line": 21,
+          "end_line": 21,
+          "signature": "## 🚀 Getting Started"
+        },
+        {
+          "name": "Prerequisites",
+          "qualified_name": "H3: Prerequisites",
+          "kind": "module",
+          "start_line": 23,
+          "end_line": 23,
+          "signature": "### Prerequisites"
+        },
+        {
+          "name": "1. Install Dependencies",
+          "qualified_name": "H3: 1. Install Dependencies",
+          "kind": "module",
+          "start_line": 27,
+          "end_line": 27,
+          "signature": "### 1. Install Dependencies"
+        },
+        {
+          "name": "2. Development Mode",
+          "qualified_name": "H3: 2. Development Mode",
+          "kind": "module",
+          "start_line": 32,
+          "end_line": 32,
+          "signature": "### 2. Development Mode"
+        },
+        {
+          "name": "3. Build for Production",
+          "qualified_name": "H3: 3. Build for Production",
+          "kind": "module",
+          "start_line": 39,
+          "end_line": 39,
+          "signature": "### 3. Build for Production"
+        },
+        {
+          "name": "4. Run the Production Server",
+          "qualified_name": "H3: 4. Run the Production Server",
+          "kind": "module",
+          "start_line": 45,
+          "end_line": 45,
+          "signature": "### 4. Run the Production Server"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.835786384Z"
+    },
+    "src/components/Manifesto.tsx": {
+      "relative_path": "src/components/Manifesto.tsx",
+      "language": "typescript",
+      "size_bytes": 5620,
+      "line_count": 155,
+      "content_hash": "56166c70724584001f760dce55966301585d1690e33406c6773bb5054f95335e",
+      "symbols": [
+        {
+          "name": "ManifestoProps",
+          "qualified_name": "ManifestoProps",
+          "kind": "interface",
+          "start_line": 14,
+          "end_line": 16,
+          "signature": "interface ManifestoProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.873103596Z"
+    },
+    "src/components/Inventory.tsx": {
+      "relative_path": "src/components/Inventory.tsx",
+      "language": "typescript",
+      "size_bytes": 11794,
+      "line_count": 306,
+      "content_hash": "f36cb6f244c762f5f9c30f5e6bc94fce6a2b9a0cc2d6c0cffd34adba48a7b36d",
+      "symbols": [
+        {
+          "name": "InventoryProps",
+          "qualified_name": "InventoryProps",
+          "kind": "interface",
+          "start_line": 8,
+          "end_line": 13,
+          "signature": "interface InventoryProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.866468897Z"
+    },
+    "src/components/IndustrialDashboard.tsx": {
+      "relative_path": "src/components/IndustrialDashboard.tsx",
+      "language": "typescript",
+      "size_bytes": 3409,
+      "line_count": 86,
+      "content_hash": "304d91722da8eb554b13e38efb49b7ad1684fdcc7d881f8ea72f0792ffc173eb",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.867904357Z"
+    },
+    "src/layout.tsx": {
+      "relative_path": "src/layout.tsx",
+      "language": "typescript",
+      "size_bytes": 206,
+      "line_count": 13,
+      "content_hash": "d7ee23996f13dc936216942b831dcfe10ebd022fb8dd6e4d1ce9a418b1fde240",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.881269927Z"
+    },
+    ".idea/vcs.xml": {
+      "relative_path": ".idea/vcs.xml",
+      "language": "xml",
+      "size_bytes": 167,
+      "line_count": 6,
+      "content_hash": "6323e12648862a0a96fc0d7877672817d6cd91e2c2a3c3d78f1090db23c6e88e",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.835845749Z"
+    },
+    "src/lib/i18n.ts": {
+      "relative_path": "src/lib/i18n.ts",
+      "language": "typescript",
+      "size_bytes": 26789,
+      "line_count": 337,
+      "content_hash": "630db448516a61cb707c7a2dd60da8738365f02723d081219c594648ca657f5d",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.877975137Z"
+    },
+    "src/lib/analytics.ts": {
+      "relative_path": "src/lib/analytics.ts",
+      "language": "typescript",
+      "size_bytes": 1331,
+      "line_count": 47,
+      "content_hash": "b85cca4e9a033c651d90807d0a7e2524822eca448ca3cf6b5a24b4f07b299e6d",
+      "symbols": [
+        {
+          "name": "AnalyticsEvent",
+          "qualified_name": "AnalyticsEvent",
+          "kind": "interface",
+          "start_line": 3,
+          "end_line": 9,
+          "signature": "interface AnalyticsEvent {"
+        },
+        {
+          "name": "TelemetryTracker",
+          "qualified_name": "TelemetryTracker",
+          "kind": "class",
+          "start_line": 11,
+          "end_line": 45,
+          "signature": "class TelemetryTracker {"
+        },
+        {
+          "name": "track",
+          "qualified_name": "TelemetryTracker.track",
+          "kind": "method",
+          "start_line": 15,
+          "end_line": 33,
+          "signature": "public track(event: string, category: AnalyticsEvent['category'], label?: string, value?: number | string) {"
+        },
+        {
+          "name": "subscribe",
+          "qualified_name": "TelemetryTracker.subscribe",
+          "kind": "method",
+          "start_line": 35,
+          "end_line": 40,
+          "signature": "public subscribe(listener: (event: AnalyticsEvent) => void) {"
+        },
+        {
+          "name": "getRecentEvents",
+          "qualified_name": "TelemetryTracker.getRecentEvents",
+          "kind": "method",
+          "start_line": 42,
+          "end_line": 44,
+          "signature": "public getRecentEvents(): AnalyticsEvent[] {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.878331330Z"
+    },
+    "src/page.tsx": {
+      "relative_path": "src/page.tsx",
+      "language": "typescript",
+      "size_bytes": 186,
+      "line_count": 10,
+      "content_hash": "5ba93ce5b728663da94d5bc0137387fa159d87ea2a986e9e2435fc4cb798c893",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.881322169Z"
+    },
+    "pnpm-lock.yaml": {
+      "relative_path": "pnpm-lock.yaml",
+      "language": "yaml",
+      "size_bytes": 98934,
+      "line_count": 3071,
+      "content_hash": "bed93ee17cad70becbe68a4b17c007ba0b92c1f3f064c6fb2ccb32f61472c152",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.885031331Z"
+    },
+    "src/components/Footer.tsx": {
+      "relative_path": "src/components/Footer.tsx",
+      "language": "typescript",
+      "size_bytes": 7150,
+      "line_count": 130,
+      "content_hash": "066471557816efb227c9cd87c9184bd381a3806bf357fa9c92de8a35b5e56d3b",
+      "symbols": [
+        {
+          "name": "FooterProps",
+          "qualified_name": "FooterProps",
+          "kind": "interface",
+          "start_line": 7,
+          "end_line": 9,
+          "signature": "interface FooterProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.851745043Z"
+    },
+    "src/lib/datasheet.ts": {
+      "relative_path": "src/lib/datasheet.ts",
+      "language": "typescript",
+      "size_bytes": 938,
+      "line_count": 32,
+      "content_hash": "6d0406b2f16e9dbcdd7cca727d6e93684069c0144414a21f78f6ec6f007f2c4e",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.878447687Z"
+    },
+    "metadata.json": {
+      "relative_path": "metadata.json",
+      "language": "json",
+      "size_bytes": 223,
+      "line_count": 6,
+      "content_hash": "033304b2aface8119b8ae87f55468f9a84270feac512d0bfb197f2168cbdda0e",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.884559968Z"
+    },
+    "src/components/Hero.tsx": {
+      "relative_path": "src/components/Hero.tsx",
+      "language": "typescript",
+      "size_bytes": 8743,
+      "line_count": 205,
+      "content_hash": "51221967aec222858bcca074a19f6e4a4ce285363aec20529e74318af091f341",
+      "symbols": [
+        {
+          "name": "HeroProps",
+          "qualified_name": "HeroProps",
+          "kind": "interface",
+          "start_line": 8,
+          "end_line": 13,
+          "signature": "interface HeroProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.846690656Z"
+    },
+    "src/components/TechStack.tsx": {
+      "relative_path": "src/components/TechStack.tsx",
+      "language": "typescript",
+      "size_bytes": 6234,
+      "line_count": 157,
+      "content_hash": "e59f90d38b355ac1b5c14f9246750a92f34b23e3eeb34a3267dfc32163334b9f",
+      "symbols": [
+        {
+          "name": "TechStackProps",
+          "qualified_name": "TechStackProps",
+          "kind": "interface",
+          "start_line": 6,
+          "end_line": 8,
+          "signature": "interface TechStackProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.876784263Z"
+    },
+    "src/App.tsx": {
+      "relative_path": "src/App.tsx",
+      "language": "typescript",
+      "size_bytes": 11151,
+      "line_count": 248,
+      "content_hash": "600b5efcb2279689594be4739add891c3e7985609b06f657229a9085d1da5707",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.881184441Z"
+    },
+    ".vscode/settings.json": {
+      "relative_path": ".vscode/settings.json",
+      "language": "json",
+      "size_bytes": 110,
+      "line_count": 4,
+      "content_hash": "b600e0018746105bba4ea9a0929e4459e9694f5c7e58b9228426e81a8e4ddfe4",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.885564434Z"
+    },
+    "src/components/Architects.tsx": {
+      "relative_path": "src/components/Architects.tsx",
+      "language": "typescript",
+      "size_bytes": 6992,
+      "line_count": 150,
+      "content_hash": "8747d09842d9f2776ff4be85beff96a7da738ec45d26300d119a56661faa7f6d",
+      "symbols": [
+        {
+          "name": "ArchitectsProps",
+          "qualified_name": "ArchitectsProps",
+          "kind": "interface",
+          "start_line": 7,
+          "end_line": 9,
+          "signature": "interface ArchitectsProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.874717153Z"
+    },
+    "src/components/PCBBackground.tsx": {
+      "relative_path": "src/components/PCBBackground.tsx",
+      "language": "typescript",
+      "size_bytes": 29380,
+      "line_count": 790,
+      "content_hash": "66f537495533daeaa57609422010cde4d905ca19402b073082967fb5ce348bc5",
+      "symbols": [
+        {
+          "name": "PCBTrace",
+          "qualified_name": "PCBTrace",
+          "kind": "interface",
+          "start_line": 3,
+          "end_line": 9,
+          "signature": "interface PCBTrace {"
+        },
+        {
+          "name": "PCBBackground",
+          "qualified_name": "PCBBackground",
+          "kind": "function",
+          "start_line": 11,
+          "end_line": 790,
+          "signature": "function PCBBackground() {"
+        },
+        {
+          "name": "addParallelBus",
+          "qualified_name": "addParallelBus",
+          "kind": "function",
+          "start_line": 60,
+          "end_line": 138,
+          "signature": "function addParallelBus(startX: number, startY: number, count: number, spacing: number, directions: any[], color = '#00ff9f', depth = 0.25) {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.841217148Z"
+    },
+    "src/components/Views.tsx": {
+      "relative_path": "src/components/Views.tsx",
+      "language": "typescript",
+      "size_bytes": 31296,
+      "line_count": 459,
+      "content_hash": "6dcd4152da674a0b9ea06d5385d9090eb5453a66312cb7a089791504ef507836",
+      "symbols": [
+        {
+          "name": "GatewayView",
+          "qualified_name": "GatewayView",
+          "kind": "function",
+          "start_line": 9,
+          "end_line": 70,
+          "signature": "function GatewayView({ audioMuted, setView, lang }: any) {"
+        },
+        {
+          "name": "t",
+          "qualified_name": "t",
+          "kind": "method",
+          "start_line": 349,
+          "end_line": 349,
+          "signature": "t(\"DS // \", lang)}{t(p.titleKey, lang)}"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.862148269Z"
+    },
+    "abstract_logo_symbol.svg": {
+      "relative_path": "abstract_logo_symbol.svg",
+      "language": "svg",
+      "size_bytes": 1802,
+      "line_count": 58,
+      "content_hash": "68f5dabe5ae27f397fc6ab37bcb15b04407e57485df7fb5d69806548e86a9c87",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.835759075Z"
+    },
+    "assets/abstract_logo_symbol.svg": {
+      "relative_path": "assets/abstract_logo_symbol.svg",
+      "language": "svg",
+      "size_bytes": 1803,
+      "line_count": 58,
+      "content_hash": "0d29e7dabd98ac0a8863455219bf09969b1da0f4ccf51120c113fd9b6f4713e3",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.884697696Z"
+    },
+    "src/components/TechBox.tsx": {
+      "relative_path": "src/components/TechBox.tsx",
+      "language": "typescript",
+      "size_bytes": 1584,
+      "line_count": 40,
+      "content_hash": "346429e9f1ba8b340848828baa3410bbc2cbb4cc3e80cb10282ea037e250dc50",
+      "symbols": [
+        {
+          "name": "TechBoxProps",
+          "qualified_name": "TechBoxProps",
+          "kind": "interface",
+          "start_line": 3,
+          "end_line": 11,
+          "signature": "interface TechBoxProps extends React.HTMLAttributes<HTMLDivElement> {"
+        },
+        {
+          "name": "TechBox",
+          "qualified_name": "TechBox",
+          "kind": "function",
+          "start_line": 13,
+          "end_line": 31,
+          "signature": "function TechBox({ children, variant = 'panel', interactive = false, innerClassName = '', className = '', ...props }: TechBoxProps) {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.877076341Z"
+    },
+    "src/index.css": {
+      "relative_path": "src/index.css",
+      "language": "css",
+      "size_bytes": 3618,
+      "line_count": 162,
+      "content_hash": "ac88cfb802fcd7a643e67c629d535c362ec8fb40c2a6bf92818e5039709f0daa",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.878476182Z"
+    },
+    "docs/oxide-tech-product-design-guide.md": {
+      "relative_path": "docs/oxide-tech-product-design-guide.md",
+      "language": "markdown",
+      "size_bytes": 14744,
+      "line_count": 617,
+      "content_hash": "8172b1140fa7da49642cc210f22e037a7c6534bba1642e9c23adedaf3db9a844",
+      "symbols": [
+        {
+          "name": "oxide-tech Product Design Guide",
+          "qualified_name": "H1: oxide-tech Product Design Guide",
+          "kind": "module",
+          "start_line": 1,
+          "end_line": 1,
+          "signature": "# oxide-tech Product Design Guide"
+        },
+        {
+          "name": "UI/UX Standards & Component Library v1.0",
+          "qualified_name": "H3: UI/UX Standards & Component Library v1.0",
+          "kind": "module",
+          "start_line": 2,
+          "end_line": 2,
+          "signature": "### UI/UX Standards & Component Library v1.0"
+        },
+        {
+          "name": "Table of Contents",
+          "qualified_name": "H2: Table of Contents",
+          "kind": "module",
+          "start_line": 9,
+          "end_line": 9,
+          "signature": "## Table of Contents"
+        },
+        {
+          "name": "1. Design Philosophy",
+          "qualified_name": "H2: 1. Design Philosophy",
+          "kind": "module",
+          "start_line": 29,
+          "end_line": 29,
+          "signature": "## 1. Design Philosophy"
+        },
+        {
+          "name": "1.1 The oxide-tech Product Experience",
+          "qualified_name": "H3: 1.1 The oxide-tech Product Experience",
+          "kind": "module",
+          "start_line": 31,
+          "end_line": 31,
+          "signature": "### 1.1 The oxide-tech Product Experience"
+        },
+        {
+          "name": "1.2 Design Metaphor",
+          "qualified_name": "H3: 1.2 Design Metaphor",
+          "kind": "module",
+          "start_line": 39,
+          "end_line": 39,
+          "signature": "### 1.2 Design Metaphor"
+        },
+        {
+          "name": "1.3 Target Users",
+          "qualified_name": "H3: 1.3 Target Users",
+          "kind": "module",
+          "start_line": 50,
+          "end_line": 50,
+          "signature": "### 1.3 Target Users"
+        },
+        {
+          "name": "1.4 Design Goals",
+          "qualified_name": "H3: 1.4 Design Goals",
+          "kind": "module",
+          "start_line": 66,
+          "end_line": 66,
+          "signature": "### 1.4 Design Goals"
+        },
+        {
+          "name": "2. Design Principles",
+          "qualified_name": "H2: 2. Design Principles",
+          "kind": "module",
+          "start_line": 76,
+          "end_line": 76,
+          "signature": "## 2. Design Principles"
+        },
+        {
+          "name": "2.1 The Five Pillars of oxide-tech Product Design",
+          "qualified_name": "H3: 2.1 The Five Pillars of oxide-tech Product Design",
+          "kind": "module",
+          "start_line": 78,
+          "end_line": 78,
+          "signature": "### 2.1 The Five Pillars of oxide-tech Product Design"
+        },
+        {
+          "name": "1. Precision Over Convenience",
+          "qualified_name": "H4: 1. Precision Over Convenience",
+          "kind": "module",
+          "start_line": 80,
+          "end_line": 80,
+          "signature": "#### 1. Precision Over Convenience"
+        },
+        {
+          "name": "2. Information Density",
+          "qualified_name": "H4: 2. Information Density",
+          "kind": "module",
+          "start_line": 89,
+          "end_line": 89,
+          "signature": "#### 2. Information Density"
+        },
+        {
+          "name": "3. Progressive Disclosure",
+          "qualified_name": "H4: 3. Progressive Disclosure",
+          "kind": "module",
+          "start_line": 98,
+          "end_line": 98,
+          "signature": "#### 3. Progressive Disclosure"
+        },
+        {
+          "name": "4. Feedback Everywhere",
+          "qualified_name": "H4: 4. Feedback Everywhere",
+          "kind": "module",
+          "start_line": 110,
+          "end_line": 110,
+          "signature": "#### 4. Feedback Everywhere"
+        },
+        {
+          "name": "5. Safety by Design",
+          "qualified_name": "H4: 5. Safety by Design",
+          "kind": "module",
+          "start_line": 120,
+          "end_line": 120,
+          "signature": "#### 5. Safety by Design"
+        },
+        {
+          "name": "2.2 Anti-Patterns to Avoid",
+          "qualified_name": "H3: 2.2 Anti-Patterns to Avoid",
+          "kind": "module",
+          "start_line": 132,
+          "end_line": 132,
+          "signature": "### 2.2 Anti-Patterns to Avoid"
+        },
+        {
+          "name": "3. User Experience Guidelines",
+          "qualified_name": "H2: 3. User Experience Guidelines",
+          "kind": "module",
+          "start_line": 146,
+          "end_line": 146,
+          "signature": "## 3. User Experience Guidelines"
+        },
+        {
+          "name": "3.1 Information Architecture",
+          "qualified_name": "H3: 3.1 Information Architecture",
+          "kind": "module",
+          "start_line": 148,
+          "end_line": 148,
+          "signature": "### 3.1 Information Architecture"
+        },
+        {
+          "name": "Navigation Structure",
+          "qualified_name": "H4: Navigation Structure",
+          "kind": "module",
+          "start_line": 150,
+          "end_line": 150,
+          "signature": "#### Navigation Structure"
+        },
+        {
+          "name": "Page Hierarchy",
+          "qualified_name": "H4: Page Hierarchy",
+          "kind": "module",
+          "start_line": 174,
+          "end_line": 174,
+          "signature": "#### Page Hierarchy"
+        },
+        {
+          "name": "3.2 User Flows",
+          "qualified_name": "H3: 3.2 User Flows",
+          "kind": "module",
+          "start_line": 181,
+          "end_line": 181,
+          "signature": "### 3.2 User Flows"
+        },
+        {
+          "name": "Product Discovery Flow",
+          "qualified_name": "H4: Product Discovery Flow",
+          "kind": "module",
+          "start_line": 183,
+          "end_line": 183,
+          "signature": "#### Product Discovery Flow"
+        },
+        {
+          "name": "Technical Documentation Flow",
+          "qualified_name": "H4: Technical Documentation Flow",
+          "kind": "module",
+          "start_line": 188,
+          "end_line": 188,
+          "signature": "#### Technical Documentation Flow"
+        },
+        {
+          "name": "Support Flow",
+          "qualified_name": "H4: Support Flow",
+          "kind": "module",
+          "start_line": 193,
+          "end_line": 193,
+          "signature": "#### Support Flow"
+        },
+        {
+          "name": "3.3 Cognitive Load Management",
+          "qualified_name": "H3: 3.3 Cognitive Load Management",
+          "kind": "module",
+          "start_line": 198,
+          "end_line": 198,
+          "signature": "### 3.3 Cognitive Load Management"
+        },
+        {
+          "name": "Chunking",
+          "qualified_name": "H4: Chunking",
+          "kind": "module",
+          "start_line": 200,
+          "end_line": 200,
+          "signature": "#### Chunking"
+        },
+        {
+          "name": "Progressive Disclosure",
+          "qualified_name": "H4: Progressive Disclosure",
+          "kind": "module",
+          "start_line": 207,
+          "end_line": 207,
+          "signature": "#### Progressive Disclosure"
+        },
+        {
+          "name": "Visual Hierarchy",
+          "qualified_name": "H4: Visual Hierarchy",
+          "kind": "module",
+          "start_line": 217,
+          "end_line": 217,
+          "signature": "#### Visual Hierarchy"
+        },
+        {
+          "name": "3.4 Error Prevention",
+          "qualified_name": "H3: 3.4 Error Prevention",
+          "kind": "module",
+          "start_line": 225,
+          "end_line": 225,
+          "signature": "### 3.4 Error Prevention"
+        },
+        {
+          "name": "Input Validation",
+          "qualified_name": "H4: Input Validation",
+          "kind": "module",
+          "start_line": 227,
+          "end_line": 227,
+          "signature": "#### Input Validation"
+        },
+        {
+          "name": "Confirmation Dialogs",
+          "qualified_name": "H4: Confirmation Dialogs",
+          "kind": "module",
+          "start_line": 236,
+          "end_line": 236,
+          "signature": "#### Confirmation Dialogs"
+        },
+        {
+          "name": "Undo Support",
+          "qualified_name": "H4: Undo Support",
+          "kind": "module",
+          "start_line": 253,
+          "end_line": 253,
+          "signature": "#### Undo Support"
+        },
+        {
+          "name": "4. Component Library",
+          "qualified_name": "H2: 4. Component Library",
+          "kind": "module",
+          "start_line": 263,
+          "end_line": 263,
+          "signature": "## 4. Component Library"
+        },
+        {
+          "name": "4.1 Buttons",
+          "qualified_name": "H3: 4.1 Buttons",
+          "kind": "module",
+          "start_line": 265,
+          "end_line": 265,
+          "signature": "### 4.1 Buttons"
+        },
+        {
+          "name": "Primary Button",
+          "qualified_name": "H4: Primary Button",
+          "kind": "module",
+          "start_line": 267,
+          "end_line": 267,
+          "signature": "#### Primary Button"
+        },
+        {
+          "name": "Secondary Button",
+          "qualified_name": "H4: Secondary Button",
+          "kind": "module",
+          "start_line": 295,
+          "end_line": 295,
+          "signature": "#### Secondary Button"
+        },
+        {
+          "name": "Icon Button",
+          "qualified_name": "H4: Icon Button",
+          "kind": "module",
+          "start_line": 314,
+          "end_line": 314,
+          "signature": "#### Icon Button"
+        },
+        {
+          "name": "4.2 Cards",
+          "qualified_name": "H3: 4.2 Cards",
+          "kind": "module",
+          "start_line": 328,
+          "end_line": 328,
+          "signature": "### 4.2 Cards"
+        },
+        {
+          "name": "TechBox (Product Card)",
+          "qualified_name": "H4: TechBox (Product Card)",
+          "kind": "module",
+          "start_line": 330,
+          "end_line": 330,
+          "signature": "#### TechBox (Product Card)"
+        },
+        {
+          "name": "Feature Card",
+          "qualified_name": "H4: Feature Card",
+          "kind": "module",
+          "start_line": 385,
+          "end_line": 385,
+          "signature": "#### Feature Card"
+        },
+        {
+          "name": "Leader Card",
+          "qualified_name": "H4: Leader Card",
+          "kind": "module",
+          "start_line": 402,
+          "end_line": 402,
+          "signature": "#### Leader Card"
+        },
+        {
+          "name": "4.3 Navigation",
+          "qualified_name": "H3: 4.3 Navigation",
+          "kind": "module",
+          "start_line": 421,
+          "end_line": 421,
+          "signature": "### 4.3 Navigation"
+        },
+        {
+          "name": "Header Navigation",
+          "qualified_name": "H4: Header Navigation",
+          "kind": "module",
+          "start_line": 423,
+          "end_line": 423,
+          "signature": "#### Header Navigation"
+        },
+        {
+          "name": "Mobile Navigation",
+          "qualified_name": "H4: Mobile Navigation",
+          "kind": "module",
+          "start_line": 449,
+          "end_line": 449,
+          "signature": "#### Mobile Navigation"
+        },
+        {
+          "name": "4.4 HologramViewer",
+          "qualified_name": "H3: 4.4 HologramViewer",
+          "kind": "module",
+          "start_line": 465,
+          "end_line": 465,
+          "signature": "### 4.4 HologramViewer"
+        },
+        {
+          "name": "4.5 PCBBackground",
+          "qualified_name": "H3: 4.5 PCBBackground",
+          "kind": "module",
+          "start_line": 510,
+          "end_line": 510,
+          "signature": "### 4.5 PCBBackground"
+        },
+        {
+          "name": "4.6 Form Elements",
+          "qualified_name": "H3: 4.6 Form Elements",
+          "kind": "module",
+          "start_line": 546,
+          "end_line": 546,
+          "signature": "### 4.6 Form Elements"
+        },
+        {
+          "name": "Text Input",
+          "qualified_name": "H4: Text Input",
+          "kind": "module",
+          "start_line": 548,
+          "end_line": 548,
+          "signature": "#### Text Input"
+        },
+        {
+          "name": "Select Dropdown",
+          "qualified_name": "H4: Select Dropdown",
+          "kind": "module",
+          "start_line": 572,
+          "end_line": 572,
+          "signature": "#### Select Dropdown"
+        },
+        {
+          "name": "Checkbox/Radio",
+          "qualified_name": "H4: Checkbox/Radio",
+          "kind": "module",
+          "start_line": 586,
+          "end_line": 586,
+          "signature": "#### Checkbox/Radio"
+        },
+        {
+          "name": "4.7 Data Display",
+          "qualified_name": "H3: 4.7 Data Display",
+          "kind": "module",
+          "start_line": 603,
+          "end_line": 603,
+          "signature": "### 4.7 Data Display"
+        },
+        {
+          "name": "Stat Card",
+          "qualified_name": "H4: Stat Card",
+          "kind": "module",
+          "start_line": 605,
+          "end_line": 605,
+          "signature": "#### Stat Card"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.885503881Z"
+    },
+    ".idea/modules.xml": {
+      "relative_path": ".idea/modules.xml",
+      "language": "xml",
+      "size_bytes": 272,
+      "line_count": 8,
+      "content_hash": "4946f71ad0a575ebd20d45769dc938dac91c219e3c96b60353e851f04689f49e",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.835831501Z"
+    },
+    "src/components/HeaderNav.tsx": {
+      "relative_path": "src/components/HeaderNav.tsx",
+      "language": "typescript",
+      "size_bytes": 9044,
+      "line_count": 156,
+      "content_hash": "18e7e59739ac2bfd7b7cee1689abdeb4565d813a083b2583b6f87715d2fa81c2",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.871548217Z"
+    },
+    "src/components/Navigation.tsx": {
+      "relative_path": "src/components/Navigation.tsx",
+      "language": "typescript",
+      "size_bytes": 7031,
+      "line_count": 181,
+      "content_hash": "5327605f671b7f745e028910f43068e0908c6798263352709334f7866e742f2f",
+      "symbols": [
+        {
+          "name": "NavigationProps",
+          "qualified_name": "NavigationProps",
+          "kind": "interface",
+          "start_line": 8,
+          "end_line": 12,
+          "signature": "interface NavigationProps {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.838004282Z"
+    },
+    "vite.config.ts": {
+      "relative_path": "vite.config.ts",
+      "language": "typescript",
+      "size_bytes": 708,
+      "line_count": 22,
+      "content_hash": "c7b7cc4b3a6b6a08f0a4fb916bb4d4e41804d5767611bce43d4c1ad53a198192",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.885128691Z"
+    },
+    "pnpm-workspace.yaml": {
+      "relative_path": "pnpm-workspace.yaml",
+      "language": "yaml",
+      "size_bytes": 72,
+      "line_count": 4,
+      "content_hash": "41bc33aa5327fe5a13bae4e9b787e3ac5ae7d990e121b0d1c3353c6708cc3686",
+      "symbols": [],
+      "last_scanned_at": "2026-09-22T09:26:14.885516942Z"
+    },
+    "src/lib/audio.ts": {
+      "relative_path": "src/lib/audio.ts",
+      "language": "typescript",
+      "size_bytes": 743,
+      "line_count": 20,
+      "content_hash": "54004f4899dc1f7048af324b3bfd545a0bbdcdde7155df3c444d68e7555659bf",
+      "symbols": [
+        {
+          "name": "playHardwareTone",
+          "qualified_name": "playHardwareTone",
+          "kind": "function",
+          "start_line": 1,
+          "end_line": 20,
+          "signature": "function playHardwareTone(frequency: number, duration: number, muted: boolean) {"
+        }
+      ],
+      "last_scanned_at": "2026-09-22T09:26:14.878097430Z"
+    }
+  },
+  "total_symbols": 252,
+  "last_updated": "2026-09-22T09:26:14.885594117Z"
+}
